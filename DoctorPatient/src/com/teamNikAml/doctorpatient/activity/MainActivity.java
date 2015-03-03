@@ -1,4 +1,4 @@
-package com.teamNikAml.activity.doctorpatient;
+package com.teamNikAml.doctorpatient.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
