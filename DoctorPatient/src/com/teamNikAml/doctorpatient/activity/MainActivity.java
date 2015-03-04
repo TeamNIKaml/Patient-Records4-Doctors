@@ -116,6 +116,7 @@ public class MainActivity extends Activity {
 			// on first time display view for first nav item
 			displayView(0);
 		}
+		mDrawerLayout.openDrawer(mDrawerList);
 	}
 
 	/**
