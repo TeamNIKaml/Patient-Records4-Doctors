@@ -11,20 +11,20 @@ public class DatabaseConstants {
 		public static final String NAME = "name";
 		public static final String SEX = "sex";
 		public static final String AGE = "age";
-		public static final String DOB = "dob";
+		public static final String EMAIL = "email";
 		public static final String CONTACTNO = "contactno";
-		public static final String NOTES = "notes";
+		public static final String OTHERNOTES = "othernotes";
 
 	}
 
 	public static final	String CREATE_TABLE_PATIENTDETAIL = 
-			"create table if not exists " + DATABASE_NAME + " ( "
+			"create table if not exists " + TABLE_PATIENTDETAIL + " ( "
 			+ PatientDetailTable.ID + " INTEGER PRIMARY KEY, "
 			+ PatientDetailTable.NAME + " VARACHAR, "
 			+ PatientDetailTable.SEX + " VARACHAR, "
 			+ PatientDetailTable.AGE + " INTEGER, "
-			+ PatientDetailTable.DOB + " VARACHAR, "
+			+ PatientDetailTable.EMAIL + " VARACHAR, "
 			+ PatientDetailTable.CONTACTNO + " VARACHAR, "
-			+ PatientDetailTable.NOTES + " VARACHAR);" ;
+			+ PatientDetailTable.OTHERNOTES + " VARACHAR);" ;
 
 }
