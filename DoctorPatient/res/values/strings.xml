@@ -32,5 +32,6 @@
     <string name="email">EMail ID</string>
     <string name="phone">Phone Number</string>
     <string name="other">Others</string>
+    <string name="new_patient">New Patient</string>
 
 </resources>

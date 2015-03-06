@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
+    
+   <color name="button_background_end">#99a3b7</color>
+    <color name="button_background_start">#99a3b7</color>  
+    
+    
+  <color name="edit_text_background_start">#FFFFFF</color>
+    <color name="edit_text_background_end">#FFFFFF</color>  
+    
     <!-- Slide menu -->
     <color name="list_item_title">#fff</color>
     <color name="list_background">#00b9f1</color>
@@ -22,5 +30,14 @@
     
      <color name="primary">#8113ef</color>
       <color name="primary_dark">#00b9f1</color>
+      
+      
+      
+      
+      
+      
+      <!-- new patient fragment reg -->
+      
+         <color name="table_row_background">#748aa8</color>  
      
 </resources>
