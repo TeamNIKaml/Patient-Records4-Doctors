@@ -8,11 +8,6 @@ public class MyApplication extends Application {
 
 	PatientDetailAccess patientDetailAccess;
 
-	public MyApplication() {
-		super();
-		// TODO Auto-generated constructor stub
-		this.patientDetailAccess = null;
-	}
 
 	public PatientDetailAccess getPatientDetailAccess() {
 		return patientDetailAccess;
@@ -20,6 +15,13 @@ public class MyApplication extends Application {
 
 	public void setPatientDetailAccess(PatientDetailAccess patientDetailAccess) {
 		this.patientDetailAccess = patientDetailAccess;
+	}
+
+	@Override
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		super.onCreate();
+		patientDetailAccess = new PatientDetailAccess(getApplicationContext(), null, null, 0);
 	}
 	
 	

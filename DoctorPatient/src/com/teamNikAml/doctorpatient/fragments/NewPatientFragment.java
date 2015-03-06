@@ -59,8 +59,9 @@ public class NewPatientFragment extends Fragment {
 				IDatabaseUtility database =((MyApplication)getActivity().getApplication()).getPatientDetailAccess();
 				if (database==null) {
 					((MyApplication)getActivity().getApplication()).setPatientDetailAccess(new PatientDetailAccess(getActivity().getApplicationContext(), null, null, 0));
+					 database =((MyApplication)getActivity().getApplication()).getPatientDetailAccess();
 				}
-				 database =((MyApplication)getActivity().getApplication()).getPatientDetailAccess();
+
 				database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
 				
 				}
