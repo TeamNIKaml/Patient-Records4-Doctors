@@ -10,9 +10,9 @@ public class PatientDetailUnit {
 	private String name;
 	private String sex;
 	private int age;
-	private String dob;
+	private String email;
 	private String contactNo;
-	private String notes;
+	private String otherNotes;
 	
 	
 	public int getId() {
@@ -40,10 +40,10 @@ public class PatientDetailUnit {
 		this.age = age;
 	}
 	public String getDob() {
-		return dob;
+		return email;
 	}
-	public void setDob(String dob) {
-		this.dob = dob;
+	public void setDob(String email) {
+		this.email = email;
 	}
 	public String getContactNo() {
 		return contactNo;
@@ -52,10 +52,10 @@ public class PatientDetailUnit {
 		this.contactNo = contactNo;
 	}
 	public String getNotes() {
-		return notes;
+		return otherNotes;
 	}
-	public void setNotes(String notes) {
-		this.notes = notes;
+	public void setNotes(String otherNotes) {
+		this.otherNotes = otherNotes;
 	}
 
 	public ArrayList<PatientDetailUnit> getPatientArray(Cursor c) {
