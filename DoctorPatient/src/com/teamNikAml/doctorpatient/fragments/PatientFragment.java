@@ -40,7 +40,7 @@ public class PatientFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_new_patient_reg,
+		View rootView = inflater.inflate(R.layout.fragment_patients,
 				container, false);
 
 		searchView = (EditText) rootView.findViewById(R.id.editText_search);
