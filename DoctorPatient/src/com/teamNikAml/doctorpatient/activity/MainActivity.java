@@ -18,11 +18,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.teamNikAml.doctorpatient.adaptor.NavDrawerListAdapter;
-import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.fragments.AppointmentFragment;
 import com.teamNikAml.doctorpatient.fragments.BackupFragment;
 import com.teamNikAml.doctorpatient.fragments.BillFragment;
-import com.teamNikAml.doctorpatient.fragments.NewPatientFragment;
 import com.teamNikAml.doctorpatient.fragments.PatientFragment;
 import com.teamNikAml.doctorpatient.model.NavDrawerItem;
 
@@ -174,7 +172,7 @@ public class MainActivity extends Activity {
 		Fragment fragment = null;
 		switch (position) {
 		case 0:
-			fragment = new NewPatientFragment();
+			fragment = new PatientFragment();
 			break;
 		case 1:
 			fragment = new AppointmentFragment();

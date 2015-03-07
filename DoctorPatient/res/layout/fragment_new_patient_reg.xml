@@ -5,51 +5,43 @@
 
     <TableRow
         android:id="@+id/tableRow_search1"
-        android:background="@color/table_row_background"
-      
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-       
-        android:gravity="center_horizontal"
-        >
-        
-        
-          <LinearLayout
+        android:background="@color/table_row_background"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="10"
-            android:weightSum="100"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
             android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
-            
-            >
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:layout_weight="10"
+            android:orientation="horizontal"
+            android:weightSum="100" >
 
-        <EditText
-           android:padding="@dimen/padding"
-            android:drawableLeft="@drawable/ic_search" 
-           android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
-           android:layout_marginRight="@dimen/new_patient_reg_margin_right"
-            android:id="@+id/editText_search"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="30"
-            android:background="@drawable/edit_text_background"
-            android:hint="@string/name" />
+            <EditText
+                android:id="@+id/editText_search"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="30"
+                android:background="@drawable/edit_text_background"
+                android:drawableLeft="@drawable/ic_search"
+                android:hint="@string/name"
+                android:padding="@dimen/padding" />
 
-        <Button
-            android:id="@+id/button_newPatient"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginRight="@dimen/new_patient_reg_margin_right"
-            android:layout_weight="70"
-            android:background="@drawable/button"
-            android:padding="@dimen/padding"
-            android:text="@string/new_patient" />
-        
-          </LinearLayout>
-
+            <Button
+                android:id="@+id/button_newPatient"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="70"
+                android:background="@drawable/button"
+                android:padding="@dimen/padding"
+                android:text="@string/new_patient" />
+        </LinearLayout>
     </TableRow>
 
     <TableRow

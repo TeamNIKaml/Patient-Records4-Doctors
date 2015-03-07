@@ -1,6 +1,7 @@
 package com.teamNikAml.doctorpatient.fragments;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -63,7 +64,10 @@ public class NewPatientFragment extends Fragment {
 				}
 
 				database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
-				
+				FragmentTransaction t = getActivity().getFragmentManager().beginTransaction();
+				Fragment mFrag = new PatientFragment();
+				t.replace(R.id.frame_container, mFrag);
+				t.commit();
 				}
 		});
 		return rootView;
