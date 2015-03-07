@@ -14,13 +14,13 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_history_of_illness"
+            android:id="@+id/edittext_general_examination"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
             android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
-            android:hint="@string/historyOfIllness"
+            android:hint="@string/generalExamination"
             android:inputType="textMultiLine"
             android:maxLines="10"
             android:minLines="6"
@@ -40,7 +40,7 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_edittext_note_history_of_illness"
+            android:id="@+id/edittext_edittext_note_general_examination"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
@@ -62,7 +62,7 @@
         android:gravity="right" >
 
         <Button
-            android:id="@+id/button_next"
+            android:id="@+id/button_save"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

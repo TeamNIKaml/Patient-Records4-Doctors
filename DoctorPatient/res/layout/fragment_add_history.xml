@@ -10,15 +10,15 @@
      <TableRow
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/new_patient_margin_top"
+        android:layout_marginTop="@dimen/margin_top"
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_chief_complaint"
+            android:id="@+id/edittext_medical_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/new_patient_margin_left"
-            android:layout_marginRight="@dimen/new_patient_margin_right"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
             android:hint="@string/medicalHistory"
             android:inputType="textMultiLine"
@@ -36,15 +36,15 @@
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/new_patient_margin_top"
+        android:layout_marginTop="@dimen/margin_top"
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_edittext_note_chief_complaint"
+            android:id="@+id/edittext_edittext_personal_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/new_patient_margin_left"
-            android:layout_marginRight="@dimen/new_patient_margin_right"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
             android:hint="@string/personalHistory"
             android:inputType="textMultiLine"
@@ -58,7 +58,7 @@
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/new_patient_margin_top"
+        android:layout_marginTop="@dimen/margin_top"
         android:gravity="right" >
 
         <Button
@@ -66,9 +66,9 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/new_patient_margin_top"
-            android:layout_marginLeft="@dimen/new_patient_margin_left_button"
-            android:layout_marginRight="@dimen/new_patient_margin_right"
+            android:layout_marginBottom="@dimen/margin_top"
+            android:layout_marginLeft="@dimen/margin_left_button"
+            android:layout_marginRight="@dimen/margin_right"
             android:background="@color/button_background"
             android:padding="@dimen/padding"
             android:text="@string/save"

@@ -6,62 +6,32 @@
     android:background="@color/fagment_background"
     android:shrinkColumns="*"
     android:stretchColumns="*" >
-
-    <TableRow
+    
+     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_top"
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_name"
+            android:id="@+id/edittext_final_diagnosis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
             android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
-            android:hint="@string/name"
-            android:inputType="text"
+            android:hint="@string/finalDignosis"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:minLines="6"
             android:padding="@dimen/padding"
             android:textColor="@color/edit_text_text_color"
             android:textSize="@dimen/textSize_edit_text" />
     </TableRow>
+    
+    
 
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_top"
-        android:gravity="left" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent" >
-
-            <EditText
-                android:id="@+id/edittext_age"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_right"
-                android:background="@color/edit_text_background"
-                android:hint="@string/age"
-                android:inputType="text"
-                android:padding="@dimen/padding"
-                android:textColor="@color/edit_text_text_color"
-                android:textSize="@dimen/textSize_edit_text" />
-
-            <Spinner
-                android:id="@+id/spinner_sex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margin_right"
-                android:padding="@dimen/padding"
-                android:textColor="@color/edit_text_text_color" />
-        </LinearLayout>
-    </TableRow>
+   
 
     <TableRow
         android:layout_width="fill_parent"
@@ -70,56 +40,37 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_email"
+            android:id="@+id/edittext_edittext_note_final_diagnosis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
             android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:padding="@dimen/padding"
-            android:textColor="@color/edit_text_text_color"
-            android:textSize="@dimen/textSize_edit_text" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_top"
-        android:gravity="left" >
-
-        <EditText
-            android:id="@+id/edittext_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginRight="@dimen/margin_right"
-            android:background="@color/edit_text_background"
-            android:hint="@string/phone"
-            android:inputType="text|phone"
-            android:padding="@dimen/padding"
-            android:textColor="@color/edit_text_text_color"
-            android:textSize="@dimen/textSize_edit_text" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_top"
-        android:gravity="left" >
-
-        <EditText
-            android:id="@+id/edittext_others"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginRight="@dimen/margin_right"
-            android:background="@color/edit_text_background"
-            android:hint="@string/other"
+            android:hint="@string/note"
             android:inputType="textMultiLine"
             android:maxLines="10"
             android:minLines="4"
+            android:padding="@dimen/padding"
+            android:textColor="@color/edit_text_text_color"
+            android:textSize="@dimen/textSize_edit_text" />
+    </TableRow>
+    
+    
+     <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="left" >
+
+        <EditText
+            android:id="@+id/edittext_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/edit_text_background"
+            android:hint="@string/fee"
+            android:inputType="text"
             android:padding="@dimen/padding"
             android:textColor="@color/edit_text_text_color"
             android:textSize="@dimen/textSize_edit_text" />
@@ -132,7 +83,7 @@
         android:gravity="right" >
 
         <Button
-            android:id="@+id/button_save_patient"
+            android:id="@+id/button_save"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
