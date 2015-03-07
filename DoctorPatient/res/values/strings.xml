@@ -33,5 +33,11 @@
     <string name="phone">Phone Number</string>
     <string name="other">Others</string>
     <string name="new_patient">New Patient</string>
+    <string name="chiefComplaint">Chief Complaint</string>
+    <string name="note">Note</string>
+    <string name="next">Next</string>
+    <string name="historyOfIllness">History Of Presenting Illness</string>
+    <string name="medicalHistory">Medical History</string>
+    <string name="personalHistory">Personal History</string>
 
 </resources>
