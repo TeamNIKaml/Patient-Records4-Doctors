@@ -112,4 +112,21 @@ public class DatabaseConstants {
 			+ Finaldiagnosis.NOTES + " VARACHAR);" ;
 	
 	/****************************************************************************************/
+	
+	public static final String TABLE_HISTORYOFILLNESS = "HistoryOfIllnessTable";
+	
+	public static class HistoryOfIllness {
+		public static final String ID ="id";
+		public static final String HISTORYOFILLNESS = "historyofillness";
+		public static final String NOTES = "hoinotes";
+	}
+	
+	public static final	String CREATE_TABLE_HISTORYOFILLNESS = 
+			"create table if not exists " + TABLE_HISTORYOFILLNESS + " ( "
+			+ HistoryOfIllness.ID + " INTEGER PRIMARY KEY, "
+			+ HistoryOfIllness.HISTORYOFILLNESS + " VARACHAR, "
+			+ HistoryOfIllness.NOTES + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
 }

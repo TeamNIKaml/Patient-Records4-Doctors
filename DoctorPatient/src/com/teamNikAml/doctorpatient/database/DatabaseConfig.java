@@ -25,6 +25,7 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		db.execSQL(DatabaseConstants.CREATE_TABLE_INVESTIGATION);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_EXAMINATION);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_FINALDIAGNOSIS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_HISTORYOFILLNESS);
 		//db.execSQL("INSERT INTO "+DatabaseConstants.TABLE_PRESENTINGILLNESS+" VALUES ( 1, xxxx, yyyyy);");
 	}
 
