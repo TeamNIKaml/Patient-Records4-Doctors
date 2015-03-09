@@ -32,10 +32,11 @@ public class NewPatientFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_new_patient,
 				container, false);
-		
+
 		sex = (Spinner) rootView.findViewById(id.spinner_sex);
-		ArrayAdapter<String> mySexAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_spinner_item,sexValues);
-		mySexAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); 
+		ArrayAdapter<String> mySexAdapter = new ArrayAdapter<String>(
+				getActivity().getApplicationContext(), R.layout.spinner_layout,
+				R.id.textView_spinnertext, sexValues);
 		sex.setAdapter(mySexAdapter);
 		name = (EditText) rootView.findViewById(id.edittext_name);
 		age = (EditText) rootView.findViewById(id.edittext_age);
@@ -43,32 +44,44 @@ public class NewPatientFragment extends Fragment {
 		contact = (EditText) rootView.findViewById(id.edittext_phone);
 		othernotes = (EditText) rootView.findViewById(id.edittext_others);
 		ok = (Button) rootView.findViewById(id.button_save_patient);
-		
+
 		ok.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.PatientDetailTable.NAME, name.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.SEX, sex.getSelectedItem().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.AGE, age.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.EMAIL, email.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.CONTACTNO, contact.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES, othernotes.getText().toString().trim());
-				
-				IDatabaseUtility database =((MyApplication)getActivity().getApplication()).getPatientDetailAccess();
-				if (database==null) {
-					((MyApplication)getActivity().getApplication()).setPatientDetailAccess(new PatientDetailAccess(getActivity().getApplicationContext(), null, null, 0));
-					 database =((MyApplication)getActivity().getApplication()).getPatientDetailAccess();
+				cv.put(DatabaseConstants.PatientDetailTable.NAME, name
+						.getText().toString().trim());
+				cv.put(DatabaseConstants.PatientDetailTable.SEX, sex
+						.getSelectedItem().toString().trim());
+				cv.put(DatabaseConstants.PatientDetailTable.AGE, age.getText()
+						.toString().trim());
+				cv.put(DatabaseConstants.PatientDetailTable.EMAIL, email
+						.getText().toString().trim());
+				cv.put(DatabaseConstants.PatientDetailTable.CONTACTNO, contact
+						.getText().toString().trim());
+				cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
+						othernotes.getText().toString().trim());
+
+				IDatabaseUtility database = ((MyApplication) getActivity()
+						.getApplication()).getPatientDetailAccess();
+				if (database == null) {
+					((MyApplication) getActivity().getApplication())
+							.setPatientDetailAccess(new PatientDetailAccess(
+									getActivity().getApplicationContext(),
+									null, null, 0));
+					database = ((MyApplication) getActivity().getApplication())
+							.getPatientDetailAccess();
 				}
 
 				database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
-				FragmentTransaction t = getActivity().getFragmentManager().beginTransaction();
+				FragmentTransaction t = getActivity().getFragmentManager()
+						.beginTransaction();
 				Fragment mFrag = new PatientFragment();
 				t.replace(R.id.frame_container, mFrag);
 				t.commit();
-				}
+			}
 		});
 		return rootView;
 	}

@@ -40,8 +40,8 @@ public class PatientFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_patients,
-				container, false);
+		View rootView = inflater.inflate(R.layout.fragment_patients, container,
+				false);
 
 		searchView = (EditText) rootView.findViewById(R.id.editText_search);
 		listView = (ListView) rootView.findViewById(R.id.list_patientName);
@@ -88,8 +88,8 @@ public class PatientFragment extends Fragment {
 		}
 
 		adapter = new ArrayAdapter<String>(getActivity()
-				.getApplicationContext(), android.R.layout.simple_list_item_1,
-				nameArry);
+				.getApplicationContext(), R.layout.patient_list_view,
+				R.id.textView_patient_listview, nameArry);
 		listView.setAdapter(adapter);
 		listView.setTextFilterEnabled(true);
 		searchView.addTextChangedListener(new TextWatcher() {
@@ -125,12 +125,13 @@ public class PatientFragment extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-/*				String item = ((TextView) arg1).getText().toString();
-
-				Intent intent = new Intent(getApplicationContext(),
-						ViewPatientRecord.class);
-				intent.putExtra("name", item.substring(item.length() - 1));
-				startActivity(intent);*/
+				/*
+				 * String item = ((TextView) arg1).getText().toString();
+				 * 
+				 * Intent intent = new Intent(getApplicationContext(),
+				 * ViewPatientRecord.class); intent.putExtra("name",
+				 * item.substring(item.length() - 1)); startActivity(intent);
+				 */
 
 			}
 		});

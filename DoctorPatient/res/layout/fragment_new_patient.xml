@@ -59,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margin_right"
                 android:padding="@dimen/padding"
-                android:textColor="@color/spinner_text_color"></Spinner>
+                android:textColor="@color/spinner_text_color" >
+            </Spinner>
         </LinearLayout>
     </TableRow>
 
