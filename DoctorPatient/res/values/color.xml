@@ -6,6 +6,12 @@
     <color name="button_background_start">#99a3b7</color>  
     
     
+    
+    
+    
+     <color name="diagnosis_button">#3d528e</color> 
+     <color name="diagnosis_background">#dce1ec</color> 
+    
       <color name="spinner_text_color">#40413c</color>
       <color name="list_patient_background">#40413c</color>
     
