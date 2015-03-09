@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseConfig extends SQLiteOpenHelper implements Runnable {
+public class DatabaseConfig extends SQLiteOpenHelper{
 
 	protected SQLiteDatabase prdDataBase;
 	
@@ -13,36 +13,30 @@ public class DatabaseConfig extends SQLiteOpenHelper implements Runnable {
 			int version) {
 		super(context, name, factory, version);
 		// TODO Auto-generated constructor stub
-		Thread t = new Thread(this);
-		t.start();
-
-		try {
-			if (t.isAlive()) {
-				t.join();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		prdDataBase = getWritableDatabase();
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL(DatabaseConstants.CREATE_TABLE_PATIENTDETAIL);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_PRESENTINGILLNESS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_PROVISIONALDIAGNOSIS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_INVESTIGATION);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_EXAMINATION);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_FINALDIAGNOSIS);
+		//db.execSQL("INSERT INTO "+DatabaseConstants.TABLE_PRESENTINGILLNESS+" VALUES ( 1, xxxx, yyyyy);");
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PATIENTDETAIL);
-
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PRESENTINGILLNESS);
+		
 		onCreate(prdDataBase);
 	}
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		prdDataBase = getWritableDatabase();
-	}
+
 
 }
