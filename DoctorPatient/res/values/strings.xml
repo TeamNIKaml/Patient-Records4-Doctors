@@ -46,5 +46,7 @@
     <string name="investigation">Investigation</string>
     <string name="finalDignosis">Final Dignosis</string>
     <string name="fee">Fee</string>
+    <string name="socialHistory">Social History</string>
+    <string name="sexual">" Obstetric/Gynecological history"</string>
 
 </resources>
