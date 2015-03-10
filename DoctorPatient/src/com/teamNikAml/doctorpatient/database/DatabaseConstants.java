@@ -32,100 +32,165 @@ public class DatabaseConstants {
 	
 	/************************************************************************************/
 
-	public static final String TABLE_PRESENTINGILLNESS = "PresentingIllnessTable";
+	public static final String TABLE_CHIEFCOMPLAINT = "ChiefComplaintTable";
 	
-	public static class PresentingIllness {
+	public static class ChiefComplaint {
 		public static final String ID ="id";
-		public static final String PRESENTINGILLNESS = "presentingillness";
-		public static final String NOTES = "pinotes";
+		public static final String PROCESS = "chiefcomplaint";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_PRESENTINGILLNESS = 
-			"create table if not exists " + TABLE_PRESENTINGILLNESS + " ( "
-			+ PresentingIllness.ID + " INTEGER PRIMARY KEY, "
-			+ PresentingIllness.PRESENTINGILLNESS + " VARACHAR, "
-			+ PresentingIllness.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_CHIEFCOMPLAINT = 
+			"create table if not exists " + TABLE_CHIEFCOMPLAINT + " ( "
+			+ ChiefComplaint.ID + " INTEGER PRIMARY KEY, "
+			+ ChiefComplaint.PROCESS + " VARACHAR, "
+			+ ChiefComplaint.NOTES + " VARACHAR);" ;
 	
 	
 	/************************************************************************************/
 	
-	public static final String TABLE_PROVISIONALDIAGNOSIS = "ProvisionalDiagnosisTable";
+	public static final String TABLE_HISTORYOFTHEPRESENTILLNESS = "HistoryOfThePresentIllness";
 	
-	public static class Provisionaldiagnosis {
+	public static class HistoryOfThePresentIllness {
 		public static final String ID ="id";
-		public static final String PROVISIONALDIAGNOSIS = "provisionaldiagnosis";
-		public static final String NOTES = "pdnotes";
+		public static final String PROCESS = "historyofthepresentillness";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_PROVISIONALDIAGNOSIS = 
-			"create table if not exists " + TABLE_PROVISIONALDIAGNOSIS + " ( "
-			+ Provisionaldiagnosis.ID + " INTEGER PRIMARY KEY, "
-			+ Provisionaldiagnosis.PROVISIONALDIAGNOSIS + " VARACHAR, "
-			+ Provisionaldiagnosis.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS = 
+			"create table if not exists " + TABLE_HISTORYOFTHEPRESENTILLNESS + " ( "
+			+ HistoryOfThePresentIllness.ID + " INTEGER PRIMARY KEY, "
+			+ HistoryOfThePresentIllness.PROCESS + " VARACHAR, "
+			+ HistoryOfThePresentIllness.NOTES + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
-	public static final String TABLE_INVESTIGATION = "InvestigationTable";
+	public static final String TABLE_PASTMEDICALHISTORY = "PastMedicalHistory";
 	
-	public static class Investigation {
+	public static class PastMedicalHistory {
 		public static final String ID ="id";
-		public static final String INVESTIGATION = "investigation";
-		public static final String NOTES = "investigationnotes";
+		public static final String PROCESS = "pastmedicalhistory";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_INVESTIGATION = 
-			"create table if not exists " + TABLE_INVESTIGATION + " ( "
-			+ Investigation.ID + " INTEGER PRIMARY KEY, "
-			+ Investigation.INVESTIGATION + " VARACHAR, "
-			+ Investigation.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_PASTMEDICALHISTORY = 
+			"create table if not exists " + TABLE_PASTMEDICALHISTORY + " ( "
+			+ PastMedicalHistory.ID + " INTEGER PRIMARY KEY, "
+			+ PastMedicalHistory.PROCESS + " VARACHAR, "
+			+ PastMedicalHistory.NOTES + " VARACHAR);" ;
 	
 	/**************************************************************************************/
 	
-	public static final String TABLE_EXAMINATION = "ExaminationTable";
+	public static final String TABLE_REVIEWOFSYSTEMS = "ReviewOfSystems";
 	
-	public static class Examination {
+	public static class ReviewOfSystems {
 		public static final String ID ="id";
-		public static final String EXAMINATION = "examination";
-		public static final String NOTES = "examinationnotes";
+		public static final String PROCESS = "reviewofsystems";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_EXAMINATION = 
-			"create table if not exists " + TABLE_EXAMINATION + " ( "
-			+ Examination.ID + " INTEGER PRIMARY KEY, "
-			+ Examination.EXAMINATION + " VARACHAR, "
-			+ Examination.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_REVIEWOFSYSTEMS = 
+			"create table if not exists " + TABLE_REVIEWOFSYSTEMS + " ( "
+			+ ReviewOfSystems.ID + " INTEGER PRIMARY KEY, "
+			+ ReviewOfSystems.PROCESS + " VARACHAR, "
+			+ ReviewOfSystems.NOTES + " VARACHAR);" ;
 	
 	/*************************************************************************************/
 	
-	public static final String TABLE_FINALDIAGNOSIS = "FinaldiagnosisTable";
+	public static final String TABLE_FAMILYDISEASES = "FamilyDiseases";
 	
-	public static class Finaldiagnosis {
+	public static class FamilyDiseases {
 		public static final String ID ="id";
-		public static final String FINALDIAGNOSIS = "finaldiagnosis";
-		public static final String NOTES = "fdnotes";
+		public static final String PROCESS = "familydiseases";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_FINALDIAGNOSIS = 
-			"create table if not exists " + TABLE_FINALDIAGNOSIS + " ( "
-			+ Finaldiagnosis.ID + " INTEGER PRIMARY KEY, "
-			+ Finaldiagnosis.FINALDIAGNOSIS + " VARACHAR, "
-			+ Finaldiagnosis.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_FAMILYDISEASES = 
+			"create table if not exists " + TABLE_FAMILYDISEASES + " ( "
+			+ FamilyDiseases.ID + " INTEGER PRIMARY KEY, "
+			+ FamilyDiseases.PROCESS + " VARACHAR, "
+			+ FamilyDiseases.NOTES + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
-	public static final String TABLE_HISTORYOFILLNESS = "HistoryOfIllnessTable";
+	public static final String TABLE_CHILDHOODDISEASES = "ChildhoodDiseases";
 	
-	public static class HistoryOfIllness {
+	public static class ChildhoodDiseases {
 		public static final String ID ="id";
-		public static final String HISTORYOFILLNESS = "historyofillness";
-		public static final String NOTES = "hoinotes";
+		public static final String PROCESS = "childhooddiseases";
+		public static final String NOTES = "notes";
 	}
 	
-	public static final	String CREATE_TABLE_HISTORYOFILLNESS = 
-			"create table if not exists " + TABLE_HISTORYOFILLNESS + " ( "
-			+ HistoryOfIllness.ID + " INTEGER PRIMARY KEY, "
-			+ HistoryOfIllness.HISTORYOFILLNESS + " VARACHAR, "
-			+ HistoryOfIllness.NOTES + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_CHILDHOODDISEASES = 
+			"create table if not exists " + TABLE_CHILDHOODDISEASES + " ( "
+			+ ChildhoodDiseases.ID + " INTEGER PRIMARY KEY, "
+			+ ChildhoodDiseases.PROCESS + " VARACHAR, "
+			+ ChildhoodDiseases.NOTES + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_SOCIALHISTORY = "SocialHistory";
+	
+	public static class SocialHistory {
+		public static final String ID ="id";
+		public static final String PROCESS = "socialhistory";
+		public static final String NOTES = "notes";
+	}
+	
+	public static final	String CREATE_TABLE_SOCIALHISTORY = 
+			"create table if not exists " + TABLE_SOCIALHISTORY + " ( "
+			+ SocialHistory.ID + " INTEGER PRIMARY KEY, "
+			+ SocialHistory.PROCESS + " VARACHAR, "
+			+ SocialHistory.NOTES + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_ALLERGIES = "Allergies";
+	
+	public static class Allergies {
+		public static final String ID ="id";
+		public static final String PROCESS = "allergies";
+		public static final String NOTES = "notes";
+	}
+	
+	public static final	String CREATE_TABLE_ALLERGIES = 
+			"create table if not exists " + TABLE_ALLERGIES + " ( "
+			+ Allergies.ID + " INTEGER PRIMARY KEY, "
+			+ Allergies.PROCESS + " VARACHAR, "
+			+ Allergies.NOTES + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_SEXUAL = "Sexual";
+	
+	public static class Sexual {
+		public static final String ID ="id";
+		public static final String PROCESS = "sexual";
+		public static final String NOTES = "notes";
+	}
+	
+	public static final	String CREATE_TABLE_SEXUAL = 
+			"create table if not exists " + TABLE_SEXUAL + " ( "
+			+ Sexual.ID + " INTEGER PRIMARY KEY, "
+			+ Sexual.PROCESS + " VARACHAR, "
+			+ Sexual.NOTES + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	
+	public static final String TABLE_CONCLUSIONANDCLOSURE = "ConclusionAndClosure";
+	
+	public static class ConclusionAndClosure {
+		public static final String ID ="id";
+		public static final String PROCESS = "conclusionandclosure";
+		public static final String NOTES = "notes";
+	}
+	
+	public static final	String CREATE_TABLE_CONCLUSIONANDCLOSURE = 
+			"create table if not exists " + TABLE_CONCLUSIONANDCLOSURE + " ( "
+			+ ConclusionAndClosure.ID + " INTEGER PRIMARY KEY, "
+			+ ConclusionAndClosure.PROCESS + " VARACHAR, "
+			+ ConclusionAndClosure.NOTES + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	

@@ -20,12 +20,16 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL(DatabaseConstants.CREATE_TABLE_PATIENTDETAIL);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_PRESENTINGILLNESS);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_PROVISIONALDIAGNOSIS);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_INVESTIGATION);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_EXAMINATION);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_FINALDIAGNOSIS);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_HISTORYOFILLNESS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_CHIEFCOMPLAINT);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_PASTMEDICALHISTORY);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_REVIEWOFSYSTEMS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_FAMILYDISEASES);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_CHILDHOODDISEASES);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_SOCIALHISTORY);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_ALLERGIES);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_SEXUAL);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_CONCLUSIONANDCLOSURE);
 		//db.execSQL("INSERT INTO "+DatabaseConstants.TABLE_PRESENTINGILLNESS+" VALUES ( 1, xxxx, yyyyy);");
 	}
 
@@ -33,7 +37,16 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PATIENTDETAIL);
-		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PRESENTINGILLNESS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CHIEFCOMPLAINT);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_HISTORYOFTHEPRESENTILLNESS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PASTMEDICALHISTORY);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_REVIEWOFSYSTEMS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_FAMILYDISEASES);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CHILDHOODDISEASES);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_SOCIALHISTORY);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_ALLERGIES);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_SEXUAL);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CONCLUSIONANDCLOSURE);
 		
 		onCreate(prdDataBase);
 	}
