@@ -14,7 +14,7 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_medical_history"
+            android:id="@+id/edittext_past_medical_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
@@ -40,7 +40,7 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_edittext_personal_history"
+            android:id="@+id/edittext_note_past_medical_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
@@ -62,7 +62,7 @@
         android:gravity="right" >
 
         <Button
-            android:id="@+id/button_save"
+            android:id="@+id/button_past_medical_history"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
