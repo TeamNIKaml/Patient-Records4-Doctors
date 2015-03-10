@@ -42,11 +42,24 @@
     <string name="generalExamination">General Examination</string>
     <string name="sytemExamination">Sytem Examination</string>
     <string name="presentingillness">Presenting Illness</string>
-    <string name="provisionalDiagnosis">ProvisionalDiagnosis</string>
+    <string name="provisionalDiagnosis">Provisional Diagnosis</string>
     <string name="investigation">Investigation</string>
     <string name="finalDignosis">Final Dignosis</string>
     <string name="fee">Fee</string>
     <string name="socialHistory">Social History</string>
     <string name="sexual">" Obstetric/Gynecological history"</string>
+    <string name="patient_details">PatientDetails</string>
+    <string name="history_of_illness_hpc">History Of Presenting Illness</string>
+    <string name="past_medical_history">Past Medical History</string>
+    <string name="family_history">Family History</string>
+    <string name="social_history">Social History</string>
+    <string name="physical_examination">Physical Examination</string>
+    <string name="investigations">Investigations Lab Results</string>
+    <string name="allergies">Allergies</string>
+    <string name="case_summary">Case summary and impression</string>
+    <string name="chief_complaints">Chief complaints</string>
+    <string name="current_medications">Current medications</string>
+    <string name="laboratory_results">Laboratory Results</string>
+    <string name="differential_diagnosis">Differential Diagnosis</string>
 
 </resources>
