@@ -43,7 +43,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_CHIEFCOMPLAINT = 
 			"create table if not exists " + TABLE_CHIEFCOMPLAINT + " ( "
-			+ ChiefComplaint.ID + " INTEGER PRIMARY KEY, "
+			+ ChiefComplaint.ID + " INTEGER, "
 			+ ChiefComplaint.PROCESS + " VARACHAR, "
 			+ ChiefComplaint.NOTES + " VARACHAR, "
 			+ ChiefComplaint.DATE + " VARACHAR);" ;
@@ -62,7 +62,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS = 
 			"create table if not exists " + TABLE_HISTORYOFTHEPRESENTILLNESS + " ( "
-			+ HistoryOfThePresentIllness.ID + " INTEGER PRIMARY KEY, "
+			+ HistoryOfThePresentIllness.ID + " INTEGER, "
 			+ HistoryOfThePresentIllness.PROCESS + " VARACHAR, "
 			+ HistoryOfThePresentIllness.NOTES + " VARACHAR, "
 			+ HistoryOfThePresentIllness.DATE + " VARACHAR);" ;
@@ -80,7 +80,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_PASTMEDICALHISTORY = 
 			"create table if not exists " + TABLE_PASTMEDICALHISTORY + " ( "
-			+ PastMedicalHistory.ID + " INTEGER PRIMARY KEY, "
+			+ PastMedicalHistory.ID + " INTEGER, "
 			+ PastMedicalHistory.PROCESS + " VARACHAR, "
 			+ PastMedicalHistory.NOTES + " VARACHAR, "
 			+ PastMedicalHistory.DATE + " VARACHAR);" ;
@@ -98,7 +98,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_REVIEWOFSYSTEMS = 
 			"create table if not exists " + TABLE_REVIEWOFSYSTEMS + " ( "
-			+ ReviewOfSystems.ID + " INTEGER PRIMARY KEY, "
+			+ ReviewOfSystems.ID + " INTEGER, "
 			+ ReviewOfSystems.PROCESS + " VARACHAR, "
 			+ ReviewOfSystems.NOTES + " VARACHAR, "
 			+ ReviewOfSystems.DATE + " VARACHAR);" ;
@@ -116,7 +116,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_FAMILYDISEASES = 
 			"create table if not exists " + TABLE_FAMILYDISEASES + " ( "
-			+ FamilyDiseases.ID + " INTEGER PRIMARY KEY, "
+			+ FamilyDiseases.ID + " INTEGER, "
 			+ FamilyDiseases.PROCESS + " VARACHAR, "
 			+ FamilyDiseases.NOTES + " VARACHAR, "
 			+ FamilyDiseases.DATE + " VARACHAR);" ;
@@ -134,7 +134,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_CHILDHOODDISEASES = 
 			"create table if not exists " + TABLE_CHILDHOODDISEASES + " ( "
-			+ ChildhoodDiseases.ID + " INTEGER PRIMARY KEY, "
+			+ ChildhoodDiseases.ID + " INTEGER, "
 			+ ChildhoodDiseases.PROCESS + " VARACHAR, "
 			+ ChildhoodDiseases.NOTES + " VARACHAR, "
 			+ ChildhoodDiseases.DATE + " VARACHAR);" ;
@@ -152,7 +152,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_SOCIALHISTORY = 
 			"create table if not exists " + TABLE_SOCIALHISTORY + " ( "
-			+ SocialHistory.ID + " INTEGER PRIMARY KEY, "
+			+ SocialHistory.ID + " INTEGER, "
 			+ SocialHistory.PROCESS + " VARACHAR, "
 			+ SocialHistory.NOTES + " VARACHAR, "
 			+ SocialHistory.DATE + " VARACHAR);" ;
@@ -170,7 +170,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_ALLERGIES = 
 			"create table if not exists " + TABLE_ALLERGIES + " ( "
-			+ Allergies.ID + " INTEGER PRIMARY KEY, "
+			+ Allergies.ID + " INTEGER, "
 			+ Allergies.PROCESS + " VARACHAR, "
 			+ Allergies.NOTES + " VARACHAR, "
 			+ Allergies.DATE + " VARACHAR);" ;
@@ -188,7 +188,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_SEXUAL = 
 			"create table if not exists " + TABLE_SEXUAL + " ( "
-			+ Sexual.ID + " INTEGER PRIMARY KEY, "
+			+ Sexual.ID + " INTEGER, "
 			+ Sexual.PROCESS + " VARACHAR, "
 			+ Sexual.NOTES + " VARACHAR, "
 			+ Sexual.DATE + " VARACHAR);" ;
@@ -207,7 +207,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_CONCLUSIONANDCLOSURE = 
 			"create table if not exists " + TABLE_CONCLUSIONANDCLOSURE + " ( "
-			+ ConclusionAndClosure.ID + " INTEGER PRIMARY KEY, "
+			+ ConclusionAndClosure.ID + " INTEGER, "
 			+ ConclusionAndClosure.PROCESS + " VARACHAR, "
 			+ ConclusionAndClosure.NOTES + " VARACHAR, "
 			+ ConclusionAndClosure.DATE + " VARACHAR);" ;

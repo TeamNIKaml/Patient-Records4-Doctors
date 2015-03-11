@@ -55,6 +55,7 @@ public class ChiefComplaintFragment extends Fragment {
 				cv.put(DatabaseConstants.ChiefComplaint.NOTES, n);
 				cv.put(DatabaseConstants.ChiefComplaint.DATE, formattedDate);
 				
+				
 				IDatabaseUtility database = ((MyApplication) getActivity()
 						.getApplication()).getPatientDetailAccess();
 				if (database == null) {

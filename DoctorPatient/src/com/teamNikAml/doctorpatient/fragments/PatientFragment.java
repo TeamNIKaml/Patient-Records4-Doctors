@@ -131,6 +131,12 @@ public class PatientFragment extends Fragment {
 				 * ViewPatientRecord.class); intent.putExtra("name",
 				 * item.substring(item.length() - 1)); startActivity(intent);
 				 */
+				FragmentTransaction t = getActivity().getFragmentManager()
+						.beginTransaction();
+				Fragment mFrag = new PatientDiagnosisFragment();
+				t.replace(R.id.frame_container, mFrag);
+				t.addToBackStack(null);
+				t.commit();
 
 			}
 		});
