@@ -18,8 +18,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
 import com.teamNikAml.doctorpatient.application.MyApplication;
@@ -56,6 +54,7 @@ public class PatientFragment extends Fragment {
 						.beginTransaction();
 				Fragment mFrag = new NewPatientFragment();
 				t.replace(R.id.frame_container, mFrag);
+				t.addToBackStack(null);
 				t.commit();
 			}
 		});

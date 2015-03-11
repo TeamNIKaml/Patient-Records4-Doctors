@@ -21,6 +21,7 @@ import com.teamNikAml.doctorpatient.adaptor.NavDrawerListAdapter;
 import com.teamNikAml.doctorpatient.fragments.AppointmentFragment;
 import com.teamNikAml.doctorpatient.fragments.BackupFragment;
 import com.teamNikAml.doctorpatient.fragments.BillFragment;
+import com.teamNikAml.doctorpatient.fragments.ChiefComplaintFragment;
 import com.teamNikAml.doctorpatient.fragments.PatientFragment;
 import com.teamNikAml.doctorpatient.model.NavDrawerItem;
 
@@ -178,7 +179,8 @@ public class MainActivity extends Activity {
 			fragment = new AppointmentFragment();
 			break;
 		case 2:
-			fragment = new BillFragment();
+			//fragment = new BillFragment();
+			fragment = new ChiefComplaintFragment();
 			break;
 		case 3:
 			fragment = new BackupFragment();
@@ -191,6 +193,7 @@ public class MainActivity extends Activity {
 
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
+			
 			fragmentManager.beginTransaction()
 					.replace(R.id.frame_container, fragment).commit();
 
