@@ -18,6 +18,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
 import com.teamNikAml.doctorpatient.application.MyApplication;
@@ -124,16 +126,16 @@ public class PatientFragment extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				/*
-				 * String item = ((TextView) arg1).getText().toString();
-				 * 
-				 * Intent intent = new Intent(getApplicationContext(),
-				 * ViewPatientRecord.class); intent.putExtra("name",
-				 * item.substring(item.length() - 1)); startActivity(intent);
-				 */
+				
+				  String item =  ((TextView)arg1.findViewById(id.textView_patient_listview)).getText().toString();
+				  Bundle args = new Bundle();
+				  args.putString("patient_id",item.substring(item.length() - 1)); 
+					
+				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();
 				Fragment mFrag = new PatientDiagnosisFragment();
+				mFrag.setArguments(args);
 				t.replace(R.id.frame_container, mFrag);
 				t.addToBackStack(null);
 				t.commit();

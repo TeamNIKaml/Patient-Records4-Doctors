@@ -20,7 +20,7 @@ import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 
-public class ChiefComplaintFragment extends DialogFragment {
+public class HistoryOfThePresentIllness extends DialogFragment {
 
 	Button save;
 	EditText process, note;
@@ -29,10 +29,10 @@ public class ChiefComplaintFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_chief_complaint, null);
-		save = (Button) view.findViewById(id.button_save_chief_complaint);
-		process = (EditText) view.findViewById(id.edittext_chief_complaint);
-		note = (EditText) view.findViewById(id.edittext_note_chief_complaint);
+		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_history_of_the_present_illness, null);
+		save = (Button) view.findViewById(id.button_history_ofthe_present_illness);
+		process = (EditText) view.findViewById(id.edittext_history_ofthe_present_illness);
+		note = (EditText) view.findViewById(id.edittext_note_history_ofthe_present_illness);
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -48,12 +48,15 @@ public class ChiefComplaintFragment extends DialogFragment {
 
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 				String formattedDate = df.format(c.getTime());
-	
+				
+				Bundle b = getArguments();
+				String s = b.getString("patient_id");
+				
 				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.ChiefComplaint.ID, 1);
-				cv.put(DatabaseConstants.ChiefComplaint.PROCESS, p);
-				cv.put(DatabaseConstants.ChiefComplaint.NOTES, n);
-				cv.put(DatabaseConstants.ChiefComplaint.DATE, formattedDate);
+				cv.put(DatabaseConstants.HistoryOfThePresentIllness.ID, s);
+				cv.put(DatabaseConstants.HistoryOfThePresentIllness.PROCESS, p);
+				cv.put(DatabaseConstants.HistoryOfThePresentIllness.NOTES, n);
+				cv.put(DatabaseConstants.HistoryOfThePresentIllness.DATE, formattedDate);
 				
 				
 				IDatabaseUtility database = ((MyApplication) getActivity()
@@ -67,7 +70,7 @@ public class ChiefComplaintFragment extends DialogFragment {
 							.getPatientDetailAccess();
 				}
 
-				database.insert(DatabaseConstants.TABLE_CHIEFCOMPLAINT, null, cv);
+				database.insert(DatabaseConstants.TABLE_HISTORYOFTHEPRESENTILLNESS, null, cv);
 				dlg.dismiss();
 			}
 		});
