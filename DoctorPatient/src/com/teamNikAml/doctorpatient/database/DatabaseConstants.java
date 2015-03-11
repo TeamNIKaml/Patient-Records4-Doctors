@@ -38,13 +38,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "chiefcomplaint";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_CHIEFCOMPLAINT = 
 			"create table if not exists " + TABLE_CHIEFCOMPLAINT + " ( "
 			+ ChiefComplaint.ID + " INTEGER PRIMARY KEY, "
 			+ ChiefComplaint.PROCESS + " VARACHAR, "
-			+ ChiefComplaint.NOTES + " VARACHAR);" ;
+			+ ChiefComplaint.NOTES + " VARACHAR, "
+			+ ChiefComplaint.DATE + " VARACHAR);" ;
 	
 	
 	/************************************************************************************/
@@ -55,13 +57,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "historyofthepresentillness";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS = 
 			"create table if not exists " + TABLE_HISTORYOFTHEPRESENTILLNESS + " ( "
 			+ HistoryOfThePresentIllness.ID + " INTEGER PRIMARY KEY, "
 			+ HistoryOfThePresentIllness.PROCESS + " VARACHAR, "
-			+ HistoryOfThePresentIllness.NOTES + " VARACHAR);" ;
+			+ HistoryOfThePresentIllness.NOTES + " VARACHAR, "
+			+ HistoryOfThePresentIllness.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -71,13 +75,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "pastmedicalhistory";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_PASTMEDICALHISTORY = 
 			"create table if not exists " + TABLE_PASTMEDICALHISTORY + " ( "
 			+ PastMedicalHistory.ID + " INTEGER PRIMARY KEY, "
 			+ PastMedicalHistory.PROCESS + " VARACHAR, "
-			+ PastMedicalHistory.NOTES + " VARACHAR);" ;
+			+ PastMedicalHistory.NOTES + " VARACHAR, "
+			+ PastMedicalHistory.DATE + " VARACHAR);" ;
 	
 	/**************************************************************************************/
 	
@@ -87,13 +93,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "reviewofsystems";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_REVIEWOFSYSTEMS = 
 			"create table if not exists " + TABLE_REVIEWOFSYSTEMS + " ( "
 			+ ReviewOfSystems.ID + " INTEGER PRIMARY KEY, "
 			+ ReviewOfSystems.PROCESS + " VARACHAR, "
-			+ ReviewOfSystems.NOTES + " VARACHAR);" ;
+			+ ReviewOfSystems.NOTES + " VARACHAR, "
+			+ ReviewOfSystems.DATE + " VARACHAR);" ;
 	
 	/*************************************************************************************/
 	
@@ -103,13 +111,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "familydiseases";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_FAMILYDISEASES = 
 			"create table if not exists " + TABLE_FAMILYDISEASES + " ( "
 			+ FamilyDiseases.ID + " INTEGER PRIMARY KEY, "
 			+ FamilyDiseases.PROCESS + " VARACHAR, "
-			+ FamilyDiseases.NOTES + " VARACHAR);" ;
+			+ FamilyDiseases.NOTES + " VARACHAR, "
+			+ FamilyDiseases.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -119,13 +129,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "childhooddiseases";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_CHILDHOODDISEASES = 
 			"create table if not exists " + TABLE_CHILDHOODDISEASES + " ( "
 			+ ChildhoodDiseases.ID + " INTEGER PRIMARY KEY, "
 			+ ChildhoodDiseases.PROCESS + " VARACHAR, "
-			+ ChildhoodDiseases.NOTES + " VARACHAR);" ;
+			+ ChildhoodDiseases.NOTES + " VARACHAR, "
+			+ ChildhoodDiseases.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -135,13 +147,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "socialhistory";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_SOCIALHISTORY = 
 			"create table if not exists " + TABLE_SOCIALHISTORY + " ( "
 			+ SocialHistory.ID + " INTEGER PRIMARY KEY, "
 			+ SocialHistory.PROCESS + " VARACHAR, "
-			+ SocialHistory.NOTES + " VARACHAR);" ;
+			+ SocialHistory.NOTES + " VARACHAR, "
+			+ SocialHistory.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -151,13 +165,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "allergies";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_ALLERGIES = 
 			"create table if not exists " + TABLE_ALLERGIES + " ( "
 			+ Allergies.ID + " INTEGER PRIMARY KEY, "
 			+ Allergies.PROCESS + " VARACHAR, "
-			+ Allergies.NOTES + " VARACHAR);" ;
+			+ Allergies.NOTES + " VARACHAR, "
+			+ Allergies.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -167,13 +183,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "sexual";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_SEXUAL = 
 			"create table if not exists " + TABLE_SEXUAL + " ( "
 			+ Sexual.ID + " INTEGER PRIMARY KEY, "
 			+ Sexual.PROCESS + " VARACHAR, "
-			+ Sexual.NOTES + " VARACHAR);" ;
+			+ Sexual.NOTES + " VARACHAR, "
+			+ Sexual.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -184,13 +202,15 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "conclusionandclosure";
 		public static final String NOTES = "notes";
+		public static final String DATE = "date";
 	}
 	
 	public static final	String CREATE_TABLE_CONCLUSIONANDCLOSURE = 
 			"create table if not exists " + TABLE_CONCLUSIONANDCLOSURE + " ( "
 			+ ConclusionAndClosure.ID + " INTEGER PRIMARY KEY, "
 			+ ConclusionAndClosure.PROCESS + " VARACHAR, "
-			+ ConclusionAndClosure.NOTES + " VARACHAR);" ;
+			+ ConclusionAndClosure.NOTES + " VARACHAR, "
+			+ ConclusionAndClosure.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
