@@ -49,8 +49,11 @@ public class ChiefComplaintFragment extends DialogFragment {
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 				String formattedDate = df.format(c.getTime());
 	
+				Bundle b = getArguments();
+				String s = b.getString("patient_id");
+				
 				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.ChiefComplaint.ID, 1);
+				cv.put(DatabaseConstants.ChiefComplaint.ID, s);
 				cv.put(DatabaseConstants.ChiefComplaint.PROCESS, p);
 				cv.put(DatabaseConstants.ChiefComplaint.NOTES, n);
 				cv.put(DatabaseConstants.ChiefComplaint.DATE, formattedDate);
