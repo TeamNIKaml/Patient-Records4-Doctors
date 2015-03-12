@@ -19,7 +19,7 @@ import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 
-public class ChiefComplaintFragment extends DialogFragment {
+public class PastMedicalHistoryFragment  extends DialogFragment {
 
 	Button save;
 	EditText process, note;
@@ -28,10 +28,10 @@ public class ChiefComplaintFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_chief_complaint, null);
-		save = (Button) view.findViewById(id.button_save_chief_complaint);
-		process = (EditText) view.findViewById(id.edittext_chief_complaint);
-		note = (EditText) view.findViewById(id.edittext_note_chief_complaint);
+		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_past_medical_history, null);
+		save = (Button) view.findViewById(id.button_past_medical_history);
+		process = (EditText) view.findViewById(id.edittext_past_medical_history);
+		note = (EditText) view.findViewById(id.edittext_note_past_medical_history);
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -52,14 +52,14 @@ public class ChiefComplaintFragment extends DialogFragment {
 				String s = b.getString("patient_id");
 				
 				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.ChiefComplaint.ID, s);
-				cv.put(DatabaseConstants.ChiefComplaint.PROCESS, p);
-				cv.put(DatabaseConstants.ChiefComplaint.NOTES, n);
-				cv.put(DatabaseConstants.ChiefComplaint.DATE, formattedDate);
+				cv.put(DatabaseConstants.PastMedicalHistory.ID, s);
+				cv.put(DatabaseConstants.PastMedicalHistory.PROCESS, p);
+				cv.put(DatabaseConstants.PastMedicalHistory.NOTES, n);
+				cv.put(DatabaseConstants.PastMedicalHistory.DATE, formattedDate);
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_CHIEFCOMPLAINT, null, cv);
+					database.insert(DatabaseConstants.TABLE_PASTMEDICALHISTORY, null, cv);
 				}
 
 				

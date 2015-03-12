@@ -51,6 +51,13 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		onCreate(prdDataBase);
 	}
 
+	@Override
+	public synchronized void close() {
+		// TODO Auto-generated method stub
+		super.close();
+		prdDataBase.close();
+	}
+
 
 
 }

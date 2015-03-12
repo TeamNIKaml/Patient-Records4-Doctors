@@ -15,8 +15,8 @@ import com.teamNikAml.doctorpatient.activity.R.id;
 public class PatientDiagnosisFragment extends Fragment {
 
 	Bundle b;
-	Button chiefComplaint, historyOfIllness, patientDetail, MedicalHistory;
-
+	Button chiefComplaint, historyOfIllness, patientDetail, medicalHistory;
+	Button familyHistory;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -26,7 +26,8 @@ public class PatientDiagnosisFragment extends Fragment {
 		chiefComplaint = (Button) rootView.findViewById(id.button_chief_complaints);
 		historyOfIllness = (Button) rootView.findViewById(id.button_history_of_illness);
 		patientDetail = (Button) rootView.findViewById(id.button_patient_details_update);
-		MedicalHistory = (Button) rootView.findViewById(id.button_medical_history);
+		medicalHistory = (Button) rootView.findViewById(id.button_medical_history);
+		familyHistory = (Button) rootView.findViewById(id.button_family_history);
 		
 		b = getArguments();
 		String s = b.getString("patient_id");
@@ -34,7 +35,8 @@ public class PatientDiagnosisFragment extends Fragment {
 		chiefComplaint.setOnClickListener(myListener);
 		historyOfIllness.setOnClickListener(myListener);
 		patientDetail.setOnClickListener(myListener);
-		MedicalHistory.setOnClickListener(myListener);
+		medicalHistory.setOnClickListener(myListener);
+		familyHistory.setOnClickListener(myListener);
 		return rootView;
 	}
 
@@ -58,9 +60,13 @@ public class PatientDiagnosisFragment extends Fragment {
 				dialog = new HistoryOfThePresentIllness();
 				break;
 			case id.button_medical_history:
-				System.out.println("----------------");
+				dialog = new PastMedicalHistoryFragment();
 				break;
-
+			case id.button_family_history:
+				dialog = new FamilyDiseasesFragment(); 
+				break;
+				
+				
 			default:
 				break;
 			}
