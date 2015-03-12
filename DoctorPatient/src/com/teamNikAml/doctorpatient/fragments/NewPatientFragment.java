@@ -3,6 +3,7 @@ package com.teamNikAml.doctorpatient.fragments;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,18 +65,11 @@ public class NewPatientFragment extends Fragment {
 				cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
 						othernotes.getText().toString().trim());
 
-				IDatabaseUtility database = ((MyApplication) getActivity()
-						.getApplication()).getPatientDetailAccess();
-				if (database == null) {
-					((MyApplication) getActivity().getApplication())
-							.setPatientDetailAccess(new PatientDetailAccess(
-									getActivity().getApplicationContext(),
-									null, null, 0));
-					database = ((MyApplication) getActivity().getApplication())
-							.getPatientDetailAccess();
+				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+				if (database != null) {
+					database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
 				}
-
-				database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
+				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();
 				Fragment mFrag = new PatientFragment();

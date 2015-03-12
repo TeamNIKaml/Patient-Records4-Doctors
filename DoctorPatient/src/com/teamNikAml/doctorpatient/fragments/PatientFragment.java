@@ -63,22 +63,15 @@ public class PatientFragment extends Fragment {
 
 		nameArry = new ArrayList<String>();
 
-		IDatabaseUtility database = ((MyApplication) getActivity()
-				.getApplication()).getPatientDetailAccess();
-		if (database == null) {
-			((MyApplication) getActivity().getApplication())
-					.setPatientDetailAccess(new PatientDetailAccess(
-							getActivity().getApplicationContext(), null, null,
-							0));
-			database = ((MyApplication) getActivity().getApplication())
-					.getPatientDetailAccess();
+		IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		Cursor temcursor = null;
+		if (database != null) {
+			temcursor = database.query(
+					DatabaseConstants.TABLE_PATIENTDETAIL, new String[] {
+							DatabaseConstants.PatientDetailTable.ID,
+							DatabaseConstants.PatientDetailTable.NAME }, null,
+					null, null, null, null);
 		}
-
-		Cursor temcursor = database.query(
-				DatabaseConstants.TABLE_PATIENTDETAIL, new String[] {
-						DatabaseConstants.PatientDetailTable.ID,
-						DatabaseConstants.PatientDetailTable.NAME }, null,
-				null, null, null, null);
 
 		if (temcursor.moveToFirst()) {
 			do {

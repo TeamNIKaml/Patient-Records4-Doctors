@@ -51,21 +51,16 @@ public class PatientDetailFragment extends DialogFragment {
 		bundle = getArguments();
 		patientID = bundle.getString("patient_id");
 		
-		database = ((MyApplication) getActivity()
-				.getApplication()).getPatientDetailAccess();
-		if (database == null) {
-			((MyApplication) getActivity().getApplication())
-					.setPatientDetailAccess(new PatientDetailAccess(
-							getActivity().getApplicationContext(),
-							null, null, 0));
-			database = ((MyApplication) getActivity().getApplication())
-					.getPatientDetailAccess();
+		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		Cursor c = null;
+		if (database != null) {
+			String selection = "_id=?";
+			String[] selectionArgs = {patientID};
+		    c = database.query(DatabaseConstants.TABLE_PATIENTDETAIL, null,selection ,selectionArgs, null, null, null);
+			//c = database.rawQuery("SELECT * FROM "+DatabaseConstants.TABLE_PATIENTDETAIL +" WHERE _id = ?", selectionArgs);
+			
 		}
-		String selection = "_id=?";
-		String[] selectionArgs = {patientID};
-		Cursor c = database.query(DatabaseConstants.TABLE_PATIENTDETAIL, null,selection ,selectionArgs, null, null, null);
-		//c = database.rawQuery("SELECT * FROM "+DatabaseConstants.TABLE_PATIENTDETAIL +" WHERE _id = ?", selectionArgs);
-		
+
 		if (c.moveToFirst()) {
 			name.setText(c.getString(1));
 			if (c.getString(2).equals("Female")) {
@@ -97,6 +92,7 @@ public class PatientDetailFragment extends DialogFragment {
 						.getText().toString().trim());
 				cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
 						othernotes.getText().toString().trim());
+				
 				if (database != null) {
 					String selection = "_id=?";
 					String[] selectionArgs = {patientID};

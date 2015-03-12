@@ -59,18 +59,12 @@ public class HistoryOfThePresentIllness extends DialogFragment {
 				cv.put(DatabaseConstants.HistoryOfThePresentIllness.DATE, formattedDate);
 				
 				
-				IDatabaseUtility database = ((MyApplication) getActivity()
-						.getApplication()).getPatientDetailAccess();
-				if (database == null) {
-					((MyApplication) getActivity().getApplication())
-							.setPatientDetailAccess(new PatientDetailAccess(
-									getActivity().getApplicationContext(),
-									null, null, 0));
-					database = ((MyApplication) getActivity().getApplication())
-							.getPatientDetailAccess();
+				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+				if (database != null) {
+					database.insert(DatabaseConstants.TABLE_HISTORYOFTHEPRESENTILLNESS, null, cv);
 				}
 
-				database.insert(DatabaseConstants.TABLE_HISTORYOFTHEPRESENTILLNESS, null, cv);
+
 				dlg.dismiss();
 			}
 		});

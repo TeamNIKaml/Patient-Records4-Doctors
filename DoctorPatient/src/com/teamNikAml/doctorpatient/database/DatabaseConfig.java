@@ -11,7 +11,7 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 	
 	public DatabaseConfig(Context context, String name, CursorFactory factory,
 			int version) {
-		super(context, name, factory, version);
+		super(context, DatabaseConstants.DATABASE_NAME, factory, DatabaseConstants.DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
 		prdDataBase = getWritableDatabase();
 	}

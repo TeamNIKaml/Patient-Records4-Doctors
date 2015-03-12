@@ -9,7 +9,7 @@ public class PatientDetailAccess extends DatabaseConfig implements IDatabaseUtil
 
 	public PatientDetailAccess(Context context, String name,
 			CursorFactory factory, int version) {
-		super(context, DatabaseConstants.DATABASE_NAME, factory, DatabaseConstants.DATABASE_VERSION);
+		super(context, name, factory, version);
 		// TODO Auto-generated constructor stub
 	}
 
