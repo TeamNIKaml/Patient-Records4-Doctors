@@ -40,7 +40,7 @@
     <string name="medicalHistory">Medical History</string>
     <string name="personalHistory">Personal History</string>
     <string name="generalExamination">General Examination</string>
-    <string name="sytemExamination">Sytem Examination</string>
+    <string name="systemExamination">System Examination</string>
     <string name="presentingillness">Presenting Illness</string>
     <string name="provisionalDiagnosis">Provisional Diagnosis</string>
     <string name="investigation">Investigation</string>

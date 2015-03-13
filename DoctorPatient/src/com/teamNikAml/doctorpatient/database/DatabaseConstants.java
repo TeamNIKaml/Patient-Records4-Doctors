@@ -87,21 +87,21 @@ public class DatabaseConstants {
 	
 	/**************************************************************************************/
 	
-	public static final String TABLE_REVIEWOFSYSTEMS = "ReviewOfSystems";
+	public static final String TABLE_CURRENTMEDICATIONS = "CurrentMedications";
 	
-	public static class ReviewOfSystems {
+	public static class CurrentMedications {
 		public static final String ID ="id";
-		public static final String PROCESS = "reviewofsystems";
+		public static final String PROCESS = "currentmedications";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
 	}
 	
-	public static final	String CREATE_TABLE_REVIEWOFSYSTEMS = 
-			"create table if not exists " + TABLE_REVIEWOFSYSTEMS + " ( "
-			+ ReviewOfSystems.ID + " INTEGER, "
-			+ ReviewOfSystems.PROCESS + " VARACHAR, "
-			+ ReviewOfSystems.NOTES + " VARACHAR, "
-			+ ReviewOfSystems.DATE + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_CURRENTMEDICATIONS = 
+			"create table if not exists " + TABLE_CURRENTMEDICATIONS + " ( "
+			+ CurrentMedications.ID + " INTEGER, "
+			+ CurrentMedications.PROCESS + " VARACHAR, "
+			+ CurrentMedications.NOTES + " VARACHAR, "
+			+ CurrentMedications.DATE + " VARACHAR);" ;
 	
 	/*************************************************************************************/
 	

@@ -14,7 +14,7 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/editext_sexual"
+            android:id="@+id/editext_process"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
@@ -40,7 +40,7 @@
         android:gravity="left" >
 
         <EditText
-            android:id="@+id/edittext_note_sexual"
+            android:id="@+id/edittext_note_process"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_left"
@@ -62,7 +62,7 @@
         android:gravity="right" >
 
         <Button
-            android:id="@+id/button_sexual"
+            android:id="@+id/button_save_process"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
