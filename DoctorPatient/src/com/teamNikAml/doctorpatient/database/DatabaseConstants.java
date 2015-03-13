@@ -123,21 +123,21 @@ public class DatabaseConstants {
 	
 	/****************************************************************************************/
 	
-	public static final String TABLE_CHILDHOODDISEASES = "ChildhoodDiseases";
+	public static final String TABLE_PHYSICALEXAMINATION = "PhysicalExamination";
 	
-	public static class ChildhoodDiseases {
+	public static class PhysicalExamination {
 		public static final String ID ="id";
-		public static final String PROCESS = "childhooddiseases";
+		public static final String PROCESS = "physicalexamination";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
 	}
 	
-	public static final	String CREATE_TABLE_CHILDHOODDISEASES = 
-			"create table if not exists " + TABLE_CHILDHOODDISEASES + " ( "
-			+ ChildhoodDiseases.ID + " INTEGER, "
-			+ ChildhoodDiseases.PROCESS + " VARACHAR, "
-			+ ChildhoodDiseases.NOTES + " VARACHAR, "
-			+ ChildhoodDiseases.DATE + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_PHYSICALEXAMINATION = 
+			"create table if not exists " + TABLE_PHYSICALEXAMINATION + " ( "
+			+ PhysicalExamination.ID + " INTEGER, "
+			+ PhysicalExamination.PROCESS + " VARACHAR, "
+			+ PhysicalExamination.NOTES + " VARACHAR, "
+			+ PhysicalExamination.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -177,40 +177,40 @@ public class DatabaseConstants {
 	
 	/****************************************************************************************/
 	
-	public static final String TABLE_SEXUAL = "Sexual";
+	public static final String TABLE_INVESTIGATIONSANDLABRESULTS = "InvestigationsAndLabResults";
 	
-	public static class Sexual {
+	public static class InvestigationsAndLabResults {
 		public static final String ID ="id";
-		public static final String PROCESS = "sexual";
+		public static final String PROCESS = "investigationsandlabresults";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
 	}
 	
-	public static final	String CREATE_TABLE_SEXUAL = 
-			"create table if not exists " + TABLE_SEXUAL + " ( "
-			+ Sexual.ID + " INTEGER, "
-			+ Sexual.PROCESS + " VARACHAR, "
-			+ Sexual.NOTES + " VARACHAR, "
-			+ Sexual.DATE + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_INVESTIGATIONSANDLABRESULTS = 
+			"create table if not exists " + TABLE_INVESTIGATIONSANDLABRESULTS + " ( "
+			+ InvestigationsAndLabResults.ID + " INTEGER, "
+			+ InvestigationsAndLabResults.PROCESS + " VARACHAR, "
+			+ InvestigationsAndLabResults.NOTES + " VARACHAR, "
+			+ InvestigationsAndLabResults.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
 	
-	public static final String TABLE_CONCLUSIONANDCLOSURE = "ConclusionAndClosure";
+	public static final String TABLE_PROVISIONALDIAGNOSIS = "ProvisionalDiagnosis";
 	
-	public static class ConclusionAndClosure {
+	public static class ProvisionalDiagnosis {
 		public static final String ID ="id";
-		public static final String PROCESS = "conclusionandclosure";
+		public static final String PROCESS = "provisionaldiagnosis";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
 	}
 	
-	public static final	String CREATE_TABLE_CONCLUSIONANDCLOSURE = 
-			"create table if not exists " + TABLE_CONCLUSIONANDCLOSURE + " ( "
-			+ ConclusionAndClosure.ID + " INTEGER, "
-			+ ConclusionAndClosure.PROCESS + " VARACHAR, "
-			+ ConclusionAndClosure.NOTES + " VARACHAR, "
-			+ ConclusionAndClosure.DATE + " VARACHAR);" ;
+	public static final	String CREATE_TABLE_PROVISIONALDIAGNOSIS = 
+			"create table if not exists " + TABLE_PROVISIONALDIAGNOSIS + " ( "
+			+ ProvisionalDiagnosis.ID + " INTEGER, "
+			+ ProvisionalDiagnosis.PROCESS + " VARACHAR, "
+			+ ProvisionalDiagnosis.NOTES + " VARACHAR, "
+			+ ProvisionalDiagnosis.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	

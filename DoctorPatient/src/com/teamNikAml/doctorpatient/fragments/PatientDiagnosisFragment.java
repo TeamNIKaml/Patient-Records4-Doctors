@@ -17,6 +17,7 @@ public class PatientDiagnosisFragment extends Fragment {
 	Bundle b;
 	Button chiefComplaint, historyOfIllness, patientDetail, medicalHistory;
 	Button familyHistory, socialHistory, allergies, currentMedications;
+	Button investigationsAndLabResults, PhysicalExamination, provisionalDiagnosis;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -31,6 +32,10 @@ public class PatientDiagnosisFragment extends Fragment {
 		socialHistory = (Button) rootView.findViewById(id.button_social_history);
 		allergies = (Button) rootView.findViewById(id.button_allergies);
 		currentMedications = (Button) rootView.findViewById(id.button_current_medications);
+		investigationsAndLabResults = (Button) rootView.findViewById(id.button_laboratory_results);
+		PhysicalExamination = (Button) rootView.findViewById(id.button_physical_examination);
+		provisionalDiagnosis = (Button) rootView.findViewById(id.button_provisional_diagnosis);
+		
 		b = getArguments();
 		String s = b.getString("patient_id");
 
@@ -42,6 +47,9 @@ public class PatientDiagnosisFragment extends Fragment {
 		socialHistory.setOnClickListener(myListener);
 		allergies.setOnClickListener(myListener);
 		currentMedications.setOnClickListener(myListener);
+		investigationsAndLabResults.setOnClickListener(myListener);
+		PhysicalExamination.setOnClickListener(myListener);
+		provisionalDiagnosis.setOnClickListener(myListener);
 		return rootView;
 	}
 
@@ -78,6 +86,15 @@ public class PatientDiagnosisFragment extends Fragment {
 				break;
 			case id.button_current_medications:
 				dialog = new CurrentMedicationsFragment();
+				break;
+			case id.button_laboratory_results:
+				dialog = new InvestigationsAndLabResultsFragemnt();
+				break;
+			case id.button_physical_examination:
+				dialog = new PhysicalExaminationFragment();
+				break;
+			case id.button_provisional_diagnosis:
+				dialog = new ProvisionalDiagnosisFragment();
 				break;
 				
 			default:
