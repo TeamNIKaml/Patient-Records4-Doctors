@@ -23,7 +23,7 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		db.execSQL(DatabaseConstants.CREATE_TABLE_CHIEFCOMPLAINT);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_PASTMEDICALHISTORY);
-		db.execSQL(DatabaseConstants.CREATE_TABLE_REVIEWOFSYSTEMS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_CURRENTMEDICATIONS);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_FAMILYDISEASES);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_CHILDHOODDISEASES);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_SOCIALHISTORY);
@@ -40,7 +40,7 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CHIEFCOMPLAINT);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_HISTORYOFTHEPRESENTILLNESS);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PASTMEDICALHISTORY);
-		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_REVIEWOFSYSTEMS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CURRENTMEDICATIONS);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_FAMILYDISEASES);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CHILDHOODDISEASES);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_SOCIALHISTORY);

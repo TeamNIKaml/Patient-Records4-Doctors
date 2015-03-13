@@ -16,19 +16,21 @@ public class PatientDiagnosisFragment extends Fragment {
 
 	Bundle b;
 	Button chiefComplaint, historyOfIllness, patientDetail, medicalHistory;
-	Button familyHistory;
+	Button familyHistory, socialHistory, allergies, currentMedications;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
 		View rootView = inflater.inflate(R.layout.fragment_patient_diagnosis,
 				container, false);
+		patientDetail = (Button) rootView.findViewById(id.button_patient_details_update);
 		chiefComplaint = (Button) rootView.findViewById(id.button_chief_complaints);
 		historyOfIllness = (Button) rootView.findViewById(id.button_history_of_illness);
-		patientDetail = (Button) rootView.findViewById(id.button_patient_details_update);
 		medicalHistory = (Button) rootView.findViewById(id.button_medical_history);
 		familyHistory = (Button) rootView.findViewById(id.button_family_history);
-		
+		socialHistory = (Button) rootView.findViewById(id.button_social_history);
+		allergies = (Button) rootView.findViewById(id.button_allergies);
+		currentMedications = (Button) rootView.findViewById(id.button_current_medications);
 		b = getArguments();
 		String s = b.getString("patient_id");
 
@@ -37,6 +39,9 @@ public class PatientDiagnosisFragment extends Fragment {
 		patientDetail.setOnClickListener(myListener);
 		medicalHistory.setOnClickListener(myListener);
 		familyHistory.setOnClickListener(myListener);
+		socialHistory.setOnClickListener(myListener);
+		allergies.setOnClickListener(myListener);
+		currentMedications.setOnClickListener(myListener);
 		return rootView;
 	}
 
@@ -65,7 +70,15 @@ public class PatientDiagnosisFragment extends Fragment {
 			case id.button_family_history:
 				dialog = new FamilyDiseasesFragment(); 
 				break;
-				
+			case id.button_social_history:
+				dialog = new SocialHistoryFragment(); 
+				break;
+			case id.button_allergies:
+				dialog = new AllergiesFragment();
+				break;
+			case id.button_current_medications:
+				dialog = new CurrentMedicationsFragment();
+				break;
 				
 			default:
 				break;
