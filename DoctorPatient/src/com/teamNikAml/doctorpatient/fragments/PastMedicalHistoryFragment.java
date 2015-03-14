@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,7 +25,13 @@ public class PastMedicalHistoryFragment  extends DialogFragment {
 	Button save;
 	EditText process, note;
 
+	String s;
+	Bundle b;
+	IDatabaseUtility database;
 
+	int flag =0;
+	String selection;
+	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -32,6 +39,26 @@ public class PastMedicalHistoryFragment  extends DialogFragment {
 		save = (Button) view.findViewById(id.button_past_medical_history);
 		process = (EditText) view.findViewById(id.edittext_past_medical_history);
 		note = (EditText) view.findViewById(id.edittext_note_past_medical_history);
+		
+		b = getArguments();
+		s = b.getString("patient_id");
+		
+		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		Cursor c = null;
+		if (database != null) {
+			selection = "id=?";
+			String[] selectionArgs = {s};
+		    c = database.query(DatabaseConstants.TABLE_PASTMEDICALHISTORY, null,selection ,selectionArgs, null, null, null);
+
+			
+		}
+
+		if (c.moveToFirst()) {
+
+			process.setText(c.getString(1));
+			note.setText(c.getString(2));
+			flag = 1;
+		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -47,9 +74,6 @@ public class PastMedicalHistoryFragment  extends DialogFragment {
 
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 				String formattedDate = df.format(c.getTime());
-	
-				Bundle b = getArguments();
-				String s = b.getString("patient_id");
 				
 				ContentValues cv = new ContentValues();
 				cv.put(DatabaseConstants.PastMedicalHistory.ID, s);
@@ -57,9 +81,13 @@ public class PastMedicalHistoryFragment  extends DialogFragment {
 				cv.put(DatabaseConstants.PastMedicalHistory.NOTES, n);
 				cv.put(DatabaseConstants.PastMedicalHistory.DATE, formattedDate);
 				
-				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+				database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_PASTMEDICALHISTORY, null, cv);
+					if (flag == 0) {
+						database.insert(DatabaseConstants.TABLE_PASTMEDICALHISTORY, null, cv);		
+					} else {
+						database.update(DatabaseConstants.TABLE_PASTMEDICALHISTORY, cv, selection, new String[]{s});
+					}
 				}
 
 				

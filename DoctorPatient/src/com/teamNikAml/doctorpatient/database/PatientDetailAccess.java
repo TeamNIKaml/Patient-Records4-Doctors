@@ -46,6 +46,13 @@ public class PatientDetailAccess extends DatabaseConfig implements IDatabaseUtil
 		return prdDataBase.rawQuery(sql, selectionArgs);
 	}
 
+	@Override
+	public long insertWithOnConflict(String table, String nullColumnHack,
+			ContentValues initialValues, int conflictAlgorithm) {
+		// TODO Auto-generated method stub
+		return prdDataBase.insertWithOnConflict(table, nullColumnHack, initialValues, conflictAlgorithm);
+	}
+
 
 
 }

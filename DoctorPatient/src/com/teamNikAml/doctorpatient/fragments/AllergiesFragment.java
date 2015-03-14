@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +25,12 @@ public class AllergiesFragment extends DialogFragment {
 	Button save;
 	EditText process, note;
 
+	Bundle b;
+	String s;
+	IDatabaseUtility database;
+	
+	int flag =0;
+	String selection;
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -32,6 +39,26 @@ public class AllergiesFragment extends DialogFragment {
 		save = (Button) view.findViewById(id.button_allegies);
 		process = (EditText) view.findViewById(id.edittext_allegies);
 		note = (EditText) view.findViewById(id.edittext_note_allegies);
+		
+		b = getArguments();
+		s = b.getString("patient_id");
+		
+		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		Cursor c = null;
+		if (database != null) {
+			selection = "id=?";
+			String[] selectionArgs = {s};
+		    c = database.query(DatabaseConstants.TABLE_ALLERGIES, null,selection ,selectionArgs, null, null, null);
+
+			
+		}
+
+		if (c.moveToFirst()) {
+
+			process.setText(c.getString(1));
+			note.setText(c.getString(2));
+			flag = 1;
+		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -48,9 +75,6 @@ public class AllergiesFragment extends DialogFragment {
 				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 				String formattedDate = df.format(c.getTime());
 	
-				Bundle b = getArguments();
-				String s = b.getString("patient_id");
-				
 				ContentValues cv = new ContentValues();
 				cv.put(DatabaseConstants.Allergies.ID, s);
 				cv.put(DatabaseConstants.Allergies.PROCESS, p);
@@ -59,7 +83,12 @@ public class AllergiesFragment extends DialogFragment {
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_ALLERGIES, null, cv);
+					if (flag == 0) {
+						database.insert(DatabaseConstants.TABLE_ALLERGIES, null, cv);
+					} else {
+						database.update(DatabaseConstants.TABLE_ALLERGIES, cv, selection, new String[]{s});
+					}
+					
 				}
 
 				

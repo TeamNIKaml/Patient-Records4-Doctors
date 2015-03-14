@@ -80,7 +80,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_PASTMEDICALHISTORY = 
 			"create table if not exists " + TABLE_PASTMEDICALHISTORY + " ( "
-			+ PastMedicalHistory.ID + " INTEGER, "
+			+ PastMedicalHistory.ID + " INTEGER PRIMARY KEY NOT NULL, "
 			+ PastMedicalHistory.PROCESS + " VARACHAR, "
 			+ PastMedicalHistory.NOTES + " VARACHAR, "
 			+ PastMedicalHistory.DATE + " VARACHAR);" ;
@@ -116,7 +116,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_FAMILYDISEASES = 
 			"create table if not exists " + TABLE_FAMILYDISEASES + " ( "
-			+ FamilyDiseases.ID + " INTEGER, "
+			+ FamilyDiseases.ID + " INTEGER PRIMARY KEY NOT NULL, "
 			+ FamilyDiseases.PROCESS + " VARACHAR, "
 			+ FamilyDiseases.NOTES + " VARACHAR, "
 			+ FamilyDiseases.DATE + " VARACHAR);" ;
@@ -152,7 +152,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_SOCIALHISTORY = 
 			"create table if not exists " + TABLE_SOCIALHISTORY + " ( "
-			+ SocialHistory.ID + " INTEGER, "
+			+ SocialHistory.ID + " INTEGER PRIMARY KEY NOT NULL, "
 			+ SocialHistory.PROCESS + " VARACHAR, "
 			+ SocialHistory.NOTES + " VARACHAR, "
 			+ SocialHistory.DATE + " VARACHAR);" ;
@@ -170,7 +170,7 @@ public class DatabaseConstants {
 	
 	public static final	String CREATE_TABLE_ALLERGIES = 
 			"create table if not exists " + TABLE_ALLERGIES + " ( "
-			+ Allergies.ID + " INTEGER, "
+			+ Allergies.ID + " INTEGER PRIMARY KEY NOT NULL, "
 			+ Allergies.PROCESS + " VARACHAR, "
 			+ Allergies.NOTES + " VARACHAR, "
 			+ Allergies.DATE + " VARACHAR);" ;

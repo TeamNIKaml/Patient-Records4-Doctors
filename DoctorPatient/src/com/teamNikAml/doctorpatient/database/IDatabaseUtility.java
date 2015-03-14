@@ -10,4 +10,5 @@ public interface IDatabaseUtility {
 	public int update (String table, ContentValues values, String whereClause, String[] whereArgs);
 	public int delete (String table, String whereClause, String[] whereArgs);
 	public Cursor rawQuery (String sql, String[] selectionArgs);
+	public long insertWithOnConflict (String table, String nullColumnHack, ContentValues initialValues, int conflictAlgorithm);
 }
