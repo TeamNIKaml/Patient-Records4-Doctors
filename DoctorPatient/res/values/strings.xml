@@ -37,12 +37,12 @@
     <string name="note">Note</string>
     <string name="next">Next</string>
     <string name="historyOfIllness">HISTORY OF\nPRESENT ILLNESS</string>
-    <string name="medicalHistory">MEDICAL\nHISTORYFAMILY\nDISEASEFAMILY\nDISEASE</string>
+    <string name="medicalHistory">MEDICAL\nHISTORY</string>
     <string name="personalHistory">Personal History</string>
     <string name="generalExamination">General Examination</string>
     <string name="sytemExamination">SYSTEM\nEXAMINATION</string>
     <string name="presentingillness">Presenting Illness</string>
-    <string name="provisionalDiagnosis">Provisional Diagnosis</string>
+    <string name="provisionalDiagnosis">PROVISIONAL\nDIAGNOSIS</string>
     <string name="investigation">Investigation</string>
     <string name="finalDignosis">Final Dignosis</string>
     <string name="fee">Fee</string>
@@ -59,8 +59,8 @@
     <string name="case_summary">CASE SUMMARY</string>
     <string name="chief_complaints">Chief complaints</string>
     <string name="current_medications">CURRENT\nMEDICATION</string>
-    <string name="laboratory_results">Laboratory Results</string>
-    <string name="differential_diagnosis">Differential Diagnosis</string>
+    <string name="laboratory_results">LABORATORY\nRESULTS"</string>
+    <string name="differential_diagnosis">DIFFERENTIAL\nDIAGNOSIS</string>
     <string name="recentvisit">RECENT VISTS</string>
 
 </resources>
