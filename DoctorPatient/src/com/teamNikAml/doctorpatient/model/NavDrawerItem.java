@@ -1,5 +1,6 @@
 package com.teamNikAml.doctorpatient.model;
 
+
 public class NavDrawerItem {
 
 	private String title;
