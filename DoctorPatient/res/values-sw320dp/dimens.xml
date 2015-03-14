@@ -17,6 +17,12 @@
     <dimen name="textSize_heading">26sp</dimen>
     
     
+    
+     <dimen name="textSize_button_diagnosis">12sp</dimen>
+    
+    
+    
+    
      <dimen name="padding">3dp</dimen>
     
     

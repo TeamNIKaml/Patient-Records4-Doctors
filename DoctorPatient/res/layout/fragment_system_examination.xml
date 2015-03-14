@@ -1,0 +1,79 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_new_patient"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fagment_background"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+    
+     <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="left" >
+
+        <EditText
+            android:id="@+id/edittext_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/edit_text_background"
+            android:hint="@string/sytemExamination"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:minLines="6"
+            android:padding="@dimen/padding"
+            android:textColor="@color/edit_text_text_color"
+            android:textSize="@dimen/textSize_edit_text" />
+    </TableRow>
+    
+    
+
+   
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="left" >
+
+        <EditText
+            android:id="@+id/edittext_note_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/edit_text_background"
+            android:hint="@string/note"
+            android:inputType="textMultiLine"
+            android:maxLines="10"
+            android:minLines="4"
+            android:padding="@dimen/padding"
+            android:textColor="@color/edit_text_text_color"
+            android:textSize="@dimen/textSize_edit_text" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="right" >
+
+        <Button
+            android:id="@+id/button_save_process"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_top"
+            android:layout_marginLeft="@dimen/margin_left_button"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/button_background"
+            android:padding="@dimen/padding"
+            android:text="@string/save"
+            android:textColor="@color/button_text_color"
+            android:textSize="@dimen/textSize_button" />
+    </TableRow>
+
+</TableLayout>
