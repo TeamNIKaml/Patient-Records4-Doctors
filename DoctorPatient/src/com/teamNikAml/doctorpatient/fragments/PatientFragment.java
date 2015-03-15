@@ -70,7 +70,6 @@ public class PatientFragment extends Fragment {
 							DatabaseConstants.PatientDetailTable.ID,
 							DatabaseConstants.PatientDetailTable.NAME }, null,
 					null, null, null, null);
-			System.out.println("this is getting called*****************");
 		}
 
 		if (temcursor.moveToFirst()) {

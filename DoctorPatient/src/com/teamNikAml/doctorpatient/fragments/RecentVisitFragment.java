@@ -2,6 +2,7 @@ package com.teamNikAml.doctorpatient.fragments;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -24,7 +25,7 @@ import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 public class RecentVisitFragment extends DialogFragment{
 
 	ListView listView;
-	ArrayList<String> dateArry;
+	HashSet <String> dateArry;
 	private ArrayAdapter<String> adapter;
 	
 	Bundle b;
@@ -38,8 +39,10 @@ public class RecentVisitFragment extends DialogFragment{
 		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_recent_visit, null);
 		listView = (ListView) view.findViewById(id.listView_recent_visit);
 		
-		dateArry = new ArrayList<String>();
+		dateArry = new HashSet<String>();
 		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
+
 		Cursor temcursor = null;
 		b = getArguments();
 		s = b.getString("patient_id");
@@ -54,12 +57,13 @@ public class RecentVisitFragment extends DialogFragment{
 
 			} while (temcursor.moveToNext());
 		}
-		Collections.reverse(dateArry);
+		ArrayList<String> tempdateArry = new ArrayList<String>(dateArry);
+		Collections.reverse(tempdateArry);
 		adapter = new ArrayAdapter<String>(getActivity()
 				.getApplicationContext(), R.layout.patient_list_view,
-				R.id.textView_patient_listview, dateArry);
+				R.id.textView_patient_listview, tempdateArry);
 		listView.setAdapter(adapter);
-		
+				
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -73,10 +77,13 @@ public class RecentVisitFragment extends DialogFragment{
 				  args.putString("date",item.substring(0, i)); 
 				  args.putString("patient_id",s); 
 
+				  DialogFragment dialog = new PatientVisitDetailFragment();
+				  dialog.setArguments(args);
+				  dialog.show(getChildFragmentManager(), "Visit Detail");
 			}
 		});
 		
-		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
+		
 
 		return dlg;
 	}
