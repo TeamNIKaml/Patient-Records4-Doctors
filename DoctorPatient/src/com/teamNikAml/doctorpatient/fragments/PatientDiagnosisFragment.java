@@ -18,6 +18,7 @@ public class PatientDiagnosisFragment extends Fragment {
 	Button chiefComplaint, historyOfIllness, patientDetail, medicalHistory;
 	Button familyHistory, socialHistory, allergies, currentMedications;
 	Button investigationsAndLabResults, PhysicalExamination, provisionalDiagnosis;
+	Button differentialDiagnosis, systemExamination, caseSummary, recentVisit;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -34,7 +35,14 @@ public class PatientDiagnosisFragment extends Fragment {
 		currentMedications = (Button) rootView.findViewById(id.button_current_medications);
 		investigationsAndLabResults = (Button) rootView.findViewById(id.button_laboratory_results);
 		PhysicalExamination = (Button) rootView.findViewById(id.button_physical_examination);
-		provisionalDiagnosis = (Button) rootView.findViewById(id.button_provisional_diagnosis);
+		provisionalDiagnosis = (Button) rootView.findViewById(id.button_provisional_diagnosis);		
+		systemExamination = (Button) rootView.findViewById(id.button_system_examination);
+		differentialDiagnosis = (Button) rootView.findViewById(id.button_differential_diagnosis);
+		caseSummary = (Button) rootView.findViewById(id.button_case_summary);
+		recentVisit = (Button) rootView.findViewById(id.button_view_patient_history);
+
+		
+		
 		
 		b = getArguments();
 		String s = b.getString("patient_id");
@@ -50,6 +58,11 @@ public class PatientDiagnosisFragment extends Fragment {
 		investigationsAndLabResults.setOnClickListener(myListener);
 		PhysicalExamination.setOnClickListener(myListener);
 		provisionalDiagnosis.setOnClickListener(myListener);
+		systemExamination.setOnClickListener(myListener);
+		differentialDiagnosis.setOnClickListener(myListener);
+		caseSummary.setOnClickListener(myListener);
+		recentVisit.setOnClickListener(myListener);
+		
 		return rootView;
 	}
 
@@ -95,6 +108,18 @@ public class PatientDiagnosisFragment extends Fragment {
 				break;
 			case id.button_provisional_diagnosis:
 				dialog = new ProvisionalDiagnosisFragment();
+				break;
+			case id.button_system_examination:
+				dialog = new SystemExaminationFragment();
+				break;
+			case id.button_differential_diagnosis:
+				dialog = new DifferentialDiagnosis();
+				break;
+			case id.button_case_summary:
+				dialog = new CaseSummaryFragment();
+				break;
+			case id.button_view_patient_history:
+				dialog = new RecentVisitFragment();
 				break;
 				
 			default:

@@ -30,6 +30,9 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		db.execSQL(DatabaseConstants.CREATE_TABLE_ALLERGIES);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_INVESTIGATIONSANDLABRESULTS);
 		db.execSQL(DatabaseConstants.CREATE_TABLE_PROVISIONALDIAGNOSIS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_SYSTEMEXAMINATION);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_DIFFERENTIALDIAGNOSIS);
+		db.execSQL(DatabaseConstants.CREATE_TABLE_CASESUMMARY);
 		//db.execSQL("INSERT INTO "+DatabaseConstants.TABLE_PRESENTINGILLNESS+" VALUES ( 1, xxxx, yyyyy);");
 	}
 
@@ -47,6 +50,9 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_ALLERGIES);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_INVESTIGATIONSANDLABRESULTS);
 		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_PROVISIONALDIAGNOSIS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_SYSTEMEXAMINATION);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_DIFFERENTIALDIAGNOSIS);
+		prdDataBase.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_CASESUMMARY);
 		
 		onCreate(prdDataBase);
 	}

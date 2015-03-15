@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
-import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -71,6 +70,7 @@ public class PatientFragment extends Fragment {
 							DatabaseConstants.PatientDetailTable.ID,
 							DatabaseConstants.PatientDetailTable.NAME }, null,
 					null, null, null, null);
+			System.out.println("this is getting called*****************");
 		}
 
 		if (temcursor.moveToFirst()) {
@@ -122,7 +122,7 @@ public class PatientFragment extends Fragment {
 				
 				  String item =  ((TextView)arg1.findViewById(id.textView_patient_listview)).getText().toString();
 				  Bundle args = new Bundle();
-				  args.putString("patient_id",item.substring(item.length() - 1)); 
+				  args.putString("patient_id",item.substring(item.lastIndexOf("-")+1)); 
 					
 				
 				FragmentTransaction t = getActivity().getFragmentManager()

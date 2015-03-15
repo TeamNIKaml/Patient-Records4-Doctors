@@ -214,4 +214,60 @@ public class DatabaseConstants {
 	
 	/****************************************************************************************/
 	
+	public static final String TABLE_SYSTEMEXAMINATION = "SystemExamination";
+	
+	public static class SystemExamination {
+		public static final String ID ="id";
+		public static final String PROCESS = "systemexamination";
+		public static final String NOTES = "notes";
+		public static final String DATE = "date";
+	}
+	
+	public static final	String CREATE_TABLE_SYSTEMEXAMINATION = 
+			"create table if not exists " + TABLE_SYSTEMEXAMINATION + " ( "
+			+ SystemExamination.ID + " INTEGER, "
+			+ SystemExamination.PROCESS + " VARACHAR, "
+			+ SystemExamination.NOTES + " VARACHAR, "
+			+ SystemExamination.DATE + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_DIFFERENTIALDIAGNOSIS = "DifferentialDiagnosis";
+	
+	public static class DifferentialDiagnosis {
+		public static final String ID ="id";
+		public static final String PROCESS = "differentialdiagnosis";
+		public static final String NOTES = "notes";
+		public static final String DATE = "date";
+	}
+	
+	public static final	String CREATE_TABLE_DIFFERENTIALDIAGNOSIS = 
+			"create table if not exists " + TABLE_DIFFERENTIALDIAGNOSIS + " ( "
+			+ DifferentialDiagnosis.ID + " INTEGER, "
+			+ DifferentialDiagnosis.PROCESS + " VARACHAR, "
+			+ DifferentialDiagnosis.NOTES + " VARACHAR, "
+			+ DifferentialDiagnosis.DATE + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_CASESUMMARY = "CaseSummary";
+	
+	public static class CaseSummary {
+		public static final String ID ="id";
+		public static final String PROCESS = "casesummary";
+		public static final String NOTES = "notes";
+		public static final String DATE = "date";
+	}
+	
+	public static final	String CREATE_TABLE_CASESUMMARY = 
+			"create table if not exists " + TABLE_CASESUMMARY + " ( "
+			+ CaseSummary.ID + " INTEGER, "
+			+ CaseSummary.PROCESS + " VARACHAR, "
+			+ CaseSummary.NOTES + " VARACHAR, "
+			+ CaseSummary.DATE + " VARACHAR);" ;
+	
+	/****************************************************************************************/
+	
+	
+	
 }
