@@ -19,41 +19,35 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-
 public class ManagementFragment extends Fragment {
-	
-	
-	
-	private ArrayAdapter<String> graphAdaptor;
+
+	private ArrayAdapter<String> graphAdaptor,valueAdaptor;
 	private List<String> graphList = new ArrayList<String>();
 
+	private List<String> valueList = new ArrayList<String>();
+
 	private LineGraphFragment lineGraphFragment;
-	
+
 	private BarGraphFragment barGraphFragment;
-	
+
 	private PieGraphFragment pieGraphFragment;
 
-	private Spinner graphSpinner;
-	
-	
-	
+	private Spinner graphSpinner,valueSpinner;
+
 	private String[] heading = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
 
 	private double[] x = { 1, 2, 3, 4, 5, 6 };
 	private double[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
-	
-	private double[] expense = { 1000, 2500, 3700, 2000, 2300, 2500 };
-	
 
-	
+	private double[] expense = { 1000, 2500, 3700, 2000, 2300, 2500 };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_graph_container, container,
-				false);
-		
+		View rootView = inflater.inflate(R.layout.fragment_graph_container,
+				container, false);
+
 		init(rootView);
 
 		return rootView;
@@ -62,22 +56,35 @@ public class ManagementFragment extends Fragment {
 	private void init(View v) {
 		// TODO Auto-generated method stub
 		graphSpinner = (Spinner) v.findViewById(R.id.graphSpinner);
+		
+		valueSpinner = (Spinner) v.findViewById(R.id.valueSpinner);
 
 		graphList.add("Line Graph");
 		graphList.add("Bar Graph");
 		graphList.add("Pie Chart");
+		
+		
+		valueList.add("Income");
+		valueList.add("Expense");
+		valueList.add("Income vs Expense");
 
-		graphAdaptor = new ArrayAdapter<String>(getActivity().getApplicationContext(),
-				R.layout.spinnertext, graphList);
+		graphAdaptor = new ArrayAdapter<String>(getActivity()
+				.getApplicationContext(), R.layout.spinnertext, graphList);
 
 		graphSpinner.setAdapter(graphAdaptor);
 		
-		setLineGraphData();
+		
+		valueAdaptor = new ArrayAdapter<String>(getActivity().getApplicationContext(),
+				R.layout.spinnertext, valueList);
+
+		valueSpinner.setAdapter(valueAdaptor);
+
+		setLineGraphData("income");
 
 		getFragmentManager().beginTransaction()
 				.add(R.id.graph_container, lineGraphFragment).commit();
 
-		 checkFragment();
+		checkFragment();
 
 		graphSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -85,16 +92,8 @@ public class ManagementFragment extends Fragment {
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int pos, long id) {
 				// TODO Auto-generated method stub
-				
 
-			 checkFragment();
-				
-				
-				
-			
-				
-				
-				
+				checkFragment();
 
 			}
 
@@ -104,70 +103,171 @@ public class ManagementFragment extends Fragment {
 
 			}
 		});
+		
+		valueSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view,
+					int pos, long id) {
+				// TODO Auto-generated method stub
+
+				checkFragment();
+
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+		
+		
 
 	}
-	
-	
-	private void setPieGraphData()
-	{
+
+	private void setPieGraphData(String name) {
+		
 		pieGraphFragment = new PieGraphFragment();
-		
-		int[] pieChartValues = { 25, 15, 20, 40, 50, 60 };
 
-		String[] name = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+		if (name.equalsIgnoreCase("income")) {
+			int[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
+
+			String[] pieName = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+
+			pieGraphFragment.setPieChartValues(income);
+			pieGraphFragment.setPieFragmenttName(pieName);
+		}
+
+		else if (name.equalsIgnoreCase("expense")) {
+			int[] expense = { 1000, 3500, 1700, 2000, 3800, 4500 };
+			String[] pieName = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+
+			pieGraphFragment.setPieChartValues(expense);
+			pieGraphFragment.setPieFragmenttName(pieName);
+		}
+
+		else {
+			int[] value = { 16528, 13234 };
+			String[] pieName = { "Income", "Expense" };
+
+			pieGraphFragment.setPieChartValues(value);
+			pieGraphFragment.setPieFragmenttName(pieName);
+
+		}
+
 		
-		
-		pieGraphFragment.setPieChartValues(pieChartValues);
-		pieGraphFragment.setPieFragmenttName(name);
-		
-		//pieGraphFragment.init();
-		
-		
+
 	}
-	
-	
-	private void setBarGraphData() {
+
+	private void setBarGraphData(String name) {
 		// TODO Auto-generated method stub
-		
-		
+
 		barGraphFragment = new BarGraphFragment();
-		
+
 		double[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
-		 String[] heading = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
-		 
-		 barGraphFragment.setxHeading(heading);
-		 barGraphFragment.setyValue(income);
-		 
-		 barGraphFragment.SeriesAdd("income");
-		 barGraphFragment.SeriesRendererAdd(Color.WHITE, true);
-		 barGraphFragment.MultipleSeriesRendererInit(Color.BLACK, Color.BLUE);
-		 barGraphFragment.MultipleSeriesRendererAdd();
-		
+		double[] expense = { 1000, 3500, 1700, 2000, 3800, 4500 };
+
+		String[] heading = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+
+		if (name.equalsIgnoreCase("income")) {
+
+			barGraphFragment.setxHeading(heading);
+			barGraphFragment.setyValue(income);
+
+			barGraphFragment.SeriesAdd(name);
+			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
+			barGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			barGraphFragment.MultipleSeriesRendererAdd();
+
+		}
+
+		else if (name.equalsIgnoreCase("expense")) {
+
+			barGraphFragment.setxHeading(heading);
+			barGraphFragment.setyValue(expense);
+
+			barGraphFragment.SeriesAdd(name);
+			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
+			barGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			barGraphFragment.MultipleSeriesRendererAdd();
+
+		}
+
+		else {
+
+			barGraphFragment.setxHeading(heading);
+			barGraphFragment.setyValue(income);
+
+			barGraphFragment.SeriesAdd(name);
+			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
+			barGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			barGraphFragment.MultipleSeriesRendererAdd();
+
+			barGraphFragment.setxHeading(heading);
+			barGraphFragment.setyValue(expense);
+
+			barGraphFragment.SeriesAdd(name);
+			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
+			barGraphFragment.MultipleSeriesRendererAdd();
+
+		}
+
 	}
 
-	private void setLineGraphData() {
+	private void setLineGraphData(String name) {
 		// TODO Auto-generated method stub
 
-		 lineGraphFragment = new LineGraphFragment();
-		
-		
-		lineGraphFragment.setxValue(x);
-		lineGraphFragment.setyValue(income);
-		lineGraphFragment.setxHeading(heading);	
-		
-		
-		lineGraphFragment.SeriesAdd("income");
-		lineGraphFragment.SeriesRendererAdd(Color.WHITE, true);
-		lineGraphFragment.MultipleSeriesRendererInit(Color.BLACK, Color.BLUE);
-		lineGraphFragment.MultipleSeriesRendererAdd();
-		
-		
-		lineGraphFragment.setyValue(expense);
-		
-		lineGraphFragment.SeriesAdd("expense");
-		lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
-	   lineGraphFragment.MultipleSeriesRendererAdd();
-		
+		lineGraphFragment = new LineGraphFragment();
+
+		if (name.equalsIgnoreCase("income")) {
+			lineGraphFragment.setxValue(x);
+			lineGraphFragment.setyValue(income);
+			lineGraphFragment.setxHeading(heading);
+
+			lineGraphFragment.SeriesAdd(name);
+			lineGraphFragment.SeriesRendererAdd(Color.WHITE, true);
+			lineGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			lineGraphFragment.MultipleSeriesRendererAdd();
+		}
+
+		else if (name.equalsIgnoreCase("expense")) {
+
+			lineGraphFragment.setxValue(x);
+			lineGraphFragment.setyValue(expense);
+			lineGraphFragment.setxHeading(heading);
+
+			lineGraphFragment.SeriesAdd(name);
+			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
+			lineGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			lineGraphFragment.MultipleSeriesRendererAdd();
+
+		}
+
+		else {
+
+			lineGraphFragment.setxValue(x);
+			lineGraphFragment.setyValue(income);
+			lineGraphFragment.setxHeading(heading);
+
+			lineGraphFragment.SeriesAdd(name);
+			lineGraphFragment.SeriesRendererAdd(Color.WHITE, true);
+			lineGraphFragment.MultipleSeriesRendererInit(
+					Color.argb(100, 50, 50, 50), Color.BLUE);
+			lineGraphFragment.MultipleSeriesRendererAdd();
+
+			lineGraphFragment.setyValue(expense);
+
+			lineGraphFragment.SeriesAdd("expense");
+			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
+			lineGraphFragment.MultipleSeriesRendererAdd();
+
+		}
 
 	}
 
@@ -175,23 +275,25 @@ public class ManagementFragment extends Fragment {
 		// TODO Auto-generated method stub
 
 		if (graphSpinner.getSelectedItem().toString() == "Bar Graph") {
-			
-			setBarGraphData();
-			 getFragmentManager().beginTransaction().replace(R.id.graph_container, barGraphFragment).commit();
+
+			setBarGraphData(valueSpinner.getSelectedItem().toString());
+			getFragmentManager().beginTransaction()
+					.replace(R.id.graph_container, barGraphFragment).commit();
 
 		} else if (graphSpinner.getSelectedItem().toString() == "Line Graph") {
 
-			setLineGraphData();
+			setLineGraphData(valueSpinner.getSelectedItem().toString());
 
 			getFragmentManager().beginTransaction()
 					.replace(R.id.graph_container, lineGraphFragment).commit();
 
 		} else {
-				setPieGraphData();
-			 getFragmentManager().beginTransaction().replace(R.id.graph_container, pieGraphFragment).commit();
+			setPieGraphData(valueSpinner.getSelectedItem().toString());
+			getFragmentManager().beginTransaction()
+					.replace(R.id.graph_container, pieGraphFragment).commit();
 
 		}
 
 	}
-	
+
 }
