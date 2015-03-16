@@ -44,6 +44,11 @@
       
       
       
+        <!-- spinner color -->
+       <color name="spinner_normal">#045b88</color>
+      <color name="spinner_activated">#188ac5</color>
+      
+      
       
       
       <!-- new patient fragment reg -->
