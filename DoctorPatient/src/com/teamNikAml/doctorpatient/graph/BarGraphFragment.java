@@ -63,7 +63,7 @@ public class BarGraphFragment extends Fragment {
 		renderer = new XYSeriesRenderer(); // one renderer for one series
 		renderer.setColor(color);
 		renderer.setDisplayChartValues(displayChartValue);
-		renderer.setChartValuesSpacing((float) 5.5d);
+	//	renderer.setChartValuesSpacing((float) 5.5d);
 		renderer.setLineWidth((float) 10.5d);
 		renderer.setChartValuesTextSize(22);
 	}
@@ -93,12 +93,15 @@ public class BarGraphFragment extends Fragment {
 		// mRenderer.setYAxisMax(50);
 
 		mRenderer.setXLabels(0);
+		mRenderer.setBarWidth(15);
 
 		for (int i = 0; i < yValue.length; i++)
 			mRenderer.addXTextLabel(i + 1, xHeading[i]);
 
 		mRenderer.setXLabelsColor(labelColor);
 		mRenderer.setXLabelsPadding(22);
+		
+		mRenderer.setBarSpacing(10);
 
 	}
 
