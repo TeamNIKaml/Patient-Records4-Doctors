@@ -18,6 +18,11 @@
     
     
     
+    <dimen name="textSize_list_data">22sp</dimen>
+    <dimen name="textSize_list_heading">26sp</dimen>
+    
+    
+    
      <dimen name="textSize_button_diagnosis">12sp</dimen>
     
     
