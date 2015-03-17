@@ -66,9 +66,13 @@ public class NewPatientFragment extends Fragment {
 						othernotes.getText().toString().trim());
 
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+				long id = 0;
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
+					id = database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
 				}
+				
+				MyApplication myApp = (MyApplication) getActivity().getApplication();
+				myApp.addNewPatientNamewithIdToList(name.getText().toString().trim()+" \t" + "ID -"+id);
 				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();

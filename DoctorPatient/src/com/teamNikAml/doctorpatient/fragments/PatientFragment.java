@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -33,7 +34,7 @@ public class PatientFragment extends Fragment {
 	private ArrayAdapter<String> adapter;
 	private Button button;
 
-	private ArrayList<String> nameArry;
+	private ArrayList<String> nameArry = null;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,26 +61,14 @@ public class PatientFragment extends Fragment {
 			}
 		});
 
-		nameArry = new ArrayList<String>();
-
-		IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
-		Cursor temcursor = null;
-		if (database != null) {
-			temcursor = database.query(
-					DatabaseConstants.TABLE_PATIENTDETAIL, new String[] {
-							DatabaseConstants.PatientDetailTable.ID,
-							DatabaseConstants.PatientDetailTable.NAME }, null,
-					null, null, null, null);
+		
+		MyApplication myApp = (MyApplication) getActivity().getApplication();
+		nameArry = myApp.getPatientNamesWithId();
+		if (nameArry == null) {
+			myApp.setPatientNamesWithId();
+			nameArry = myApp.getPatientNamesWithId();
 		}
-
-		if (temcursor.moveToFirst()) {
-			do {
-				nameArry.add(temcursor.getString(1) + " \t" + "ID -"
-						+ temcursor.getString(0));
-
-			} while (temcursor.moveToNext());
-		}
-
+		
 		adapter = new ArrayAdapter<String>(getActivity()
 				.getApplicationContext(), R.layout.patient_list_view,
 				R.id.textView_patient_listview, nameArry);
