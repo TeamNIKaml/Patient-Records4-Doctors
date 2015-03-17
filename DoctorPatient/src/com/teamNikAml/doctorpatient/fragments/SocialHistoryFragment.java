@@ -55,8 +55,8 @@ public class SocialHistoryFragment  extends DialogFragment {
 
 		if (c.moveToFirst()) {
 
-			process.setText(c.getString(1));
-			note.setText(c.getString(2));
+			process.setText(c.getString(2));
+			note.setText(c.getString(3));
 			flag = 1;
 		}
 		

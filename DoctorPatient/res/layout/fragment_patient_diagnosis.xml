@@ -31,12 +31,11 @@
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="20"
                 android:background="@drawable/button_small"
-                 android:textColor="@android:color/white"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/patient_details"
-                  android:textSize="@dimen/textSize_button_diagnosis" />
-                />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_medical_history"
@@ -46,11 +45,11 @@
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="20"
                 android:background="@drawable/button_small"
-                 android:textColor="@android:color/white"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/medicalHistory"
-                 android:textSize="@dimen/textSize_button_diagnosis" />/>
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_family_history"
@@ -60,11 +59,11 @@
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="20"
                 android:background="@drawable/button_small"
-                 android:textColor="@android:color/white"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/family_history"
-                 android:textSize="@dimen/textSize_button_diagnosis" />/>
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_social_history"
@@ -73,12 +72,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="20"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_small"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/social_history"
-                 android:textSize="@dimen/textSize_button_diagnosis" /> />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_allergies"
@@ -87,11 +86,11 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="20"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_small"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/allergies"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/textSize_button_diagnosis" />
         </LinearLayout>
     </TableRow>
@@ -119,13 +118,13 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="35"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_large"
                 android:drawableLeft="@drawable/ic_chief_complaint"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/chiefComplaint" 
-                  android:textSize="@dimen/textSize_button_diagnosis" />/>
+                android:text="@string/chiefComplaint"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_history_of_illness"
@@ -134,12 +133,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="65"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/history_of_illness_hpc" 
-                  android:textSize="@dimen/textSize_button_diagnosis" />
+                android:text="@string/history_of_illness_hpc"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
         </LinearLayout>
     </TableRow>
 
@@ -166,12 +165,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/current_medications" 
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:text="@string/current_medications"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_physical_examination"
@@ -180,12 +179,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/physical_examination" 
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:text="@string/physical_examination"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_system_examination"
@@ -194,12 +193,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/sytemExamination"
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
         </LinearLayout>
     </TableRow>
 
@@ -226,12 +225,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/differential_diagnosis"
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_provisional_diagnosis"
@@ -240,12 +239,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/provisionalDiagnosis"
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
                 android:id="@+id/button_laboratory_results"
@@ -254,11 +253,11 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="40"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/laboratory_results" 
+                android:text="@string/laboratory_results"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/textSize_button_diagnosis" />
         </LinearLayout>
     </TableRow>
@@ -286,11 +285,11 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="65"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_medium"
                 android:gravity="center"
                 android:padding="@dimen/padding"
-                android:text="@string/recentvisit" 
+                android:text="@string/recentvisit"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/textSize_button_diagnosis" />
 
             <Button
@@ -300,12 +299,12 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="@dimen/new_patient_reg_margin_right"
                 android:layout_weight="35"
-                 android:textColor="@android:color/white"
                 android:background="@drawable/button_large"
                 android:gravity="center"
                 android:padding="@dimen/padding"
                 android:text="@string/case_summary"
-                android:textSize="@dimen/textSize_button_diagnosis"  />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
         </LinearLayout>
     </TableRow>
 
