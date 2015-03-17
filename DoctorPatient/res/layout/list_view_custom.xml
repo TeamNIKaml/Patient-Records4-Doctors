@@ -2,23 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/button_large_color"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView_process"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/textSize_list_heading" />
+        android:textSize="@dimen/textSize_list_heading"
+        android:background="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/textView_process_note"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/textSize_list_data" />
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/textSize_list_data" 
+        android:background="@android:color/white"/>
 
 </LinearLayout>

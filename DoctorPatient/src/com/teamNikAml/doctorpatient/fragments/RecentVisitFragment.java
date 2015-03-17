@@ -41,7 +41,7 @@ public class RecentVisitFragment extends DialogFragment{
 		
 		dateArry = new HashSet<String>();
 		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
-		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
+		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).setTitle("Recent Visit").create();
 
 		Cursor temcursor = null;
 		b = getArguments();
