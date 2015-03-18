@@ -19,6 +19,7 @@ public class MyApplication extends Application {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		setPatientNamesWithId();
+		setPatientdiagnosischache();
 	}
 
 	public void setPatientNamesWithId() {

@@ -76,7 +76,6 @@ public class PatientDiagnosisFragment extends Fragment {
 			switch (v.getId()) {
 
 			case id.button_patient_details_update:
-				System.out.println("+++++++++++++++");
 				dialog = new PatientDetailFragment();
 				break;
 			case id.button_chief_complaints:

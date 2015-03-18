@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -24,6 +26,8 @@ public class PhysicalExaminationFragment extends DialogFragment {
 	Button save;
 	EditText process, note;
 
+	MyApplication myApp;
+	PatientDiagnosisCache pdc;
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -33,6 +37,17 @@ public class PhysicalExaminationFragment extends DialogFragment {
 		process = (EditText) view.findViewById(id.edittext_process);
 		note = (EditText) view.findViewById(id.edittext_note_process);
 		process.setHint("Physical Examination");
+		
+		myApp = (MyApplication) getActivity().getApplication();
+		pdc = myApp.getPatientdiagnosischache();
+		String tempProcess = pdc.getPeProcess();
+		String tempNote = pdc.getPeNote();
+		if (tempProcess.length()>0) {
+			process.setText(tempProcess);
+		}
+		if (tempNote.length()>0) {
+			note.setText(tempNote);
+		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -60,7 +75,16 @@ public class PhysicalExaminationFragment extends DialogFragment {
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_PHYSICALEXAMINATION, null, cv);
+					long rowid = pdc.getStatusFlagpe();
+					if (rowid==0) {
+						 rowid = database.insert(DatabaseConstants.TABLE_PHYSICALEXAMINATION, null, cv);
+						pdc.setStatusFlagpe(rowid);
+					} else {
+						database.update(DatabaseConstants.TABLE_PHYSICALEXAMINATION, cv, "_id=?", new String[]{String.valueOf(rowid)});
+					}
+
+					pdc.setPeProcess(p);
+					pdc.setPeNote(n);
 				}
 
 				

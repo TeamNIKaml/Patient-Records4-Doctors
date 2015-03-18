@@ -79,7 +79,7 @@ public class RecentVisitFragment extends DialogFragment{
 
 				  DialogFragment dialog = new PatientVisitDetailFragment();
 				  dialog.setArguments(args);
-				  dialog.show(getChildFragmentManager(), "Visit Detail");
+				  dialog.show(getFragmentManager(), "Visit Detail");
 			}
 		});
 		

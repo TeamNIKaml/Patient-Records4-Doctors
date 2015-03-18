@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
 import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -110,8 +111,15 @@ public class PatientFragment extends Fragment {
 				
 				  String item =  ((TextView)arg1.findViewById(id.textView_patient_listview)).getText().toString();
 				  Bundle args = new Bundle();
-				  args.putString("patient_id",item.substring(item.lastIndexOf("-")+1)); 
+				  String pid = item.substring(item.lastIndexOf("-")+1);
+				  args.putString("patient_id",pid); 
 					
+				  MyApplication myApp = (MyApplication) getActivity().getApplication();
+				  PatientDiagnosisCache pdc = myApp.getPatientdiagnosischache();
+				  if (pdc.getPatientId() != Integer.parseInt(pid)) {
+					pdc.reSetPatientCache();
+					pdc.setPatientId(Integer.parseInt(pid));
+				}
 				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();

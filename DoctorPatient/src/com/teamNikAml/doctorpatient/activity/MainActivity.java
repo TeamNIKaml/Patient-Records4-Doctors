@@ -18,6 +18,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.teamNikAml.doctorpatient.adaptor.NavDrawerListAdapter;
+import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.fragments.BackupFragment;
 import com.teamNikAml.doctorpatient.fragments.BillFragment;
 import com.teamNikAml.doctorpatient.fragments.ManagementFragment;
@@ -47,6 +49,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		MyApplication myApp = (MyApplication) getApplication();
+		PatientDiagnosisCache pdc = myApp.getPatientdiagnosischache();
+		pdc.reSetPatientCache();
 
 		mTitle = mDrawerTitle = getTitle();
 

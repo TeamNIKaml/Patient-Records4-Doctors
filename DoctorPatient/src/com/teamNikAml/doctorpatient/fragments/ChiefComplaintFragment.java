@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -23,7 +25,9 @@ public class ChiefComplaintFragment extends DialogFragment {
 
 	Button save;
 	EditText process, note;
-
+	
+	MyApplication myApp;
+	PatientDiagnosisCache pdc;
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -32,6 +36,18 @@ public class ChiefComplaintFragment extends DialogFragment {
 		save = (Button) view.findViewById(id.button_save_chief_complaint);
 		process = (EditText) view.findViewById(id.edittext_chief_complaint);
 		note = (EditText) view.findViewById(id.edittext_note_chief_complaint);
+		
+		myApp = (MyApplication) getActivity().getApplication();
+		pdc = myApp.getPatientdiagnosischache();
+		
+		String tempProcess = pdc.getCcProcess();
+		String tempNote = pdc.getCcNote();
+		if (tempProcess.length()>0) {
+			process.setText(tempProcess);
+		}
+		if (tempNote.length()>0) {
+			note.setText(tempNote);
+		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -52,14 +68,24 @@ public class ChiefComplaintFragment extends DialogFragment {
 				String s = b.getString("patient_id");
 				
 				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.ChiefComplaint.ID, s);
+				cv.put(DatabaseConstants.ChiefComplaint.ID, pdc.getPatientId());
 				cv.put(DatabaseConstants.ChiefComplaint.PROCESS, p);
 				cv.put(DatabaseConstants.ChiefComplaint.NOTES, n);
 				cv.put(DatabaseConstants.ChiefComplaint.DATE, formattedDate);
 				
+				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_CHIEFCOMPLAINT, null, cv);
+					long rowid = pdc.getStatusFlagcc();
+					if (rowid==0) {
+						 rowid = database.insert(DatabaseConstants.TABLE_CHIEFCOMPLAINT, null, cv);
+						pdc.setStatusFlagcc(rowid);
+					} else {
+						database.update(DatabaseConstants.TABLE_CHIEFCOMPLAINT, cv, "_id=?", new String[]{String.valueOf(rowid)});
+					}
+
+					pdc.setCcProcess(p);
+					pdc.setCcNote(n);
 				}
 
 				

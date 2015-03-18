@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -24,6 +26,8 @@ public class CaseSummaryFragment extends DialogFragment {
 	Button save;
 	EditText process, note;
 
+	MyApplication myApp;
+	PatientDiagnosisCache pdc;
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -33,6 +37,18 @@ public class CaseSummaryFragment extends DialogFragment {
 		process = (EditText) view.findViewById(id.edittext_process);
 		note = (EditText) view.findViewById(id.edittext_note_process);
 		process.setHint("Case Summary");
+		
+		myApp = (MyApplication) getActivity().getApplication();
+		pdc = myApp.getPatientdiagnosischache();
+		
+		String tempProcess = pdc.getCsProcess();
+		String tempNote = pdc.getCsNote();
+		if (tempProcess.length()>0) {
+			process.setText(tempProcess);
+		}
+		if (tempNote.length()>0) {
+			note.setText(tempNote);
+		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
@@ -60,7 +76,16 @@ public class CaseSummaryFragment extends DialogFragment {
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {
-					database.insert(DatabaseConstants.TABLE_CASESUMMARY, null, cv);
+					long rowid = pdc.getStatusFlagcs();
+					if (rowid==0) {
+						 rowid = database.insert(DatabaseConstants.TABLE_CASESUMMARY, null, cv);
+						pdc.setStatusFlagcs(rowid);
+					} else {
+						database.update(DatabaseConstants.TABLE_CASESUMMARY, cv, "_id=?", new String[]{String.valueOf(rowid)});
+					}
+
+					pdc.setCsProcess(p);
+					pdc.setCsNote(n);
 				}
 
 				
