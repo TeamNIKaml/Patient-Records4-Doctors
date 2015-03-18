@@ -21,7 +21,7 @@
             android:layout_marginRight="@dimen/margin_right"
             android:background="@color/edit_text_background"
             android:hint="@string/name"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:padding="@dimen/padding"
             android:textColor="@color/edit_text_text_color"
             android:textSize="@dimen/textSize_edit_text" />

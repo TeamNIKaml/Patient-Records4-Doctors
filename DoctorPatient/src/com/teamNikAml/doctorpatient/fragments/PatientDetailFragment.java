@@ -98,6 +98,8 @@ public class PatientDetailFragment extends DialogFragment {
 					String[] selectionArgs = {patientID};
 					database.update(DatabaseConstants.TABLE_PATIENTDETAIL, cv, selection, selectionArgs);
 				}
+				MyApplication myApp = (MyApplication) getActivity().getApplication();
+				myApp.setPatientNamesWithId();
 				
 				dlg.dismiss();
 			}

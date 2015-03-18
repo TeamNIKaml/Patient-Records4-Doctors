@@ -17,7 +17,7 @@ public class DatabaseConstants {
 		public static final String EMAIL = "email";
 		public static final String CONTACTNO = "contactno";
 		public static final String OTHERNOTES = "othernotes";
-
+		public static final String DATE = "date";
 	}
 
 	public static final	String CREATE_TABLE_PATIENTDETAIL = 
@@ -28,7 +28,8 @@ public class DatabaseConstants {
 			+ PatientDetailTable.AGE + " INTEGER, "
 			+ PatientDetailTable.EMAIL + " VARACHAR, "
 			+ PatientDetailTable.CONTACTNO + " VARACHAR, "
-			+ PatientDetailTable.OTHERNOTES + " VARACHAR);" ;
+			+ PatientDetailTable.OTHERNOTES + " VARACHAR, "
+			+ PatientDetailTable.DATE + " VARACHAR);" ;
 	
 	/************************************************************************************/
 

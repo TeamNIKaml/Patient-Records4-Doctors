@@ -1,9 +1,11 @@
 package com.teamNikAml.doctorpatient.fragments;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,34 +53,45 @@ public class NewPatientFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				ContentValues cv = new ContentValues();
-				cv.put(DatabaseConstants.PatientDetailTable.NAME, name
-						.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.SEX, sex
-						.getSelectedItem().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.AGE, age.getText()
-						.toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.EMAIL, email
-						.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.CONTACTNO, contact
-						.getText().toString().trim());
-				cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
-						othernotes.getText().toString().trim());
+				
+				if (name.getText().toString().trim().length()>0) {
+					
+					Calendar c = Calendar.getInstance();
 
-				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
-				long id = 0;
-				if (database != null) {
-					id = database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
+					SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+					String formattedDate = df.format(c.getTime());
+					
+					ContentValues cv = new ContentValues();
+					cv.put(DatabaseConstants.PatientDetailTable.NAME, name
+							.getText().toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.SEX, sex
+							.getSelectedItem().toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.AGE, age.getText()
+							.toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.EMAIL, email
+							.getText().toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.CONTACTNO, contact
+							.getText().toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
+							othernotes.getText().toString().trim());
+					cv.put(DatabaseConstants.PatientDetailTable.DATE,
+							formattedDate);
+
+					IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+					long id = 0;
+					if (database != null) {
+						id = database.insert(DatabaseConstants.TABLE_PATIENTDETAIL, null, cv);
+					}
+					
+					MyApplication myApp = (MyApplication) getActivity().getApplication();
+					myApp.addNewPatientNamewithIdToList(name.getText().toString().trim()+" \t" + "ID -"+id);
+					
+					FragmentTransaction t = getActivity().getFragmentManager()
+							.beginTransaction();
+					Fragment mFrag = new PatientFragment();
+					t.replace(R.id.frame_container, mFrag);
+					t.commit();
 				}
-				
-				MyApplication myApp = (MyApplication) getActivity().getApplication();
-				myApp.addNewPatientNamewithIdToList(name.getText().toString().trim()+" \t" + "ID -"+id);
-				
-				FragmentTransaction t = getActivity().getFragmentManager()
-						.beginTransaction();
-				Fragment mFrag = new PatientFragment();
-				t.replace(R.id.frame_container, mFrag);
-				t.commit();
 			}
 		});
 		return rootView;
