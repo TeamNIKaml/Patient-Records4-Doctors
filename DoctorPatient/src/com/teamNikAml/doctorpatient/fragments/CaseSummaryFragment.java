@@ -28,10 +28,11 @@ public class CaseSummaryFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_general, null);
+		View view = getActivity().getLayoutInflater().inflate(R.layout.fragment_case_summary, null);
 		save = (Button) view.findViewById(id.button_save_process);
 		process = (EditText) view.findViewById(id.edittext_process);
 		note = (EditText) view.findViewById(id.edittext_note_process);
+		process.setHint("Case Summary");
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		

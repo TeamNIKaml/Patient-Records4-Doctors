@@ -63,5 +63,6 @@
     <string name="differential_diagnosis">DIFFERENTIAL\nDIAGNOSIS</string>
     <string name="recentvisit">RECENT VISTS</string>
     <string name="caseSummary">Case Summary</string>
+    <string name="family_diseases">Family Diseases</string>
 
 </resources>

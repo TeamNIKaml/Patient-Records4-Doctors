@@ -32,6 +32,7 @@ public class ProvisionalDiagnosisFragment  extends DialogFragment {
 		save = (Button) view.findViewById(id.button_save_process);
 		process = (EditText) view.findViewById(id.edittext_process);
 		note = (EditText) view.findViewById(id.edittext_note_process);
+		process.setHint("Provisional Diagnosis");
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
 		
