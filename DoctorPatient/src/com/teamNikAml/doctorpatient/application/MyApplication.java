@@ -12,6 +12,7 @@ import android.database.Cursor;
 public class MyApplication extends Application {
 
 	private ArrayList<String> nameArry = null;
+	private PatientDiagnosisCache patientdiagnosischache;
 
 	@Override
 	public void onCreate() {
@@ -63,4 +64,14 @@ public class MyApplication extends Application {
 		nameArry.add(nameWithId);
 	}
 
+	public PatientDiagnosisCache getPatientdiagnosischache() {
+		return patientdiagnosischache;
+	}
+
+	public void setPatientdiagnosischache() {
+		this.patientdiagnosischache = new PatientDiagnosisCache();
+	}
+
+	
+	
 }

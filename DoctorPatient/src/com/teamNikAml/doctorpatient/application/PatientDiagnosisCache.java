@@ -5,6 +5,39 @@ public class PatientDiagnosisCache {
 	StringBuilder ccProcess, ccNote, hpiProcess, hpiNote, cmProcess, cmNote;
 	StringBuilder peProcess, peNote, seProcess, seNote, ddProcess, ddNote;
 	StringBuilder pdProcess, pdNote, lrrocess, lrNote, csProcess, csNote;
+	int patientId;
+	
+	
+	
+	
+	public PatientDiagnosisCache() {
+		super();
+		this.ccProcess = null;
+		this.ccNote = null;
+		this.hpiProcess = null;
+		this.hpiNote = null;
+		this.cmProcess = null;
+		this.cmNote = null;
+		this.peProcess = null;
+		this.peNote = null;
+		this.seProcess = null;
+		this.seNote = null;
+		this.ddProcess = null;
+		this.ddNote = null;
+		this.pdProcess = null;
+		this.pdNote = null;
+		this.lrrocess = null;
+		this.lrNote = null;
+		this.csProcess = null;
+		this.csNote = null;
+		this.patientId = 0;
+	}
+	public int getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
 	public StringBuilder getCcProcess() {
 		return ccProcess;
 	}
