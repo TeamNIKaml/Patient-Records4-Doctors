@@ -127,7 +127,7 @@ public class PatientDiagnosisFragment extends Fragment {
 
 			if (dialog != null) {
 				dialog.setArguments(b);
-				dialog.show(getChildFragmentManager(), "Process Dialog");
+				dialog.show(getFragmentManager(), "Process Dialog");
 			}
 		}
 	};
