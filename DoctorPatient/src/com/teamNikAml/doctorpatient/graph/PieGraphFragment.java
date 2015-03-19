@@ -13,12 +13,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
 
 public class PieGraphFragment  extends Fragment {
 
 	
-	private int[] pieChartValues;
+	private double[] pieChartValues;
 
 	private String[] pieFragmenttName;
 
@@ -86,20 +86,14 @@ public class PieGraphFragment  extends Fragment {
 				SeriesSelection seriesSelection = mChartView
 						.getCurrentSeriesAndPoint();
 				if (seriesSelection == null) {
-					Toast.makeText(getActivity().getApplicationContext(),
-							"No chart element selected", Toast.LENGTH_SHORT)
-							.show();
+
 				} else {
 					for (int i = 0; i < mSeries.getItemCount(); i++) {
 						mRenderer.getSeriesRendererAt(i).setHighlighted(
 								i == seriesSelection.getPointIndex());
 					}
 					mChartView.repaint();
-					Toast.makeText(
-							getActivity().getApplicationContext(),
-							pieFragmenttName[seriesSelection.getPointIndex()] + " : "
-									+ seriesSelection.getValue(),
-							Toast.LENGTH_SHORT).show();
+
 				}
 			}
 		});
@@ -118,11 +112,11 @@ public class PieGraphFragment  extends Fragment {
 		}
 	}
 
-	public int[] getPieChartValues() {
+	public double[] getPieChartValues() {
 		return pieChartValues;
 	}
 
-	public void setPieChartValues(int[] pieChartValues) {
+	public void setPieChartValues(double[] pieChartValues) {
 		this.pieChartValues = pieChartValues;
 	}
 

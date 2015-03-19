@@ -34,12 +34,13 @@ public class ManagementFragment extends Fragment {
 
 	private Spinner graphSpinner,valueSpinner;
 
-	private String[] heading = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+	private String[] heading = { "January", "February", "March", "April", "May", "June",
+		    "July", "August", "September", "October", "November", "December"};
 
-	private double[] x = { 1, 2, 3, 4, 5, 6 };
-	private double[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
+	private double[] x = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+	private double[] income = { 2000, 2500, 2700, 3000, 2800, 3500, 1001, 2500, 3700, 2000, 2300, 2500 };
 
-	private double[] expense = { 1000, 2500, 3700, 2000, 2300, 2500 };
+	private double[] expense = { 1001, 2500, 3700, 2000, 2300, 2500, 2000, 2500, 2700, 3000, 2800, 3500 };
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -131,24 +132,21 @@ public class ManagementFragment extends Fragment {
 		pieGraphFragment = new PieGraphFragment();
 
 		if (name.equalsIgnoreCase("income")) {
-			int[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
 
-			String[] pieName = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
 
 			pieGraphFragment.setPieChartValues(income);
-			pieGraphFragment.setPieFragmenttName(pieName);
+			pieGraphFragment.setPieFragmenttName(heading);
 		}
 
 		else if (name.equalsIgnoreCase("expense")) {
-			int[] expense = { 1000, 3500, 1700, 2000, 3800, 4500 };
-			String[] pieName = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
+
 
 			pieGraphFragment.setPieChartValues(expense);
-			pieGraphFragment.setPieFragmenttName(pieName);
+			pieGraphFragment.setPieFragmenttName(heading);
 		}
 
 		else {
-			int[] value = { 16528, 13234 };
+			double[] value = { 16528, 13234 };
 			String[] pieName = { "Income", "Expense" };
 
 			pieGraphFragment.setPieChartValues(value);
@@ -165,10 +163,6 @@ public class ManagementFragment extends Fragment {
 
 		barGraphFragment = new BarGraphFragment();
 
-		double[] income = { 2000, 2500, 2700, 3000, 2800, 3500 };
-		double[] expense = { 1000, 3500, 1700, 2000, 3800, 4500 };
-
-		String[] heading = { "Jan", "Feb", "Mar", "Apr", "May", "Jun" };
 
 		if (name.equalsIgnoreCase("income")) {
 
