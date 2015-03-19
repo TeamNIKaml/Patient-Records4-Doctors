@@ -1,14 +1,20 @@
 package com.teamNikAml.doctorpatient.fragments;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 import com.teamNikAml.doctorpatient.activity.R;
+import com.teamNikAml.doctorpatient.database.DatabaseConstants;
+import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
+import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 import com.teamNikAml.doctorpatient.graph.BarGraphFragment;
 import com.teamNikAml.doctorpatient.graph.LineGraphFragment;
 import com.teamNikAml.doctorpatient.graph.PieGraphFragment;
 
 import android.app.Fragment;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -41,11 +47,46 @@ public class ManagementFragment extends Fragment {
 	private double[] income = { 2000, 2500, 2700, 3000, 2800, 3500, 1001, 2500, 3700, 2000, 2300, 2500 };
 
 	private double[] expense = { 1001, 2500, 3700, 2000, 2300, 2500, 2000, 2500, 2700, 3000, 2800, 3500 };
+	
+	private String[] month = new String[12];
+	private String[] year = new String[12];	
+	private double[] newPatient = new double[12];
+	private double[] noOfVisits = new double[12];	
 
+	IDatabaseUtility database;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
+		database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
+		
+		Calendar cal = Calendar.getInstance();
+		int monthvalue = cal.get(Calendar.MONTH);
+		int yearvalue = cal.get(Calendar.YEAR);
+		int temp=monthvalue,j=0;
+		for (int i = 0; i < 12; i++) {
+
+			month[j] = heading[temp];
+			year[j] = String.valueOf(yearvalue);
+			
+			String where = "%-";
+			if (temp<9) {
+				where = where+"0"+(temp+1)+"-"+yearvalue;
+			}else{
+				where = where+(temp+1)+"-"+yearvalue;
+			}
+			System.out.println(where);
+			newPatient[j]=getNewPatientCount(where);
+			
+			if (temp==11) {
+				temp=-1;
+				yearvalue--;
+			}
+			j++; temp++;
+		}
+
+		System.out.println(Arrays.asList(month));
+		
 		View rootView = inflater.inflate(R.layout.fragment_graph_container,
 				container, false);
 
@@ -172,7 +213,7 @@ public class ManagementFragment extends Fragment {
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
 			barGraphFragment.MultipleSeriesRendererInit(
-					Color.argb(100, 50, 50, 50), Color.BLUE);
+					Color.argb(100, 50, 50, 50), Color.WHITE);
 			barGraphFragment.MultipleSeriesRendererAdd();
 
 		}
@@ -185,7 +226,7 @@ public class ManagementFragment extends Fragment {
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
 			barGraphFragment.MultipleSeriesRendererInit(
-					Color.argb(100, 50, 50, 50), Color.BLUE);
+					Color.argb(100, 50, 50, 50), Color.WHITE);
 			barGraphFragment.MultipleSeriesRendererAdd();
 
 		}
@@ -223,9 +264,9 @@ public class ManagementFragment extends Fragment {
 			lineGraphFragment.setxHeading(heading);
 
 			lineGraphFragment.SeriesAdd(name);
-			lineGraphFragment.SeriesRendererAdd(Color.WHITE, true);
+			lineGraphFragment.SeriesRendererAdd(Color.BLUE, true);
 			lineGraphFragment.MultipleSeriesRendererInit(
-					Color.argb(100, 50, 50, 50), Color.BLUE);
+					Color.argb(100, 50, 50, 50), Color.WHITE);
 			lineGraphFragment.MultipleSeriesRendererAdd();
 		}
 
@@ -238,7 +279,7 @@ public class ManagementFragment extends Fragment {
 			lineGraphFragment.SeriesAdd(name);
 			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
 			lineGraphFragment.MultipleSeriesRendererInit(
-					Color.argb(100, 50, 50, 50), Color.BLUE);
+					Color.argb(100, 50, 50, 50), Color.WHITE);
 			lineGraphFragment.MultipleSeriesRendererAdd();
 
 		}
@@ -250,9 +291,9 @@ public class ManagementFragment extends Fragment {
 			lineGraphFragment.setxHeading(heading);
 
 			lineGraphFragment.SeriesAdd(name);
-			lineGraphFragment.SeriesRendererAdd(Color.WHITE, true);
+			lineGraphFragment.SeriesRendererAdd(Color.BLUE, true);
 			lineGraphFragment.MultipleSeriesRendererInit(
-					Color.argb(100, 50, 50, 50), Color.BLUE);
+					Color.argb(100, 50, 50, 50), Color.WHITE);
 			lineGraphFragment.MultipleSeriesRendererAdd();
 
 			lineGraphFragment.setyValue(expense);
@@ -288,6 +329,21 @@ public class ManagementFragment extends Fragment {
 
 		}
 
+	}
+	
+	int getNewPatientCount(String str){
+		Cursor cursor = database.rawQuery("SELECT COUNT (*) FROM " + DatabaseConstants.TABLE_PATIENTDETAIL + " WHERE " 
+		+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
+
+		int count = 0;
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+			    count= cursor.getInt(0);
+			}
+			System.out.println("cursor is not null");
+		    cursor.close();
+		}
+		return count;
 	}
 
 }
