@@ -53,6 +53,33 @@
             android:textColor="@color/edit_text_text_color"
             android:textSize="@dimen/textSize_edit_text" />
     </TableRow>
+    
+    
+      <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="left" >
+
+        <EditText
+            android:id="@+id/edittext_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/edit_text_background"
+            android:hint="@string/fee"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/padding"
+            android:textColor="@color/edit_text_text_color"
+            android:textSize="@dimen/textSize_edit_text" />
+
+    </TableRow>
+    
+    
+    
+    
+    
 
     <TableRow
         android:layout_width="fill_parent"
