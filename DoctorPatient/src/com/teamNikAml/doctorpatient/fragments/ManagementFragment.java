@@ -63,7 +63,7 @@ public class ManagementFragment extends Fragment {
 		Calendar cal = Calendar.getInstance();
 		int monthvalue = cal.get(Calendar.MONTH);
 		int yearvalue = cal.get(Calendar.YEAR);
-		int temp=monthvalue,j=0;
+		int temp=monthvalue,j=11;
 		for (int i = 0; i < 12; i++) {
 
 			month[j] = heading[temp];
@@ -78,14 +78,14 @@ public class ManagementFragment extends Fragment {
 			System.out.println(where);
 			newPatient[j]=getNewPatientCount(where);
 			
-			if (temp==11) {
-				temp=-1;
+			if (temp==0) {
+				temp=12;
 				yearvalue--;
 			}
-			j++; temp++;
+			j--; temp--;
 		}
 
-		System.out.println(Arrays.asList(month));
+		System.out.println(newPatient[11]);
 		
 		View rootView = inflater.inflate(R.layout.fragment_graph_container,
 				container, false);
@@ -332,8 +332,13 @@ public class ManagementFragment extends Fragment {
 	}
 	
 	int getNewPatientCount(String str){
-		Cursor cursor = database.rawQuery("SELECT COUNT (*) FROM " + DatabaseConstants.TABLE_PATIENTDETAIL + " WHERE " 
-		+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
+		Cursor cursor = null;
+		try{
+			 cursor = database.rawQuery("SELECT COUNT (*) FROM " + DatabaseConstants.TABLE_PATIENTDETAIL + " WHERE " 
+						+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
+		}catch(Exception e){
+
+		}
 
 		int count = 0;
 		if (cursor != null) {
