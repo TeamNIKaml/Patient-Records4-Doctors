@@ -5,7 +5,7 @@ public class PatientDiagnosisCache {
 	String ccProcess, ccNote, hpiProcess, hpiNote, cmProcess, cmNote;
 	String peProcess, peNote, seProcess, seNote, ddProcess, ddNote;
 	String pdProcess, pdNote, lrPocess, lrNote, csProcess, csNote;
-	int patientId;
+	int patientId, csFees;
 	long statusFlagcc, statusFlaghpi, statusFlagcm, statusFlagpe, statusFlagse, statusFlagdd, statusFlagpd, statusFlaglr, statusFlagcs;	
 	
 	public PatientDiagnosisCache() {
@@ -28,6 +28,7 @@ public class PatientDiagnosisCache {
 		this.lrNote = "";
 		this.csProcess = "";
 		this.csNote = "";
+		this.csFees = 0;
 		this.patientId = 0;
 		this.statusFlagcc = 0;
 		this.statusFlaghpi = 0;
@@ -217,6 +218,12 @@ public class PatientDiagnosisCache {
 	public void setCsNote(String csNote) {
 		this.csNote = csNote;
 	}
+	public int getCsFees() {
+		return csFees;
+	}
+	public void setCsFees(int csFees) {
+		this.csFees = csFees;
+	}
 	
 	/*********************************************************/
 	
@@ -239,6 +246,7 @@ public class PatientDiagnosisCache {
 		this.lrNote = "";
 		this.csProcess = "";
 		this.csNote = "";
+		this.csFees = 0;
 		this.patientId = 0;
 		this.statusFlagcc = 0;
 		this.statusFlaghpi = 0;

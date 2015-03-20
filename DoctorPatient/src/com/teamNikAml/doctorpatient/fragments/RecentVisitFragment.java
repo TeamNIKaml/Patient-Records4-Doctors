@@ -53,7 +53,7 @@ public class RecentVisitFragment extends DialogFragment{
 
 		if (temcursor.moveToFirst()) {
 			do {
-				dateArry.add(temcursor.getString(0) + "# " + temcursor.getString(1) );
+				dateArry.add(temcursor.getString(0) + "# " + temcursor.getString(1));
 
 			} while (temcursor.moveToNext());
 		}

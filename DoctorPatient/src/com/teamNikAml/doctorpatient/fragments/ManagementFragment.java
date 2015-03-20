@@ -77,6 +77,7 @@ public class ManagementFragment extends Fragment {
 			}
 			System.out.println(where);
 			newPatient[j]=getNewPatientCount(where);
+			noOfVisits[j]=getPatientVisitCount(where);
 			
 			if (temp==0) {
 				temp=12;
@@ -84,8 +85,14 @@ public class ManagementFragment extends Fragment {
 			}
 			j--; temp--;
 		}
+		for (int i = 11; i >=0; i--) {
+			System.out.println(newPatient[i]);
+		}
+		for (int i = 11; i >=0; i--) {
+			System.out.println(noOfVisits[i]);
+		}
+		
 
-		System.out.println(newPatient[11]);
 		
 		View rootView = inflater.inflate(R.layout.fragment_graph_container,
 				container, false);
@@ -106,8 +113,8 @@ public class ManagementFragment extends Fragment {
 		graphList.add("Pie Chart");
 		
 		
-		valueList.add("Income");
-		valueList.add("Expense");
+		valueList.add("New Patient");
+		valueList.add("Appointment");
 		valueList.add("Income vs Expense");
 
 		graphAdaptor = new ArrayAdapter<String>(getActivity()
@@ -172,18 +179,18 @@ public class ManagementFragment extends Fragment {
 		
 		pieGraphFragment = new PieGraphFragment();
 
-		if (name.equalsIgnoreCase("income")) {
+		if (name.equalsIgnoreCase("New Patient")) {
 
 
-			pieGraphFragment.setPieChartValues(income);
-			pieGraphFragment.setPieFragmenttName(heading);
+			pieGraphFragment.setPieChartValues(newPatient);
+			pieGraphFragment.setPieFragmenttName(month);
 		}
 
-		else if (name.equalsIgnoreCase("expense")) {
+		else if (name.equalsIgnoreCase("Appointment")) {
 
 
-			pieGraphFragment.setPieChartValues(expense);
-			pieGraphFragment.setPieFragmenttName(heading);
+			pieGraphFragment.setPieChartValues(noOfVisits);
+			pieGraphFragment.setPieFragmenttName(month);
 		}
 
 		else {
@@ -205,10 +212,10 @@ public class ManagementFragment extends Fragment {
 		barGraphFragment = new BarGraphFragment();
 
 
-		if (name.equalsIgnoreCase("income")) {
+		if (name.equalsIgnoreCase("New Patient")) {
 
-			barGraphFragment.setxHeading(heading);
-			barGraphFragment.setyValue(income);
+			barGraphFragment.setxHeading(month);
+			barGraphFragment.setyValue(newPatient);
 
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
@@ -218,10 +225,10 @@ public class ManagementFragment extends Fragment {
 
 		}
 
-		else if (name.equalsIgnoreCase("expense")) {
+		else if (name.equalsIgnoreCase("Appointment")) {
 
-			barGraphFragment.setxHeading(heading);
-			barGraphFragment.setyValue(expense);
+			barGraphFragment.setxHeading(month);
+			barGraphFragment.setyValue(noOfVisits);
 
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
@@ -233,8 +240,8 @@ public class ManagementFragment extends Fragment {
 
 		else {
 
-			barGraphFragment.setxHeading(heading);
-			barGraphFragment.setyValue(income);
+			barGraphFragment.setxHeading(month);
+			barGraphFragment.setyValue(newPatient);
 
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
@@ -242,8 +249,8 @@ public class ManagementFragment extends Fragment {
 					Color.argb(100, 50, 50, 50), Color.BLUE);
 			barGraphFragment.MultipleSeriesRendererAdd();
 
-			barGraphFragment.setxHeading(heading);
-			barGraphFragment.setyValue(expense);
+			barGraphFragment.setxHeading(month);
+			barGraphFragment.setyValue(noOfVisits);
 
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
@@ -258,10 +265,10 @@ public class ManagementFragment extends Fragment {
 
 		lineGraphFragment = new LineGraphFragment();
 
-		if (name.equalsIgnoreCase("income")) {
+		if (name.equalsIgnoreCase("New Patient")) {
 			lineGraphFragment.setxValue(x);
-			lineGraphFragment.setyValue(income);
-			lineGraphFragment.setxHeading(heading);
+			lineGraphFragment.setyValue(newPatient);
+			lineGraphFragment.setxHeading(month);
 
 			lineGraphFragment.SeriesAdd(name);
 			lineGraphFragment.SeriesRendererAdd(Color.BLUE, true);
@@ -270,11 +277,11 @@ public class ManagementFragment extends Fragment {
 			lineGraphFragment.MultipleSeriesRendererAdd();
 		}
 
-		else if (name.equalsIgnoreCase("expense")) {
+		else if (name.equalsIgnoreCase("Appointment")) {
 
 			lineGraphFragment.setxValue(x);
-			lineGraphFragment.setyValue(expense);
-			lineGraphFragment.setxHeading(heading);
+			lineGraphFragment.setyValue(noOfVisits);
+			lineGraphFragment.setxHeading(month);
 
 			lineGraphFragment.SeriesAdd(name);
 			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
@@ -287,8 +294,8 @@ public class ManagementFragment extends Fragment {
 		else {
 
 			lineGraphFragment.setxValue(x);
-			lineGraphFragment.setyValue(income);
-			lineGraphFragment.setxHeading(heading);
+			lineGraphFragment.setyValue(newPatient);
+			lineGraphFragment.setxHeading(month);
 
 			lineGraphFragment.SeriesAdd(name);
 			lineGraphFragment.SeriesRendererAdd(Color.BLUE, true);
@@ -296,7 +303,7 @@ public class ManagementFragment extends Fragment {
 					Color.argb(100, 50, 50, 50), Color.WHITE);
 			lineGraphFragment.MultipleSeriesRendererAdd();
 
-			lineGraphFragment.setyValue(expense);
+			lineGraphFragment.setyValue(noOfVisits);
 
 			lineGraphFragment.SeriesAdd("expense");
 			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
@@ -335,6 +342,26 @@ public class ManagementFragment extends Fragment {
 		Cursor cursor = null;
 		try{
 			 cursor = database.rawQuery("SELECT COUNT (*) FROM " + DatabaseConstants.TABLE_PATIENTDETAIL + " WHERE " 
+						+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
+		}catch(Exception e){
+
+		}
+
+		int count = 0;
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+			    count= cursor.getInt(0);
+			}
+			System.out.println("cursor is not null");
+		    cursor.close();
+		}
+		return count;
+	}
+	
+	int getPatientVisitCount(String str){
+		Cursor cursor = null;
+		try{
+			 cursor = database.rawQuery("SELECT COUNT (*) FROM " + DatabaseConstants.TABLE_CASESUMMARY + " WHERE " 
 						+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
 		}catch(Exception e){
 

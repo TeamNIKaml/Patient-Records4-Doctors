@@ -44,9 +44,21 @@ public class PatientVisitDetailFragment extends DialogFragment {
 			sb = new StringBuilder();
 			if (temcursor.moveToFirst()) {
 				do {
+					if (sb.length()>0) {
+						sb.append("\n-----------------------------\n");
+					}
 					sb.append(temcursor.getString(2));
-					sb.append("\n");
+					if (temcursor.getString(2).length()>0) {
+						sb.append("\n\n");	
+					}
 					sb.append(temcursor.getString(3));
+
+					if (string.equals(DatabaseConstants.TABLE_CASESUMMARY)) {
+						if (temcursor.getString(3).length()>0) {
+							sb.append("\n");
+						}
+						sb.append("Fees - "+temcursor.getString(4));
+					}
 				} while (temcursor.moveToNext());
 			}
 			if (sb.length()>0) {

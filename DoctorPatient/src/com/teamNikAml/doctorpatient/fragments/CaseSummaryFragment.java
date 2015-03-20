@@ -24,7 +24,7 @@ import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 public class CaseSummaryFragment extends DialogFragment {
 
 	Button save;
-	EditText process, note;
+	EditText process, note, fees;
 
 	MyApplication myApp;
 	PatientDiagnosisCache pdc;
@@ -36,18 +36,24 @@ public class CaseSummaryFragment extends DialogFragment {
 		save = (Button) view.findViewById(id.button_save_process);
 		process = (EditText) view.findViewById(id.edittext_process);
 		note = (EditText) view.findViewById(id.edittext_note_process);
-		process.setHint("Case Summary");
+		fees = (EditText) view.findViewById(id.edittext_fee);
+		process.setHint("Case Report");
+		note.setHint("Prescription");
 		
 		myApp = (MyApplication) getActivity().getApplication();
 		pdc = myApp.getPatientdiagnosischache();
 		
 		String tempProcess = pdc.getCsProcess();
 		String tempNote = pdc.getCsNote();
+		int tempfee = pdc.getCsFees();
 		if (tempProcess.length()>0) {
 			process.setText(tempProcess);
 		}
 		if (tempNote.length()>0) {
 			note.setText(tempNote);
+		}
+		if (tempfee > 0) {
+			fees.setText(String.valueOf(tempfee));
 		}
 		
 		final Dialog dlg = new AlertDialog.Builder(getActivity()).setView(view).create();
@@ -59,6 +65,12 @@ public class CaseSummaryFragment extends DialogFragment {
 				// TODO Auto-generated method stub
 				String p = process.getText().toString().trim();
 				String n = note.getText().toString().trim();
+				String ftemp = fees.getText().toString().trim();
+				int f =0;
+				if (ftemp.length()>0) {
+					f = Integer.parseInt(ftemp);
+				}
+				
 				
 				Calendar c = Calendar.getInstance();
 
@@ -72,6 +84,7 @@ public class CaseSummaryFragment extends DialogFragment {
 				cv.put(DatabaseConstants.CaseSummary.ID, s);
 				cv.put(DatabaseConstants.CaseSummary.PROCESS, p);
 				cv.put(DatabaseConstants.CaseSummary.NOTES, n);
+				cv.put(DatabaseConstants.CaseSummary.FEES, f);
 				cv.put(DatabaseConstants.CaseSummary.DATE, formattedDate);
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
@@ -86,6 +99,7 @@ public class CaseSummaryFragment extends DialogFragment {
 
 					pdc.setCsProcess(p);
 					pdc.setCsNote(n);
+					pdc.setCsFees(f);
 				}
 
 				

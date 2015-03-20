@@ -282,6 +282,7 @@ public class DatabaseConstants {
 		public static final String ID ="id";
 		public static final String PROCESS = "casesummary";
 		public static final String NOTES = "notes";
+		public static final String FEES ="fees";
 		public static final String DATE = "date";
 	}
 	
@@ -291,6 +292,7 @@ public class DatabaseConstants {
 			+ CaseSummary.ID + " INTEGER, "
 			+ CaseSummary.PROCESS + " VARACHAR, "
 			+ CaseSummary.NOTES + " VARACHAR, "
+			+ CaseSummary.FEES + " INTEGER, "
 			+ CaseSummary.DATE + " VARACHAR);" ;
 	
 	/****************************************************************************************/
