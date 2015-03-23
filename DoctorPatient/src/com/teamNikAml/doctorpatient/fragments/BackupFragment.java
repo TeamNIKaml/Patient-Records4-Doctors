@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.teamNikAml.doctorpatient.activity.R;
+import com.teamNikAml.doctorpatient.database.DatabaseConfig;
 
 
 /*import com.google.android.gms.common.ConnectionResult;
@@ -32,28 +33,43 @@ public class BackupFragment extends Fragment {
 				false);
 
 		try {
+			
+			System.out.println("dfsdfsddsds");
+			
 	        File sd = Environment.getExternalStorageDirectory();
 	        File data = Environment.getDataDirectory();
 
-	        if (data.canWrite()) {
-	            String currentDBPath = "//data//"+ "com.teamNikAml.doctorpatient.activity" +"//databases//"+"PatientRecordsDatabase";
-	            String backupDBPath = "DatabaseBackup";
-	            File currentDB = new File(data, currentDBPath);
-	            File backupDB = new File(data, backupDBPath);
+	     
+	            File currentDBPath = getActivity().getApplicationContext().getDatabasePath("PatientRecordsDatabase");
+	            
+	            File backupDBPath ;
+	            backupDBPath = new File(getActivity().getApplicationContext().getFilesDir() + "/" + "DatabaseBackup" );
+	    		
+	            
+	            
+	            
+	            System.out.println(currentDBPath.getPath());
+	          
+	            //File currentDB = new File(data, currentDBPath);
+	           // File backupDB = new File(data, backupDBPath);
 
-	            if (currentDB.exists()) {
-	                FileInputStream fileInputStream = new FileInputStream(currentDB);
+	            if (currentDBPath.exists()) {
+	                FileInputStream fileInputStream = new FileInputStream(currentDBPath);
 					FileChannel src = fileInputStream.getChannel();
-	                FileOutputStream fileOutputStream = new FileOutputStream(backupDB);
+	                FileOutputStream fileOutputStream = new FileOutputStream(backupDBPath);
 					FileChannel dst = fileOutputStream.getChannel();
 	                dst.transferFrom(src, 0, src.size());
 	                src.close();
 	                dst.close();
+	                
+	                System.out.println(backupDBPath.getPath());
 	                fileInputStream.close();
 	                fileOutputStream.close();
-	            }
+	           
 	        }
 	    } catch (Exception e) {
+	    	
+	    	e.printStackTrace();
 	    }
 		return rootView;
 	}
