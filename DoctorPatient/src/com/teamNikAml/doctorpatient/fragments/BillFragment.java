@@ -69,7 +69,6 @@ public class BillFragment extends Fragment {
 							 temp = "%-0";
 						}
 						adapterList.add(heading[i]+"  "+fetchDataByMonth(temp+(i+1)+"-"+year));
-						System.out.println(temp+(i+1)+"-"+year);
 					}
 				}
 				listAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), R.layout.patient_list_view,

@@ -1,7 +1,6 @@
 package com.teamNikAml.doctorpatient.fragments;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -44,14 +43,12 @@ public class ManagementFragment extends Fragment {
 		    "July", "August", "September", "October", "November", "December"};
 
 	private double[] x = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-	private double[] income = { 2000, 2500, 2700, 3000, 2800, 3500, 1001, 2500, 3700, 2000, 2300, 2500 };
-
-	private double[] expense = { 1001, 2500, 3700, 2000, 2300, 2500, 2000, 2500, 2700, 3000, 2800, 3500 };
 	
 	private String[] month = new String[12];
 	private String[] year = new String[12];	
 	private double[] newPatient = new double[12];
 	private double[] noOfVisits = new double[12];	
+	private double[] incomeByMonth = new double[12];
 
 	IDatabaseUtility database;
 	@Override
@@ -63,7 +60,7 @@ public class ManagementFragment extends Fragment {
 		Calendar cal = Calendar.getInstance();
 		int monthvalue = cal.get(Calendar.MONTH);
 		int yearvalue = cal.get(Calendar.YEAR);
-		int temp=monthvalue,j=11;
+		int temp = monthvalue, j = 11;
 		for (int i = 0; i < 12; i++) {
 
 			month[j] = heading[temp];
@@ -75,9 +72,10 @@ public class ManagementFragment extends Fragment {
 			}else{
 				where = where+(temp+1)+"-"+yearvalue;
 			}
-			System.out.println(where);
+			
 			newPatient[j]=getNewPatientCount(where);
 			noOfVisits[j]=getPatientVisitCount(where);
+			incomeByMonth[j]=getIncomeByMonth(where);
 			
 			if (temp==0) {
 				temp=12;
@@ -85,13 +83,6 @@ public class ManagementFragment extends Fragment {
 			}
 			j--; temp--;
 		}
-		for (int i = 11; i >=0; i--) {
-			System.out.println(newPatient[i]);
-		}
-		for (int i = 11; i >=0; i--) {
-			System.out.println(noOfVisits[i]);
-		}
-		
 
 		
 		View rootView = inflater.inflate(R.layout.fragment_graph_container,
@@ -115,7 +106,7 @@ public class ManagementFragment extends Fragment {
 		
 		valueList.add("New Patient");
 		valueList.add("Appointment");
-		valueList.add("Income vs Expense");
+		valueList.add("Income");
 
 		graphAdaptor = new ArrayAdapter<String>(getActivity()
 				.getApplicationContext(), R.layout.spinnertext, graphList);
@@ -194,11 +185,9 @@ public class ManagementFragment extends Fragment {
 		}
 
 		else {
-			double[] value = { 16528, 13234 };
-			String[] pieName = { "Income", "Expense" };
 
-			pieGraphFragment.setPieChartValues(value);
-			pieGraphFragment.setPieFragmenttName(pieName);
+			pieGraphFragment.setPieChartValues(incomeByMonth);
+			pieGraphFragment.setPieFragmenttName(month);
 
 		}
 
@@ -241,19 +230,12 @@ public class ManagementFragment extends Fragment {
 		else {
 
 			barGraphFragment.setxHeading(month);
-			barGraphFragment.setyValue(newPatient);
+			barGraphFragment.setyValue(incomeByMonth);
 
 			barGraphFragment.SeriesAdd(name);
 			barGraphFragment.SeriesRendererAdd(Color.BLUE, true);
 			barGraphFragment.MultipleSeriesRendererInit(
 					Color.argb(100, 50, 50, 50), Color.BLUE);
-			barGraphFragment.MultipleSeriesRendererAdd();
-
-			barGraphFragment.setxHeading(month);
-			barGraphFragment.setyValue(noOfVisits);
-
-			barGraphFragment.SeriesAdd(name);
-			barGraphFragment.SeriesRendererAdd(Color.GREEN, true);
 			barGraphFragment.MultipleSeriesRendererAdd();
 
 		}
@@ -294,19 +276,13 @@ public class ManagementFragment extends Fragment {
 		else {
 
 			lineGraphFragment.setxValue(x);
-			lineGraphFragment.setyValue(newPatient);
+			lineGraphFragment.setyValue(incomeByMonth);
 			lineGraphFragment.setxHeading(month);
 
 			lineGraphFragment.SeriesAdd(name);
 			lineGraphFragment.SeriesRendererAdd(Color.BLUE, true);
 			lineGraphFragment.MultipleSeriesRendererInit(
 					Color.argb(100, 50, 50, 50), Color.WHITE);
-			lineGraphFragment.MultipleSeriesRendererAdd();
-
-			lineGraphFragment.setyValue(noOfVisits);
-
-			lineGraphFragment.SeriesAdd("expense");
-			lineGraphFragment.SeriesRendererAdd(Color.GREEN, true);
 			lineGraphFragment.MultipleSeriesRendererAdd();
 
 		}
@@ -352,7 +328,6 @@ public class ManagementFragment extends Fragment {
 			if (cursor.moveToFirst()) {
 			    count= cursor.getInt(0);
 			}
-			System.out.println("cursor is not null");
 		    cursor.close();
 		}
 		return count;
@@ -372,7 +347,27 @@ public class ManagementFragment extends Fragment {
 			if (cursor.moveToFirst()) {
 			    count= cursor.getInt(0);
 			}
-			System.out.println("cursor is not null");
+		    cursor.close();
+		}
+		return count;
+	}
+	
+	int getIncomeByMonth(String str){
+		Cursor cursor = null;
+		try{
+			 cursor = database.rawQuery("SELECT "+DatabaseConstants.CaseSummary.FEES+" FROM " + DatabaseConstants.TABLE_CASESUMMARY + " WHERE " 
+						+ DatabaseConstants.PatientDetailTable.DATE + " LIKE ?", new String[] { str });
+		}catch(Exception e){
+
+		}
+		int count = 0;
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					count = count + cursor.getInt(0);
+
+				} while (cursor.moveToNext());
+			}
 		    cursor.close();
 		}
 		return count;
