@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.teamNikAml.doctorpatient.activity.R;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 
 public class BackupFragment extends Fragment {
 
@@ -54,12 +55,8 @@ public class BackupFragment extends Fragment {
 	    }
 		
 		
-		Calendar cal = Calendar.getInstance();
-        Date currentLocalTime = cal.getTime();
-        SimpleDateFormat date = new SimpleDateFormat("HH:mm"); 
-        String localTime = date.format(currentLocalTime); 
-        System.out.println(localTime);
-		
+        System.out.println(new GeneralClass().getCurrentDate());
+        System.out.println(new GeneralClass().getCurrentTime());
 		return rootView;
 	}
 

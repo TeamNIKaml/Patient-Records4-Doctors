@@ -18,6 +18,7 @@ public class DatabaseConstants {
 		public static final String CONTACTNO = "contactno";
 		public static final String OTHERNOTES = "othernotes";
 		public static final String DATE = "date";
+	    public static final String TIME = "time";
 	}
 
 	public static final	String CREATE_TABLE_PATIENTDETAIL = 
@@ -29,7 +30,8 @@ public class DatabaseConstants {
 			+ PatientDetailTable.EMAIL + " VARACHAR, "
 			+ PatientDetailTable.CONTACTNO + " VARACHAR, "
 			+ PatientDetailTable.OTHERNOTES + " VARACHAR, "
-			+ PatientDetailTable.DATE + " VARACHAR);" ;
+			+ PatientDetailTable.DATE + " VARACHAR, "
+			+ PatientDetailTable.TIME + " VARACHAR);" ;
 	
 	/************************************************************************************/
 
@@ -41,6 +43,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "chiefcomplaint";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_CHIEFCOMPLAINT = 
@@ -49,7 +52,8 @@ public class DatabaseConstants {
 			+ ChiefComplaint.ID + " INTEGER, "
 			+ ChiefComplaint.PROCESS + " VARACHAR, "
 			+ ChiefComplaint.NOTES + " VARACHAR, "
-			+ ChiefComplaint.DATE + " VARACHAR);" ;
+			+ ChiefComplaint.DATE + " VARACHAR, "
+			+ ChiefComplaint.TIME + " VARACHAR);" ;
 	
 	
 	/************************************************************************************/
@@ -62,6 +66,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "historyofthepresentillness";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_HISTORYOFTHEPRESENTILLNESS = 
@@ -70,7 +75,8 @@ public class DatabaseConstants {
 			+ HistoryOfThePresentIllness.ID + " INTEGER, "
 			+ HistoryOfThePresentIllness.PROCESS + " VARACHAR, "
 			+ HistoryOfThePresentIllness.NOTES + " VARACHAR, "
-			+ HistoryOfThePresentIllness.DATE + " VARACHAR);" ;
+			+ HistoryOfThePresentIllness.DATE + " VARACHAR, "
+			+ HistoryOfThePresentIllness.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -82,6 +88,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "pastmedicalhistory";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_PASTMEDICALHISTORY = 
@@ -90,7 +97,8 @@ public class DatabaseConstants {
 			+ PastMedicalHistory.ID + " INTEGER UNIQUE NOT NULL, "
 			+ PastMedicalHistory.PROCESS + " VARACHAR, "
 			+ PastMedicalHistory.NOTES + " VARACHAR, "
-			+ PastMedicalHistory.DATE + " VARACHAR);" ;
+			+ PastMedicalHistory.DATE + " VARACHAR, "
+			+ PastMedicalHistory.TIME + " VARACHAR);" ;
 	
 	/**************************************************************************************/
 	
@@ -102,6 +110,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "currentmedications";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_CURRENTMEDICATIONS = 
@@ -110,7 +119,8 @@ public class DatabaseConstants {
 			+ CurrentMedications.ID + " INTEGER, "
 			+ CurrentMedications.PROCESS + " VARACHAR, "
 			+ CurrentMedications.NOTES + " VARACHAR, "
-			+ CurrentMedications.DATE + " VARACHAR);" ;
+			+ CurrentMedications.DATE + " VARACHAR, "
+			+ CurrentMedications.TIME + " VARACHAR);" ;
 	
 	/*************************************************************************************/
 	
@@ -122,6 +132,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "familydiseases";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_FAMILYDISEASES = 
@@ -130,7 +141,8 @@ public class DatabaseConstants {
 			+ FamilyDiseases.ID + " INTEGER UNIQUE NOT NULL, "
 			+ FamilyDiseases.PROCESS + " VARACHAR, "
 			+ FamilyDiseases.NOTES + " VARACHAR, "
-			+ FamilyDiseases.DATE + " VARACHAR);" ;
+			+ FamilyDiseases.DATE + " VARACHAR, "
+			+ FamilyDiseases.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -142,6 +154,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "physicalexamination";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_PHYSICALEXAMINATION = 
@@ -150,7 +163,8 @@ public class DatabaseConstants {
 			+ PhysicalExamination.ID + " INTEGER, "
 			+ PhysicalExamination.PROCESS + " VARACHAR, "
 			+ PhysicalExamination.NOTES + " VARACHAR, "
-			+ PhysicalExamination.DATE + " VARACHAR);" ;
+			+ PhysicalExamination.DATE + " VARACHAR, "
+			+ PhysicalExamination.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -162,6 +176,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "socialhistory";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_SOCIALHISTORY = 
@@ -170,7 +185,8 @@ public class DatabaseConstants {
 			+ SocialHistory.ID + " INTEGER UNIQUE NOT NULL, "
 			+ SocialHistory.PROCESS + " VARACHAR, "
 			+ SocialHistory.NOTES + " VARACHAR, "
-			+ SocialHistory.DATE + " VARACHAR);" ;
+			+ SocialHistory.DATE + " VARACHAR, "
+			+ SocialHistory.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -182,6 +198,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "allergies";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_ALLERGIES = 
@@ -190,7 +207,8 @@ public class DatabaseConstants {
 			+ Allergies.ID + " INTEGER UNIQUE NOT NULL, "
 			+ Allergies.PROCESS + " VARACHAR, "
 			+ Allergies.NOTES + " VARACHAR, "
-			+ Allergies.DATE + " VARACHAR);" ;
+			+ Allergies.DATE + " VARACHAR, "
+			+ Allergies.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -202,6 +220,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "investigationsandlabresults";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_INVESTIGATIONSANDLABRESULTS = 
@@ -210,7 +229,8 @@ public class DatabaseConstants {
 			+ InvestigationsAndLabResults.ID + " INTEGER, "
 			+ InvestigationsAndLabResults.PROCESS + " VARACHAR, "
 			+ InvestigationsAndLabResults.NOTES + " VARACHAR, "
-			+ InvestigationsAndLabResults.DATE + " VARACHAR);" ;
+			+ InvestigationsAndLabResults.DATE + " VARACHAR, "
+			+ InvestigationsAndLabResults.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -223,6 +243,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "provisionaldiagnosis";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_PROVISIONALDIAGNOSIS = 
@@ -231,7 +252,8 @@ public class DatabaseConstants {
 			+ ProvisionalDiagnosis.ID + " INTEGER, "
 			+ ProvisionalDiagnosis.PROCESS + " VARACHAR, "
 			+ ProvisionalDiagnosis.NOTES + " VARACHAR, "
-			+ ProvisionalDiagnosis.DATE + " VARACHAR);" ;
+			+ ProvisionalDiagnosis.DATE + " VARACHAR, "
+			+ ProvisionalDiagnosis.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -243,6 +265,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "systemexamination";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_SYSTEMEXAMINATION = 
@@ -251,7 +274,8 @@ public class DatabaseConstants {
 			+ SystemExamination.ID + " INTEGER, "
 			+ SystemExamination.PROCESS + " VARACHAR, "
 			+ SystemExamination.NOTES + " VARACHAR, "
-			+ SystemExamination.DATE + " VARACHAR);" ;
+			+ SystemExamination.DATE + " VARACHAR, "
+			+ SystemExamination.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -263,6 +287,7 @@ public class DatabaseConstants {
 		public static final String PROCESS = "differentialdiagnosis";
 		public static final String NOTES = "notes";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_DIFFERENTIALDIAGNOSIS = 
@@ -271,7 +296,8 @@ public class DatabaseConstants {
 			+ DifferentialDiagnosis.ID + " INTEGER, "
 			+ DifferentialDiagnosis.PROCESS + " VARACHAR, "
 			+ DifferentialDiagnosis.NOTES + " VARACHAR, "
-			+ DifferentialDiagnosis.DATE + " VARACHAR);" ;
+			+ DifferentialDiagnosis.DATE + " VARACHAR, "
+			+ DifferentialDiagnosis.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
@@ -284,6 +310,7 @@ public class DatabaseConstants {
 		public static final String NOTES = "notes";
 		public static final String FEES ="fees";
 		public static final String DATE = "date";
+		public static final String TIME = "time";
 	}
 	
 	public static final	String CREATE_TABLE_CASESUMMARY = 
@@ -293,10 +320,75 @@ public class DatabaseConstants {
 			+ CaseSummary.PROCESS + " VARACHAR, "
 			+ CaseSummary.NOTES + " VARACHAR, "
 			+ CaseSummary.FEES + " INTEGER, "
-			+ CaseSummary.DATE + " VARACHAR);" ;
+			+ CaseSummary.DATE + " VARACHAR, "
+			+ CaseSummary.TIME + " VARACHAR);" ;
 	
 	/****************************************************************************************/
 	
+	public static final String TABLE_REPORTBYDAY = "ReportByDay";
 	
+	public static class ReportByDay {
+		public static final String TID = "_id";
+		public static final String NEWPATIENTCOUNT ="newpatientcount";
+		public static final String APPOINTMENTCOUNT = "appointmentcount";
+		public static final String INCOME = "income";
+		public static final String DATE ="date";
+		public static final String MONTH = "month";
+		public static final String YEAR = "year";
+	}
+	
+	public static final	String CREATE_TABLE_REPORTBYDAY = 
+			"create table if not exists " + TABLE_REPORTBYDAY + " ( "
+			+ ReportByDay.TID + " INTEGER PRIMARY KEY, "
+			+ ReportByDay.NEWPATIENTCOUNT + " INTEGER, "
+			+ ReportByDay.APPOINTMENTCOUNT + " INTEGER, "
+			+ ReportByDay.INCOME + " INTEGER, "
+			+ ReportByDay.DATE + " VARACHAR, "
+			+ ReportByDay.MONTH + " INTEGER, "
+			+ ReportByDay.YEAR + " INTEGER);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_REPORTBYMONTH = "ReportByMonth";
+	
+	public static class ReportByMonth {
+		public static final String TID = "_id";
+		public static final String NEWPATIENTCOUNT ="newpatientcount";
+		public static final String APPOINTMENTCOUNT = "appointmentcount";
+		public static final String INCOME = "income";
+		public static final String MONTH = "month";
+		public static final String YEAR = "year";
+	}
+	
+	public static final	String CREATE_TABLE_REPORTBYMONTH = 
+			"create table if not exists " + TABLE_REPORTBYMONTH + " ( "
+			+ ReportByMonth.TID + " INTEGER PRIMARY KEY, "
+			+ ReportByMonth.NEWPATIENTCOUNT + " INTEGER, "
+			+ ReportByMonth.APPOINTMENTCOUNT + " INTEGER, "
+			+ ReportByMonth.INCOME + " INTEGER, "
+			+ ReportByMonth.MONTH + " INTEGER, "
+			+ ReportByMonth.YEAR + " INTEGER);" ;
+	
+	/****************************************************************************************/
+	
+	public static final String TABLE_REPORTBYYEAR = "ReportByYear";
+	
+	public static class ReportByYear {
+		public static final String TID = "_id";
+		public static final String NEWPATIENTCOUNT ="newpatientcount";
+		public static final String APPOINTMENTCOUNT = "appointmentcount";
+		public static final String INCOME = "income";
+		public static final String YEAR = "year";
+	}
+	
+	public static final	String CREATE_TABLE_REPORTBYYEAR = 
+			"create table if not exists " + TABLE_REPORTBYYEAR + " ( "
+			+ ReportByYear.TID + " INTEGER PRIMARY KEY, "
+			+ ReportByYear.NEWPATIENTCOUNT + " INTEGER, "
+			+ ReportByYear.APPOINTMENTCOUNT + " INTEGER, "
+			+ ReportByYear.INCOME + " INTEGER, "
+			+ ReportByYear.YEAR + " INTEGER);" ;
+	
+	/****************************************************************************************/
 	
 }
