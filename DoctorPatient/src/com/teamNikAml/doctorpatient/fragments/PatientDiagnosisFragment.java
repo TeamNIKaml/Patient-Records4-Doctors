@@ -45,8 +45,7 @@ public class PatientDiagnosisFragment extends Fragment {
 		
 		
 		b = getArguments();
-		String s = b.getString("patient_id");
-
+		
 		chiefComplaint.setOnClickListener(myListener);
 		historyOfIllness.setOnClickListener(myListener);
 		patientDetail.setOnClickListener(myListener);

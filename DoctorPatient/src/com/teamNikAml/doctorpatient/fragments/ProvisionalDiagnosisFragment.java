@@ -1,8 +1,5 @@
 package com.teamNikAml.doctorpatient.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -15,6 +12,7 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
@@ -61,10 +59,7 @@ public class ProvisionalDiagnosisFragment  extends DialogFragment {
 				String p = process.getText().toString().trim();
 				String n = note.getText().toString().trim();
 				
-				Calendar c = Calendar.getInstance();
-
-				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-				String formattedDate = df.format(c.getTime());
+				GeneralClass gc = myApp.getGeneralClass();
 	
 				Bundle b = getArguments();
 				String s = b.getString("patient_id");
@@ -73,7 +68,8 @@ public class ProvisionalDiagnosisFragment  extends DialogFragment {
 				cv.put(DatabaseConstants.ProvisionalDiagnosis.ID, s);
 				cv.put(DatabaseConstants.ProvisionalDiagnosis.PROCESS, p);
 				cv.put(DatabaseConstants.ProvisionalDiagnosis.NOTES, n);
-				cv.put(DatabaseConstants.ProvisionalDiagnosis.DATE, formattedDate);
+				cv.put(DatabaseConstants.ProvisionalDiagnosis.DATE, gc.getCurrentDate());
+				cv.put(DatabaseConstants.ProvisionalDiagnosis.TIME, gc.getCurrentTime());
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {

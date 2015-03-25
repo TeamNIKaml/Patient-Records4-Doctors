@@ -1,7 +1,5 @@
 package com.teamNikAml.doctorpatient.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -16,6 +14,7 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -70,17 +69,14 @@ public class FamilyDiseasesFragment extends DialogFragment {
 				String p = process.getText().toString().trim();
 				String n = note.getText().toString().trim();
 				
-				Calendar c = Calendar.getInstance();
-
-				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-				String formattedDate = df.format(c.getTime());
-	
+				GeneralClass gc = new GeneralClass();	
 				
 				ContentValues cv = new ContentValues();
 				cv.put(DatabaseConstants.FamilyDiseases.ID, s);
 				cv.put(DatabaseConstants.FamilyDiseases.PROCESS, p);
 				cv.put(DatabaseConstants.FamilyDiseases.NOTES, n);
-				cv.put(DatabaseConstants.FamilyDiseases.DATE, formattedDate);
+				cv.put(DatabaseConstants.FamilyDiseases.DATE, gc.getCurrentDate());
+				cv.put(DatabaseConstants.FamilyDiseases.TIME, gc.getCurrentTime());
 				
 				database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {

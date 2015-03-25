@@ -1,8 +1,5 @@
 package com.teamNikAml.doctorpatient.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -16,6 +13,7 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
@@ -69,17 +67,15 @@ public class AllergiesFragment extends DialogFragment {
 				// TODO Auto-generated method stub
 				String p = process.getText().toString().trim();
 				String n = note.getText().toString().trim();
-				
-				Calendar c = Calendar.getInstance();
 
-				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-				String formattedDate = df.format(c.getTime());
-	
+				GeneralClass gc = new GeneralClass();
+				
 				ContentValues cv = new ContentValues();
 				cv.put(DatabaseConstants.Allergies.ID, s);
 				cv.put(DatabaseConstants.Allergies.PROCESS, p);
 				cv.put(DatabaseConstants.Allergies.NOTES, n);
-				cv.put(DatabaseConstants.Allergies.DATE, formattedDate);
+				cv.put(DatabaseConstants.Allergies.DATE, gc.getCurrentDate());
+				cv.put(DatabaseConstants.Allergies.TIME, gc.getCurrentTime());
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {

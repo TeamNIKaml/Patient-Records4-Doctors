@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,9 +51,6 @@ public class BackupFragment extends Fragment {
 	    } catch (Exception e) {
 	    }
 		
-		
-        System.out.println(new GeneralClass().getCurrentDate());
-        System.out.println(new GeneralClass().getCurrentTime());
 		return rootView;
 	}
 

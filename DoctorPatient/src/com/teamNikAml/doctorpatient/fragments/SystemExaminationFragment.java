@@ -1,7 +1,5 @@
 package com.teamNikAml.doctorpatient.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -15,6 +13,7 @@ import android.widget.EditText;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
@@ -59,10 +58,7 @@ public class SystemExaminationFragment extends DialogFragment {
 				String p = process.getText().toString().trim();
 				String n = note.getText().toString().trim();
 				
-				Calendar c = Calendar.getInstance();
-
-				SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-				String formattedDate = df.format(c.getTime());
+				GeneralClass gc = myApp.getGeneralClass();
 	
 				Bundle b = getArguments();
 				String s = b.getString("patient_id");
@@ -71,7 +67,8 @@ public class SystemExaminationFragment extends DialogFragment {
 				cv.put(DatabaseConstants.SystemExamination.ID, s);
 				cv.put(DatabaseConstants.SystemExamination.PROCESS, p);
 				cv.put(DatabaseConstants.SystemExamination.NOTES, n);
-				cv.put(DatabaseConstants.SystemExamination.DATE, formattedDate);
+				cv.put(DatabaseConstants.SystemExamination.DATE, gc.getCurrentDate());
+				cv.put(DatabaseConstants.SystemExamination.TIME, gc.getCurrentTime());
 				
 				IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 				if (database != null) {

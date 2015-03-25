@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,9 +23,6 @@ import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
-import com.teamNikAml.doctorpatient.database.DatabaseConstants;
-import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
-import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 
 public class PatientFragment extends Fragment {
 
@@ -119,7 +115,8 @@ public class PatientFragment extends Fragment {
 				  if (pdc.getPatientId() != Integer.parseInt(pid)) {
 					pdc.reSetPatientCache();
 					pdc.setPatientId(Integer.parseInt(pid));
-				}
+					myApp.initializeGeneralClass();
+				  } 
 				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();

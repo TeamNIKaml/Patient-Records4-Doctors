@@ -1,7 +1,5 @@
 package com.teamNikAml.doctorpatient.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -18,6 +16,7 @@ import android.widget.Spinner;
 
 import com.teamNikAml.doctorpatient.activity.R;
 import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
@@ -56,10 +55,7 @@ public class NewPatientFragment extends Fragment {
 				
 				if (name.getText().toString().trim().length()>0) {
 					
-					Calendar c = Calendar.getInstance();
-
-					SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-					String formattedDate = df.format(c.getTime());
+					GeneralClass gc = new GeneralClass();
 					
 					ContentValues cv = new ContentValues();
 					cv.put(DatabaseConstants.PatientDetailTable.NAME, name
@@ -75,7 +71,9 @@ public class NewPatientFragment extends Fragment {
 					cv.put(DatabaseConstants.PatientDetailTable.OTHERNOTES,
 							othernotes.getText().toString().trim());
 					cv.put(DatabaseConstants.PatientDetailTable.DATE,
-							formattedDate);
+							gc.getCurrentDate());
+					cv.put(DatabaseConstants.PatientDetailTable.TIME,
+							gc.getCurrentTime());
 
 					IDatabaseUtility database = new PatientDetailAccess(getActivity().getApplicationContext(), null, null,0);
 					long id = 0;

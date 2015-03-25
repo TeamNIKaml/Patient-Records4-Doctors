@@ -13,6 +13,7 @@ public class MyApplication extends Application {
 
 	private ArrayList<String> nameArry = null;
 	private PatientDiagnosisCache patientdiagnosischache;
+	private GeneralClass generalClass;
 
 	@Override
 	public void onCreate() {
@@ -73,6 +74,11 @@ public class MyApplication extends Application {
 		this.patientdiagnosischache = new PatientDiagnosisCache();
 	}
 
-	
+	public void initializeGeneralClass(){
+		generalClass = new GeneralClass();
+	}
+	public GeneralClass getGeneralClass(){
+		return generalClass;
+	}
 	
 }
