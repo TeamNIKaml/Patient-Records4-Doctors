@@ -49,6 +49,7 @@ public class MyApplication extends Application {
 								+ temcursor.getString(0));
 
 					} while (temcursor.moveToNext());
+					temcursor.close();
 				}
 			}
 		};

@@ -15,5 +15,9 @@ public class GeneralClass {
     public String getCurrentTime(){
     	return time.format(c.getTime()); 
     }
+    
+    public void setCalender(Calendar c){
+    	this.c = c;
+    }
 
 }

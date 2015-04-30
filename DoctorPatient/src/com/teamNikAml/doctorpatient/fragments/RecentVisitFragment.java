@@ -48,12 +48,12 @@ public class RecentVisitFragment extends DialogFragment{
 		s = b.getString("patient_id");
 		if (database != null) {
 			temcursor = database.query(DatabaseConstants.TABLE_CASESUMMARY, new String[] {
-							DatabaseConstants.CaseSummary.DATE,DatabaseConstants.CaseSummary.PROCESS },"id=?" ,new String[]{s}, null, null, null);
+							DatabaseConstants.CaseSummary.DATE,DatabaseConstants.CaseSummary.PROCESS,DatabaseConstants.CaseSummary.TIME },"id=?" ,new String[]{s}, null, null, null);
 		}
 
 		if (temcursor.moveToFirst()) {
 			do {
-				dateArry.add(temcursor.getString(0) + "# " + temcursor.getString(1));
+				dateArry.add(temcursor.getString(0) + "# " +temcursor.getString(2)+"@"+ temcursor.getString(1));
 
 			} while (temcursor.moveToNext());
 		}
@@ -74,7 +74,9 @@ public class RecentVisitFragment extends DialogFragment{
 				  String item =  ((TextView)arg1.findViewById(id.textView_patient_listview)).getText().toString();
 				  Bundle args = new Bundle();
 				  int i = item.indexOf('#');
+				  int j = item.indexOf('@');
 				  args.putString("date",item.substring(0, i)); 
+				  args.putString("time", item.substring(i+2, j));
 				  args.putString("patient_id",s); 
 
 				  DialogFragment dialog = new PatientVisitDetailFragment();

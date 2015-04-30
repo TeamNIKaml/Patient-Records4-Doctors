@@ -2,6 +2,11 @@ package com.teamNikAml.doctorpatient.fragments;
 
 import java.util.ArrayList;
 
+import com.teamNikAml.doctorpatient.activity.R;
+import com.teamNikAml.doctorpatient.activity.R.id;
+import com.teamNikAml.doctorpatient.application.MyApplication;
+import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
+
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -9,55 +14,29 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
-import com.teamNikAml.doctorpatient.activity.R;
-import com.teamNikAml.doctorpatient.activity.R.id;
-import com.teamNikAml.doctorpatient.application.MyApplication;
-import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
-
-public class PatientFragment extends Fragment {
+public class OldAppointmentFragment extends Fragment {
 
 	private EditText searchView;
 	private ListView listView;
 	private ArrayAdapter<String> adapter;
-	private Button button;
-
 	private ArrayList<String> nameArry = null;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
-		View rootView = inflater.inflate(R.layout.fragment_patients, container,
+		// TODO Auto-generated method stub
+		View rootView = inflater.inflate(R.layout.layout_with_listview_search, container,
 				false);
 
 		searchView = (EditText) rootView.findViewById(R.id.editText_search);
 		listView = (ListView) rootView.findViewById(R.id.list_patientName);
-		button = (Button) rootView.findViewById(id.button_newPatient);
-
-		button.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				FragmentTransaction t = getActivity().getFragmentManager()
-						.beginTransaction();
-				Fragment mFrag = new NewPatientFragment();
-				t.replace(R.id.frame_container, mFrag);
-				//t.addToBackStack(null);
-				t.commit();
-			}
-		});
-
 		
 		MyApplication myApp = (MyApplication) getActivity().getApplication();
 		nameArry = myApp.getPatientNamesWithId();
@@ -112,15 +91,15 @@ public class PatientFragment extends Fragment {
 					
 				  MyApplication myApp = (MyApplication) getActivity().getApplication();
 				  PatientDiagnosisCache pdc = myApp.getPatientdiagnosischache();
-				  if (pdc.getPatientId() != Integer.parseInt(pid)) {
+				 
 					pdc.reSetPatientCache();
 					pdc.setPatientId(Integer.parseInt(pid));
 					myApp.initializeGeneralClass();
-				  } 
+				   
 				
 				FragmentTransaction t = getActivity().getFragmentManager()
 						.beginTransaction();
-				Fragment mFrag = new PatientDiagnosisFragment();
+				Fragment mFrag = new OldDiagnosis();
 				mFrag.setArguments(args);
 				t.replace(R.id.frame_container, mFrag);
 				//t.addToBackStack(null);
@@ -128,7 +107,10 @@ public class PatientFragment extends Fragment {
 
 			}
 		});
-
+		
 		return rootView;
 	}
+	
+	
+
 }

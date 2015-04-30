@@ -1,0 +1,311 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_new_patient"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*"
+    android:weightSum="100" >
+
+    <TableRow
+        android:id="@+id/tableRow_search1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="12"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/button_datepicker"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="20"
+                android:background="@drawable/button_small"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="Set Date"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_medical_history"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="20"
+                android:background="@drawable/button_small"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/medicalHistory"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_family_history"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="20"
+                android:background="@drawable/button_small"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/family_history"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_social_history"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="20"
+                android:background="@drawable/button_small"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/social_history"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_allergies"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="20"
+                android:background="@drawable/button_small"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/allergies"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow_search2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="22"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/button_chief_complaints"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="35"
+                android:background="@drawable/button_large"
+                android:drawableLeft="@drawable/ic_chief_complaint"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/chiefComplaint"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_history_of_illness"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="65"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/history_of_illness_hpc"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow_search3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="22"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:orientation="horizontal"
+            android:weightSum="120" >
+
+            <Button
+                android:id="@+id/button_current_medications"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/current_medications"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_physical_examination"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/physical_examination"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_system_examination"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/sytemExamination"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow_search4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="22"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:orientation="horizontal"
+            android:weightSum="120" >
+
+            <Button
+                android:id="@+id/button_differential_diagnosis"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/differential_diagnosis"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_provisional_diagnosis"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/provisionalDiagnosis"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_laboratory_results"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="40"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/laboratory_results"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow_search5"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="22"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/button_view_patient_history"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="65"
+                android:background="@drawable/button_medium"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/recentvisit"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+
+            <Button
+                android:id="@+id/button_case_summary"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+                android:layout_weight="35"
+                android:background="@drawable/button_large"
+                android:gravity="center"
+                android:padding="@dimen/padding"
+                android:text="@string/case_summary"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textSize_button_diagnosis" />
+        </LinearLayout>
+    </TableRow>
+
+</TableLayout>

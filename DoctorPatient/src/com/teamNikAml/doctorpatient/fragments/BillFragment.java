@@ -57,7 +57,11 @@ public class BillFragment extends Fragment {
 						mon = "0"+month;
 					}
 					for (int i = c.get(Calendar.DAY_OF_MONTH); i > 0; i--) {
-						adapterList.add(fetchDataByDay(i+"-"+mon+"-"+year));
+						String day =String.valueOf(i);
+						if (i<10) {
+							day = "0"+i;
+						}
+						adapterList.add(fetchDataByDay(day+"-"+mon+"-"+year));
 					}
 
 				} else {

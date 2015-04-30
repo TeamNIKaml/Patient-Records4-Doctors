@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +17,7 @@ import com.teamNikAml.doctorpatient.application.GeneralClass;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
 import com.teamNikAml.doctorpatient.database.DatabaseConstants;
+import com.teamNikAml.doctorpatient.database.DatabaseConstants.ReportByDay;
 import com.teamNikAml.doctorpatient.database.IDatabaseUtility;
 import com.teamNikAml.doctorpatient.database.PatientDetailAccess;
 
@@ -87,8 +89,12 @@ public class CaseSummaryFragment extends DialogFragment {
 				if (database != null) {
 					long rowid = pdc.getStatusFlagcs();
 					if (rowid==0) {
-						 rowid = database.insert(DatabaseConstants.TABLE_CASESUMMARY, null, cv);
+						rowid = database.insert(DatabaseConstants.TABLE_CASESUMMARY, null, cv);
 						pdc.setStatusFlagcs(rowid);
+						
+/*						String selectQuery = "SELECT * FROM " +  DatabaseConstants.TABLE_REPORTBYDAY + " WHERE "
+						+ ReportByDay.TID + "= (SELECT MAX("+ ReportByDay.TID +")  FROM "+DatabaseConstants.TABLE_REPORTBYDAY+")";
+						Cursor cc = database.rawQuery(selectQuery, null);*/
 					} else {
 						database.update(DatabaseConstants.TABLE_CASESUMMARY, cv, "_id=?", new String[]{String.valueOf(rowid)});
 					}

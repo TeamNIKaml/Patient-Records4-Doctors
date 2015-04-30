@@ -7,7 +7,7 @@ public class DatabaseConstants {
 	
 	/*********************************************************************************/
 	
-	public static final String TABLE_PATIENTDETAIL = "PatientDetailTable";
+	public static final String TABLE_PATIENTDETAIL = "PatientDetail";
 
 	public static class PatientDetailTable {
 		public static final String ID = "_id";
@@ -35,7 +35,7 @@ public class DatabaseConstants {
 	
 	/************************************************************************************/
 
-	public static final String TABLE_CHIEFCOMPLAINT = "ChiefComplaintTable";
+	public static final String TABLE_CHIEFCOMPLAINT = "ChiefComplaint";
 	
 	public static class ChiefComplaint {
 		public static final String TID = "_id";

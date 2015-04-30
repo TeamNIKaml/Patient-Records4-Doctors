@@ -69,6 +69,4 @@ public class DatabaseConfig extends SQLiteOpenHelper{
 		prdDataBase.close();
 	}
 
-
-
 }

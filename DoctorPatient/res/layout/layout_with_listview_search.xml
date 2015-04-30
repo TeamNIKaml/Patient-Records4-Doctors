@@ -1,0 +1,30 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
+    <TableRow android:layout_weight="10" >
+
+        <EditText
+            android:id="@+id/editText_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/new_patient_reg_margin_left"
+            android:layout_marginRight="@dimen/new_patient_reg_margin_right"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/ic_search"
+            android:hint="@string/name"
+            android:padding="@dimen/padding" />
+    </TableRow>
+
+    <TableRow android:layout_weight="90" >
+
+        <ListView
+            android:id="@+id/list_patientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </TableRow>
+
+</TableLayout>

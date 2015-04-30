@@ -53,6 +53,6 @@ public class PatientDetailAccess extends DatabaseConfig implements IDatabaseUtil
 		return prdDataBase.insertWithOnConflict(table, nullColumnHack, initialValues, conflictAlgorithm);
 	}
 
-
+	
 
 }
