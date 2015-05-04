@@ -17,9 +17,9 @@
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_patient</item>
-        <item>@drawable/ic_appointment</item>
-        <item>@drawable/ic_bills</item>
+        <item>@drawable/patient</item>
+        <item>@drawable/income</item>
+        <item>@drawable/ic_graph</item>
         <item>@drawable/ic_backup</item>
        
     </array>
