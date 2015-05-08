@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -151,7 +152,10 @@ public class MainActivity extends Activity {
 		}
 		// Handle action bar actions click
 		switch (item.getItemId()) {
-		case R.id.action_settings:
+		case R.id.menu_about_us:
+		Intent intent = new Intent(this,AboutUs.class);
+		startActivity(intent);
+			
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -165,7 +169,7 @@ public class MainActivity extends Activity {
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+		menu.findItem(R.id.menu_about_us).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 

@@ -64,5 +64,11 @@
     <string name="recentvisit">RECENT VISTS</string>
     <string name="caseSummary">Case Summary</string>
     <string name="family_diseases">Family Diseases</string>
+    
+     <string name="aboutus">About Us</string>   
+      <string name="nikhil">Nikhil Vijayakumar</string>   
+       <string name="amal">Amaldev T.A.</string> 
+        <string name="develop">Developed by</string>  
+          <string name="blog">http://androidsourcecod.blogspot.in/2015/04/my-credentials-android-app.html</string>  
 
 </resources>

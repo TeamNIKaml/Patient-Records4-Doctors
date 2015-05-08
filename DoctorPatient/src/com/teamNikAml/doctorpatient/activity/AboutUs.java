@@ -1,4 +1,4 @@
-package com.teamNIKaml.reminder.activity;
+package com.teamNikAml.doctorpatient.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
