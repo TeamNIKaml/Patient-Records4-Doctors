@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">24dp</dimen>
+    <dimen name="activity_vertical_margin">24dp</dimen>
+    
+    
+    
+    
+    <!-- Text size and padding -->
+    
+    
+    <dimen name="editText_radius">20dp</dimen>
+    <dimen name="button_radius">20dp</dimen>
+    <dimen name="textSize_edit_text">27sp</dimen>
+    <dimen name="textSize_button">33sp</dimen>
+    <dimen name="textSize_heading">39sp</dimen>
+    
+    
+    
+    <dimen name="textSize_list_data">24sp</dimen>
+    <dimen name="textSize_list_heading">33sp</dimen>
+    
+    
+    
+     <dimen name="textSize_button_diagnosis">24sp</dimen>
+    
+    
+    
+    
+    <dimen name="padding">5dp</dimen>
+    
+    
+    
+    <!-- Main -->
+     <dimen name="main_layout_width">360dp</dimen>
+      <dimen name="main_list_divider_height">3dp</dimen>
+      
+      
+     <!-- drawer_list -->
+      <dimen name="drawer_layout_width_image">38dp</dimen>
+       <dimen name="drawer_margin">18dp</dimen>
+         <dimen name="drawer_margin_small">12dp</dimen>
+          <dimen name="drawer_padding">60dp</dimen>
+     
+    
+    <!-- Fragment New Patient -->
+    
+    <dimen name="margin_top">24dp</dimen>
+    <dimen name="margin_left">24dp</dimen>
+    <dimen name="margin_right">24dp</dimen>
+    <dimen name="margin_left_button">210dp</dimen>
+     
+     
+     
+       <!-- Fragment New Patient reg -->
+    
+    <dimen name="new_patient_reg_margin_top">9dp</dimen>
+    <dimen name="new_patient_reg_margin_bottom">9dp</dimen>
+    <dimen name="new_patient_reg_margin_left">8dp</dimen>
+    <dimen name="new_patient_reg_margin_right">8dp</dimen>
+    
+    
+    
+    <!-- Spinner Text -->
+     <dimen name="spinner_text_padding">24dp</dimen>
+    
+  
+  
+
+</resources>

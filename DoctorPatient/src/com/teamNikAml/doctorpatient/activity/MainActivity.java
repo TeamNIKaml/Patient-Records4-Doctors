@@ -79,8 +79,7 @@ public class MainActivity extends Activity {
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons
 				.getResourceId(2, -1)));
 		// Communities, Will add a counter here
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
-				.getResourceId(3, -1)));
+		
 		
 
 		// Recycle the typed array
@@ -186,9 +185,7 @@ public class MainActivity extends Activity {
 		case 2:
 			fragment = new BillFragment();
 			break;
-		case 3:
-			fragment = new BackupFragment();
-			break;
+	
 	
 
 		default:
