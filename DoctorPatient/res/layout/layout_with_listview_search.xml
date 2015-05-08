@@ -15,7 +15,8 @@
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/ic_search"
             android:hint="@string/name"
-            android:padding="@dimen/padding" />
+            android:padding="@dimen/padding"
+               android:textSize="@dimen/textSize_edit_text" />
     </TableRow>
 
     <TableRow android:layout_weight="90" >

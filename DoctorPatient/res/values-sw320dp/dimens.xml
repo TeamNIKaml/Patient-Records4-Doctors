@@ -31,6 +31,19 @@
     <dimen name="padding">3dp</dimen>
     
     
+    
+    <!-- Main -->
+     <dimen name="main_layout_width">240dp</dimen>
+      <dimen name="main_list_divider_height">2dp</dimen>
+      
+      
+     <!-- drawer_list -->
+      <dimen name="drawer_layout_width_image">25dp</dimen>
+       <dimen name="drawer_margin">12dp</dimen>
+         <dimen name="drawer_margin_small">8dp</dimen>
+          <dimen name="drawer_padding">40dp</dimen>
+     
+    
     <!-- Fragment New Patient -->
     
     <dimen name="margin_top">16dp</dimen>
@@ -49,7 +62,8 @@
     
     
     
-    
+    <!-- Spinner Text -->
+     <dimen name="spinner_text_padding">16dp</dimen>
     
   
   

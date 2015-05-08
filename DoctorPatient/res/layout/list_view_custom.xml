@@ -11,7 +11,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white"
         android:textSize="@dimen/textSize_list_heading"
-        android:background="@android:color/holo_blue_dark" />
+        android:background="@android:color/holo_blue_dark" 
+        />
 
     <TextView
         android:id="@+id/textView_process_note"
@@ -20,6 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:textSize="@dimen/textSize_list_data" 
-        android:background="@android:color/white"/>
+        android:background="@android:color/white"
+           />
 
 </LinearLayout>

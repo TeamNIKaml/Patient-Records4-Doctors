@@ -6,12 +6,12 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="25dp"
+        android:layout_width="@dimen/drawer_layout_width_image"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="@dimen/drawer_margin"
+        android:layout_marginRight="@dimen/drawer_margin"
         android:contentDescription="@string/desc_list_item_icon"
         android:src="@drawable/ic_app_launcher" />
 
@@ -22,7 +22,7 @@
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
         android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:paddingRight="40dp"
+        android:paddingRight="@dimen/drawer_padding"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="@color/list_item_title" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="@dimen/drawer_margin_small"
         android:background="@drawable/counter_bg"
         android:textColor="@color/counter_text_color" />
 

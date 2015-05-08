@@ -29,7 +29,8 @@
                 android:background="@drawable/edit_text_background"
                 android:drawableLeft="@drawable/ic_search"
                 android:hint="@string/name"
-                android:padding="@dimen/padding" />
+                android:padding="@dimen/padding" 
+                   android:textSize="@dimen/textSize_edit_text"/>
 
             <Button
                 android:id="@+id/button_newPatient"
@@ -40,7 +41,8 @@
                 android:layout_weight="70"
                 android:background="@drawable/button"
                 android:padding="@dimen/padding"
-                android:text="@string/new_patient" />
+                android:text="@string/new_patient" 
+                   android:textSize="@dimen/textSize_edit_text"/>
         </LinearLayout>
     </TableRow>
 

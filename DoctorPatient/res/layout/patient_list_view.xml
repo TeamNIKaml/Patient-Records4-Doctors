@@ -9,6 +9,6 @@
         android:layout_height="25sp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/spinner_text_color"
-        android:textSize="16sp" />
+          android:textSize="@dimen/textSize_edit_text" />
 
 </RelativeLayout>

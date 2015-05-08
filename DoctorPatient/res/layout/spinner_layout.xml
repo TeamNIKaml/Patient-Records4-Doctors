@@ -9,6 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="30sp"
         android:textColor="@color/spinner_text_color"
-        android:textSize="15sp"/>
+           android:textSize="@dimen/textSize_edit_text"/>
 
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:singleLine="true"
     android:background="@drawable/spinner_selector"
     android:textColor="@color/button_text_color"
-    android:padding="16dp"
+    android:padding="@dimen/spinner_text_padding"
    
  />
 

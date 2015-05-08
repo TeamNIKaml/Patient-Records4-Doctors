@@ -1,10 +1,46 @@
 <resources>
 
-    <!--
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    -->
-    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">41dp</dimen>
+    <dimen name="activity_vertical_margin">41dp</dimen>
+
+    <!-- Text size and padding -->
+
+    <dimen name="editText_radius">33dp</dimen>
+    <dimen name="button_radius">33dp</dimen>
+    <dimen name="textSize_edit_text">46sp</dimen>
+    <dimen name="textSize_button">56sp</dimen>
+    <dimen name="textSize_heading">67sp</dimen>
+    <dimen name="textSize_list_data">41sp</dimen>
+    <dimen name="textSize_list_heading">56sp</dimen>
+    <dimen name="textSize_button_diagnosis">41sp</dimen>
+    <dimen name="padding">3dp</dimen>
+
+    <!-- Main -->
+    <dimen name="main_layout_width">615dp</dimen>
+    <dimen name="main_list_divider_height">6dp</dimen>
+
+    <!-- drawer_list -->
+    <dimen name="drawer_layout_width_image">64dp</dimen>
+    <dimen name="drawer_margin">31dp</dimen>
+    <dimen name="drawer_margin_small">21dp</dimen>
+    <dimen name="drawer_padding">103dp</dimen>
+
+    <!-- Fragment New Patient -->
+
+    <dimen name="margin_top">41dp</dimen>
+    <dimen name="margin_left">41dp</dimen>
+    <dimen name="margin_right">41dp</dimen>
+    <dimen name="margin_left_button">360dp</dimen>
+
+    <!-- Fragment New Patient reg -->
+
+    <dimen name="new_patient_reg_margin_top">15dp</dimen>
+    <dimen name="new_patient_reg_margin_bottom">15dp</dimen>
+    <dimen name="new_patient_reg_margin_left">12dp</dimen>
+    <dimen name="new_patient_reg_margin_right">12dp</dimen>
+
+    <!-- Spinner Text -->
+    <dimen name="spinner_text_padding">41dp</dimen>
 
 </resources>
