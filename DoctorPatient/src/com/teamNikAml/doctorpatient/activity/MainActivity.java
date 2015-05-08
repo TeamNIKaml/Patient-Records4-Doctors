@@ -20,10 +20,10 @@ import android.widget.ListView;
 import com.teamNikAml.doctorpatient.adaptor.NavDrawerListAdapter;
 import com.teamNikAml.doctorpatient.application.MyApplication;
 import com.teamNikAml.doctorpatient.application.PatientDiagnosisCache;
-import com.teamNikAml.doctorpatient.fragments.BackupFragment;
 import com.teamNikAml.doctorpatient.fragments.BillFragment;
 import com.teamNikAml.doctorpatient.fragments.ManagementFragment;
 import com.teamNikAml.doctorpatient.fragments.PatientFragment;
+import com.teamNikAml.doctorpatient.model.AppRater;
 import com.teamNikAml.doctorpatient.model.NavDrawerItem;
 
 public class MainActivity extends Activity {
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		AppRater.app_launched(this);
 		MyApplication myApp = (MyApplication) getApplication();
 		PatientDiagnosisCache pdc = myApp.getPatientdiagnosischache();
 		pdc.reSetPatientCache();
