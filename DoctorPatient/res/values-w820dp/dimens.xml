@@ -43,4 +43,12 @@
     <!-- Spinner Text -->
     <dimen name="spinner_text_padding">41dp</dimen>
 
+    <!-- about us potrait -->
+
+    <dimen name="add_password_margin_top">26dp</dimen>
+
+    <!-- about us Landscape -->
+    <dimen name="about_margin_left">1030dp</dimen>
+    <dimen name="about_margin_right">1030dp</dimen>
+
 </resources>
