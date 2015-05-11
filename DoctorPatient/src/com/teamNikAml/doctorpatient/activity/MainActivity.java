@@ -147,21 +147,26 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		
+		switch (item.getItemId()) {
+		case R.id.menu_about_us:
+	startActivity(new Intent(getApplicationContext(), AboutUs.class));
+	break;
+case R.id.menu_other_apps:
+	startActivity(new Intent(
+			Intent.ACTION_VIEW,
+			Uri.parse("http://play.google.com/store/search?q=pub:Nikhil Vijayakumar")));
+
+}
+		
+		
 		// toggle nav drawer on selecting action bar app icon/title
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
 		// Handle action bar actions click
-		switch (item.getItemId()) {
-				case R.id.menu_about_us:
-			startActivity(new Intent(getApplicationContext(), AboutUs.class));
-			break;
-		case R.id.menu_other_apps:
-			startActivity(new Intent(
-					Intent.ACTION_VIEW,
-					Uri.parse("http://play.google.com/store/search?q=pub:Nikhil Vijayakumar")));
-
-		}
+		
 		return super.onOptionsItemSelected(item);	
 	}
 
