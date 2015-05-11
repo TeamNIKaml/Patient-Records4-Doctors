@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -152,14 +153,16 @@ public class MainActivity extends Activity {
 		}
 		// Handle action bar actions click
 		switch (item.getItemId()) {
-		case R.id.menu_about_us:
-		Intent intent = new Intent(this,AboutUs.class);
-		startActivity(intent);
-			
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
+				case R.id.menu_about_us:
+			startActivity(new Intent(getApplicationContext(), AboutUs.class));
+			break;
+		case R.id.menu_other_apps:
+			startActivity(new Intent(
+					Intent.ACTION_VIEW,
+					Uri.parse("http://play.google.com/store/search?q=pub:Nikhil Vijayakumar")));
+
 		}
+		return super.onOptionsItemSelected(item);	
 	}
 
 	/* *
