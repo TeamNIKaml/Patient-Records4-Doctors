@@ -192,16 +192,15 @@ case R.id.menu_other_apps:
 			fragment = new PatientFragment();
 			break;
 		case 1:
-			fragment = new ManagementFragment();
+			fragment = new BillFragment();
 			break;
 		case 2:
-			fragment = new BillFragment();
+			fragment = new ManagementFragment();
 			break;
 	
 	
 
-		default:
-			break;
+		
 		}
 
 		if (fragment != null) {
