@@ -1,7 +1,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="100" >
+    >
 
     <TableRow
         android:id="@+id/tableRow_search1"
@@ -48,18 +48,26 @@
 
     <TableRow
         android:id="@+id/tableRow_search2"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="10"
-        android:gravity="center_horizontal"
-        android:weightSum="100" >
+          android:gravity="left"
+        >
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/new_patient_reg_margin_bottom"
+            android:layout_marginTop="@dimen/new_patient_reg_margin_top"
+             android:orientation="horizontal"
+           >
 
         <ListView
             
             android:id="@+id/list_patientName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="100" />
+            />
+          </LinearLayout>
     </TableRow>
 
 </TableLayout>

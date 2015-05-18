@@ -8,13 +8,13 @@
 
     <dimen name="editText_radius">24dp</dimen>
     <dimen name="button_radius">24dp</dimen>
-    <dimen name="textSize_edit_text">34sp</dimen>
-    <dimen name="textSize_button">41sp</dimen>
-    <dimen name="textSize_heading">49sp</dimen>
+    <dimen name="textSize_edit_text">30sp</dimen>
+    <dimen name="textSize_button">34sp</dimen>
+    <dimen name="textSize_heading">34sp</dimen>
     <dimen name="textSize_list_data">30sp</dimen>
-    <dimen name="textSize_list_heading">41sp</dimen>
+    <dimen name="textSize_list_heading">34sp</dimen>
     <dimen name="textSize_button_diagnosis">30sp</dimen>
-    <dimen name="padding">6dp</dimen>
+    <dimen name="padding">8dp</dimen>
 
     <!-- Main -->
     <dimen name="main_layout_width">450dp</dimen>
@@ -37,8 +37,8 @@
 
     <dimen name="new_patient_reg_margin_top">11dp</dimen>
     <dimen name="new_patient_reg_margin_bottom">11dp</dimen>
-    <dimen name="new_patient_reg_margin_left">9dp</dimen>
-    <dimen name="new_patient_reg_margin_right">9dp</dimen>
+    <dimen name="new_patient_reg_margin_left">10dp</dimen>
+    <dimen name="new_patient_reg_margin_right">10dp</dimen>
 
     <!-- Spinner Text -->
     <dimen name="spinner_text_padding">30dp</dimen>

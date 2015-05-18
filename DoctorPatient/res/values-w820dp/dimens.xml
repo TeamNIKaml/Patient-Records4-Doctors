@@ -8,37 +8,37 @@
 
     <dimen name="editText_radius">33dp</dimen>
     <dimen name="button_radius">33dp</dimen>
-    <dimen name="textSize_edit_text">46sp</dimen>
-    <dimen name="textSize_button">56sp</dimen>
-    <dimen name="textSize_heading">67sp</dimen>
+    <dimen name="textSize_edit_text">41sp</dimen>
+    <dimen name="textSize_button">46sp</dimen>
+    <dimen name="textSize_heading">46sp</dimen>
     <dimen name="textSize_list_data">41sp</dimen>
-    <dimen name="textSize_list_heading">56sp</dimen>
+    <dimen name="textSize_list_heading">46sp</dimen>
     <dimen name="textSize_button_diagnosis">41sp</dimen>
-    <dimen name="padding">3dp</dimen>
+    <dimen name="padding">8dp</dimen>
 
     <!-- Main -->
     <dimen name="main_layout_width">615dp</dimen>
-    <dimen name="main_list_divider_height">6dp</dimen>
+    <dimen name="main_list_divider_height">5dp</dimen>
 
     <!-- drawer_list -->
     <dimen name="drawer_layout_width_image">64dp</dimen>
     <dimen name="drawer_margin">31dp</dimen>
-    <dimen name="drawer_margin_small">21dp</dimen>
-    <dimen name="drawer_padding">103dp</dimen>
+    <dimen name="drawer_margin_small">18dp</dimen>
+    <dimen name="drawer_padding">90dp</dimen>
 
     <!-- Fragment New Patient -->
 
     <dimen name="margin_top">41dp</dimen>
     <dimen name="margin_left">41dp</dimen>
     <dimen name="margin_right">41dp</dimen>
-    <dimen name="margin_left_button">360dp</dimen>
+    <dimen name="margin_left_button">359dp</dimen>
 
     <!-- Fragment New Patient reg -->
 
     <dimen name="new_patient_reg_margin_top">15dp</dimen>
     <dimen name="new_patient_reg_margin_bottom">15dp</dimen>
-    <dimen name="new_patient_reg_margin_left">12dp</dimen>
-    <dimen name="new_patient_reg_margin_right">12dp</dimen>
+    <dimen name="new_patient_reg_margin_left">13dp</dimen>
+    <dimen name="new_patient_reg_margin_right">13dp</dimen>
 
     <!-- Spinner Text -->
     <dimen name="spinner_text_padding">41dp</dimen>
@@ -48,7 +48,7 @@
     <dimen name="add_password_margin_top">26dp</dimen>
 
     <!-- about us Landscape -->
-    <dimen name="about_margin_left">1030dp</dimen>
-    <dimen name="about_margin_right">1030dp</dimen>
+    <dimen name="about_margin_left">103dp</dimen>
+    <dimen name="about_margin_right">103dp</dimen>
 
 </resources>

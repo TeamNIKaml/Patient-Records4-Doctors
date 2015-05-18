@@ -8,11 +8,11 @@
 
     <dimen name="editText_radius">20dp</dimen>
     <dimen name="button_radius">20dp</dimen>
-    <dimen name="textSize_edit_text">27sp</dimen>
-    <dimen name="textSize_button">33sp</dimen>
-    <dimen name="textSize_heading">39sp</dimen>
-    <dimen name="textSize_list_data">24sp</dimen>
-    <dimen name="textSize_list_heading">33sp</dimen>
+    <dimen name="textSize_edit_text">22sp</dimen>
+    <dimen name="textSize_button">24sp</dimen>
+    <dimen name="textSize_heading">24sp</dimen>
+    <dimen name="textSize_list_data">22sp</dimen>
+    <dimen name="textSize_list_heading">24sp</dimen>
     <dimen name="textSize_button_diagnosis">24sp</dimen>
     <dimen name="padding">5dp</dimen>
 

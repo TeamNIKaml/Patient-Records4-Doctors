@@ -8,12 +8,12 @@
 
     <dimen name="editText_radius">29dp</dimen>
     <dimen name="button_radius">29dp</dimen>
-    <dimen name="textSize_edit_text">41sp</dimen>
-    <dimen name="textSize_button">50sp</dimen>
-    <dimen name="textSize_heading">59sp</dimen>
+    <dimen name="textSize_edit_text">36sp</dimen>
+    <dimen name="textSize_button">41sp</dimen>
+    <dimen name="textSize_heading">41sp</dimen>
     <dimen name="textSize_list_data">36sp</dimen>
-    <dimen name="textSize_list_heading">50sp</dimen>
-    <dimen name="textSize_button_diagnosis">16sp</dimen>
+    <dimen name="textSize_list_heading">41sp</dimen>
+    <dimen name="textSize_button_diagnosis">36sp</dimen>
     <dimen name="padding">7dp</dimen>
 
     <!-- Main -->
@@ -22,7 +22,7 @@
 
     <!-- drawer_list -->
     <dimen name="drawer_layout_width_image">56dp</dimen>
-    <dimen name="drawer_margin">28dp</dimen>
+    <dimen name="drawer_margin">27dp</dimen>
     <dimen name="drawer_margin_small">18dp</dimen>
     <dimen name="drawer_padding">90dp</dimen>
 
