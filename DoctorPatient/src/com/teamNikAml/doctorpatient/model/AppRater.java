@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class AppRater {
     private final static String APP_TITLE = "MY Credentials";
-    private final static String APP_PNAME = "com.teamNIKaml.reminder.activity";// Package Name
+    private final static String APP_PNAME = "com.teamNikAml.doctorpatient.activity";// Package Name
 
     private final static int DAYS_UNTIL_PROMPT = 3;//Min number of days
     private final static int LAUNCHES_UNTIL_PROMPT = 3;//Min number of launches
